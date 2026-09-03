@@ -39,6 +39,24 @@ export function initTypewriter(content){
 }
 
 export function initScrollAnimations(){
+  // Cursor
+  const dot=document.getElementById('cursor-dot');
+  const ring=document.getElementById('cursor-ring');
+  if(dot && ring && window.matchMedia('(hover:hover) and (pointer:fine)').matches){
+    let mx=0, my=0, rx=0, ry=0;
+    window.addEventListener('mousemove', e=>{ mx=e.clientX; my=e.clientY; dot.style.transform=`translate(${mx-5}px,${my-5}px)`; });
+    function ringRaf(){
+      rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+      ring.style.transform=`translate(${rx-14}px,${ry-14}px)`;
+      requestAnimationFrame(ringRaf);
+    }
+    ringRaf();
+    document.querySelectorAll('a, button, .project-card, .skill-pill').forEach(el=>{
+      el.addEventListener('mouseenter', ()=>{ dot.style.transform+= ' scale(1.8)'; ring.style.transform+= ' scale(1.4)'; ring.style.opacity='0.9'; });
+      el.addEventListener('mouseleave', ()=>{ ring.style.opacity='0.5'; });
+    });
+  }
+
   // Lenis
   let lenis=null;
   if(window.Lenis){

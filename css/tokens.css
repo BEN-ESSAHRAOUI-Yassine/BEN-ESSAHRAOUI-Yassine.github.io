@@ -5,12 +5,13 @@
   --font-mono: 'JetBrains Mono', monospace;
   --nav-height: 72px;
   --max-width: 1280px;
-  --section-padding: 88px 24px;
-  --radius: 18px;
+  --section-padding: 96px 24px;
+  --radius: 20px;
   --radius-pill: 999px;
-  --transition: 0.35s cubic-bezier(0.22,1,0.36,1);
+  --transition: 0.42s cubic-bezier(0.22,1,0.36,1);
   --ink: #070A0D;
   --paper: #F6F1E7;
+  --watermark: rgba(7,10,13,0.035);
 }
 
 /* Dev — Electric Lime */
@@ -18,29 +19,31 @@
   --bg-primary: #070A0D;
   --bg-secondary: #11161B;
   --bg-card: #151B22;
-  --bg-grain: rgba(214,255,42,0.04);
+  --bg-grain: rgba(214,255,42,0.05);
   --text-primary: #F6F1E7;
-  --text-secondary: #8A9AA8;
+  --text-secondary: #8FA3B3;
   --color-accent: #D6FF2A;
   --color-accent-hover: #E6FF6B;
-  --color-accent-soft: rgba(214,255,42,0.12);
-  --color-accent-border: rgba(214,255,42,0.28);
-  --shadow-accent: 0 18px 60px rgba(214,255,42,0.18);
+  --color-accent-soft: rgba(214,255,42,0.13);
+  --color-accent-border: rgba(214,255,42,0.30);
+  --shadow-accent: 0 20px 70px rgba(214,255,42,0.20);
   --border: #1E2A36;
+  --watermark: rgba(214,255,42,0.04);
 }
 [data-profile="dev"][data-mode="light"] {
   --bg-primary: #F6F1E7;
   --bg-secondary: #EDE8DC;
   --bg-card: #FFFFFF;
-  --bg-grain: rgba(214,255,42,0.06);
-  --text-primary: #070A0D;
-  --text-secondary: #5A6A7A;
+  --bg-grain: rgba(214,255,42,0.07);
+  --text-primary: #0A0F0A;
+  --text-secondary: #5A6A5A;
   --color-accent: #5A7A00;
   --color-accent-hover: #4A6300;
-  --color-accent-soft: rgba(90,122,0,0.10);
-  --color-accent-border: rgba(90,122,0,0.22);
-  --shadow-accent: 0 18px 60px rgba(90,122,0,0.14);
+  --color-accent-soft: rgba(90,122,0,0.11);
+  --color-accent-border: rgba(90,122,0,0.24);
+  --shadow-accent: 0 20px 70px rgba(90,122,0,0.16);
   --border: #E2DDD2;
+  --watermark: rgba(90,122,0,0.035);
 }
 
 /* Telecom — Cyan */
