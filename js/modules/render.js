@@ -96,22 +96,53 @@ export function renderTimeline(content, profile, lang){
     div.innerHTML=`<div class="timeline-dot"></div><div class="timeline-content"><h3>${item.title[lang]||item.title.fr}</h3><span class="timeline-company">${item.company}</span><div class="timeline-date">${item.date}</div><ul>${bullets.map(b=>`<li>${b}</li>`).join('')}</ul></div>`;
     container.appendChild(div);
   });
-  // Education
+  // Education — distinct atelier cards
   const eduLabel=content.i18n?.sections?.education?.[lang]||'Formation';
-  const h1=document.createElement('h3'); h1.className='timeline-section-label'; h1.setAttribute('data-show-in','all'); h1.textContent='🎓 '+eduLabel; container.appendChild(h1);
-  const eduWrap=document.createElement('div'); eduWrap.className='timeline-item'; eduWrap.setAttribute('data-show-in','all');
-  let eduHtml='<div class="timeline-dot"></div><div class="timeline-content">';
-  (content.education||[]).forEach(e=>{
-    eduHtml+=`<div class="education-item"><span class="education-diploma">${e.diploma[lang]||e.diploma.fr}</span><span class="education-school">${e.school}</span><span class="education-year">${e.year}</span></div>`;
+  const eduHeader=document.createElement('div');
+  eduHeader.className='timeline-label';
+  eduHeader.setAttribute('data-show-in','all');
+  eduHeader.innerHTML=`<span class="timeline-label-icon"><i data-lucide="graduation-cap" style="width:16px;height:16px"></i></span><span>${eduLabel}</span><span class="timeline-label-line"></span>`;
+  container.appendChild(eduHeader);
+  const eduGrid=document.createElement('div');
+  eduGrid.className='edu-grid';
+  eduGrid.setAttribute('data-show-in','all');
+  const eduIcons=['sparkles','cpu','zap','scroll-text'];
+  (content.education||[]).forEach((e,i)=>{
+    const card=document.createElement('div');
+    card.className='edu-card';
+    card.innerHTML=`
+      <div class="edu-icon"><i data-lucide="${eduIcons[i%eduIcons.length]}" style="width:18px;height:18px"></i></div>
+      <div class="edu-main">
+        <div class="education-diploma">${e.diploma[lang]||e.diploma.fr}</div>
+        <div class="education-school">${e.school}</div>
+      </div>
+      <div class="education-year">${e.year}</div>
+    `;
+    eduGrid.appendChild(card);
   });
-  eduHtml+='</div>'; eduWrap.innerHTML=eduHtml; container.appendChild(eduWrap);
-  // Certs
+  container.appendChild(eduGrid);
+  // Certs — provider card with pills
   const certLabel=content.i18n?.sections?.certifications?.[lang]||'Certifications';
-  const h2=document.createElement('h3'); h2.className='timeline-section-label'; h2.setAttribute('data-show-in','all'); h2.textContent='📜 '+certLabel; container.appendChild(h2);
-  const certWrap=document.createElement('div'); certWrap.className='timeline-item'; certWrap.setAttribute('data-show-in','all');
+  const certHeader=document.createElement('div');
+  certHeader.className='timeline-label';
+  certHeader.setAttribute('data-show-in','all');
+  certHeader.innerHTML=`<span class="timeline-label-icon"><i data-lucide="award" style="width:16px;height:16px"></i></span><span>${certLabel}</span><span class="timeline-label-line"></span>`;
+  container.appendChild(certHeader);
+  const certCard=document.createElement('div');
+  certCard.className='cert-card';
+  certCard.setAttribute('data-show-in','all');
   const prov=content.certifications?.provider||'';
-  certWrap.innerHTML=`<div class="timeline-dot"></div><div class="timeline-content"><p style="font-size:0.8125rem;color:var(--text-secondary);margin-bottom:8px;">Provider: <strong style="color:var(--text-primary);">${prov}</strong></p><ul>${(content.certifications?.items||[]).map(i=>`<li>${i}</li>`).join('')}</ul></div>`;
-  container.appendChild(certWrap);
+  const pills=(content.certifications?.items||[]).map(i=>`<span class="cert-pill"><i data-lucide="badge-check" style="width:12px;height:12px"></i>${i}</span>`).join('');
+  certCard.innerHTML=`
+    <div class="cert-head">
+      <span class="cert-provider-label">Provider</span>
+      <strong class="cert-provider">${prov}</strong>
+      <span class="cert-count">${(content.certifications?.items||[]).length} certs</span>
+    </div>
+    <div class="cert-list">${pills}</div>
+  `;
+  container.appendChild(certCard);
+  if(window.lucide) window.lucide.createIcons();
 }
 
 export function renderProjects(content, profile, lang){
