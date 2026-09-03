@@ -1,0 +1,349 @@
+{
+  "meta": {
+    "name": "Yassine BEN ESSAHRAOUI",
+    "email": "ybenessahraoui@gmail.com",
+    "phone": "+212 06 13 72 79 49",
+    "location": { "fr": "Agadir, Maroc", "en": "Agadir, Morocco" },
+    "links": {
+      "linkedin": "https://www.linkedin.com/in/yassine-ben-essahraoui-bb7b41125",
+      "github": "https://github.com/BEN-ESSAHRAOUI-Yassine"
+    }
+  },
+  "profiles": {
+    "dev": {
+      "label": { "fr": "Dev", "en": "Dev" },
+      "icon": "💻",
+      "lucide": "code-2",
+      "title": { "fr": "Développeur Full Stack", "en": "Full Stack Developer" },
+      "heroDesc": { "fr": "PHP & Laravel · Web & Automation", "en": "PHP & Laravel · Web & Automation" },
+      "tagline": { "fr": "Des solutions web propres et efficaces — de l'idée au déploiement.", "en": "Building clean, efficient web solutions — from idea to deployment." },
+      "roles": {
+        "fr": ["Développeur Full Stack", "Ingénieur PHP & Laravel", "Créateur d'automatisations Web"],
+        "en": ["Full Stack Developer", "PHP & Laravel Engineer", "Web Automation Builder"]
+      }
+    },
+    "telecom": {
+      "label": { "fr": "Télécom", "en": "Telecom" },
+      "icon": "📡",
+      "lucide": "antenna",
+      "title": { "fr": "Référent BE FTTH & Géomaticien", "en": "FTTH Design Lead & GIS Specialist" },
+      "heroDesc": { "fr": "FTTH · QGIS · AutoCAD", "en": "FTTH · QGIS · AutoCAD" },
+      "tagline": { "fr": "Conception de réseaux fibre et automatisation de workflows techniques depuis 2016.", "en": "Designing fiber networks and automating technical workflows since 2016." },
+      "roles": {
+        "fr": ["Ingénieur Réseau FTTH", "Spécialiste SIG & AutoCAD", "Expert Automatisation Workflows"],
+        "en": ["FTTH Network Engineer", "GIS & AutoCAD Specialist", "Workflow Automation Expert"]
+      }
+    },
+    "it": {
+      "label": { "fr": "IT", "en": "IT" },
+      "icon": "🔧",
+      "lucide": "wrench",
+      "title": { "fr": "Technicien Support & Réseaux", "en": "IT Support & Network Technician" },
+      "heroDesc": { "fr": "Helpdesk · Réseaux · Systèmes", "en": "Helpdesk · Networks · Systems" },
+      "tagline": { "fr": "Maintenir les systèmes opérationnels — du helpdesk à l'infrastructure réseau.", "en": "Keeping systems running — from helpdesk to network infrastructure." },
+      "roles": {
+        "fr": ["Technicien Support IT", "Spécialiste Réseaux & Matériel", "Administrateur Systèmes"],
+        "en": ["IT Support Technician", "Network & Hardware Specialist", "Systems Administrator"]
+      }
+    }
+  },
+  "about": {
+    "dev": {
+      "fr": "Développeur Full Stack spécialisé en PHP et Laravel, avec une solide expérience en automatisation industrielle et télécoms. Autonome, rigoureux et orienté qualité du code.",
+      "en": "Full Stack Developer specialized in PHP and Laravel, with solid experience in industrial and telecom automation. Autonomous, rigorous and code-quality driven."
+    },
+    "telecom": {
+      "fr": "Référent BE FTTH avec 4+ ans d'expérience en études de réseaux fibre optique, conception AutoCAD/QGIS, et automatisation de workflows techniques.",
+      "en": "FTTH Design Lead with 4+ years in fiber network studies, AutoCAD/QGIS design and technical workflow automation."
+    },
+    "it": {
+      "fr": "Technicien polyvalent en maintenance informatique, réseaux et support utilisateurs. Expérience sur des environnements LAN/WAN, postes Windows/Linux, et gestion de parc.",
+      "en": "Versatile technician in IT maintenance, networks and user support. Experience with LAN/WAN, Windows/Linux workstations and asset management."
+    },
+    "stats": {
+      "dev": [
+        { "value": 7, "suffix": "+", "label": { "fr": "Années d'exp.", "en": "Years exp." } },
+        { "value": 6, "suffix": "+", "label": { "fr": "Projets web", "en": "Web projects" } },
+        { "value": 3, "suffix": "", "label": { "fr": "Certifications", "en": "Certifications" } },
+        { "value": 20, "suffix": "+", "label": { "fr": "Technologies", "en": "Technologies" } }
+      ],
+      "telecom": [
+        { "value": 4, "suffix": "+", "label": { "fr": "Années FTTH", "en": "Years FTTH" } },
+        { "value": 100, "suffix": "+", "label": { "fr": "Études réalisées", "en": "Studies delivered" } },
+        { "value": 2, "suffix": "", "label": { "fr": "AutoCAD + QGIS", "en": "AutoCAD + QGIS" } },
+        { "value": 6, "suffix": "", "label": { "fr": "Clients opérateurs", "en": "Operator clients" } }
+      ],
+      "it": [
+        { "value": 6, "suffix": "+", "label": { "fr": "Années terrain", "en": "Years field" } },
+        { "value": 2, "suffix": "", "label": { "fr": "LAN / WAN", "en": "LAN / WAN" } },
+        { "value": 2, "suffix": "", "label": { "fr": "Windows + Linux", "en": "Windows + Linux" } },
+        { "value": 2, "suffix": "", "label": { "fr": "Helpdesk + Réseaux", "en": "Helpdesk + Networks" } }
+      ]
+    }
+  },
+  "skills": {
+    "dev": [
+      { "group": { "fr": "Frontend", "en": "Frontend" }, "items": ["HTML5", "CSS3", "JavaScript"] },
+      { "group": { "fr": "Backend", "en": "Backend" }, "items": ["PHP", "Laravel", "Blade"] },
+      { "group": { "fr": "Base de données", "en": "Database" }, "items": ["MySQL", "SQL", "Modélisation relationnelle"] },
+      { "group": { "fr": "DevOps / Outils", "en": "DevOps / Tools" }, "items": ["Git", "GitHub", "XAMPP", "Vite", "Composer", "VS Code"] },
+      { "group": { "fr": "Outils IA", "en": "AI Tools" }, "items": ["Claude Code", "AntiGravity", "OpenCode"] },
+      { "group": { "fr": "Langages", "en": "Languages" }, "items": ["Python", "VBA", "AutoLISP"] },
+      { "group": { "fr": "Gestion de projet", "en": "Project Mgmt" }, "items": ["Jira", "Agile (Kanban)", "Scrum"] }
+    ],
+    "telecom": [
+      { "group": { "fr": "Études réseau", "en": "Network studies" }, "items": ["FTTH", "FTTA", "APS", "APD", "DFT", "DOE", "VDR"] },
+      { "group": { "fr": "Calculs & livrables", "en": "Calcs & deliverables" }, "items": ["CAPFT", "COMAC", "TOPOCALC"] },
+      { "group": { "fr": "CAO/DAO", "en": "CAD/GIS" }, "items": ["AutoCAD", "QGIS", "ArcGIS", "FiberGIS", "Fiberscript"] },
+      { "group": { "fr": "Automatisation", "en": "Automation" }, "items": ["AutoLISP", "VBA", "Python (QGIS API)"] },
+      { "group": { "fr": "Génie civil", "en": "Civil works" }, "items": ["Piquetage", "Coordination chantiers", "Plans GC"] },
+      { "group": { "fr": "Clients", "en": "Clients" }, "items": ["Orange", "SFR", "Bouygues", "Axione", "TDF", "Kyntus"] }
+    ],
+    "it": [
+      { "group": { "fr": "Systèmes", "en": "Systems" }, "items": ["Windows", "Linux", "Déploiement postes"] },
+      { "group": { "fr": "Réseaux", "en": "Networks" }, "items": ["LAN", "WAN", "Switchs", "Routeurs", "Wi-Fi", "Câblage"] },
+      { "group": { "fr": "Maintenance", "en": "Maintenance" }, "items": ["PC", "Imprimantes", "Serveurs", "Périphériques"] },
+      { "group": { "fr": "Outils", "en": "Tools" }, "items": ["XAMPP", "VS Code", "Active Directory", "Antivirus"] },
+      { "group": { "fr": "Automatisme", "en": "Automation" }, "items": ["PLC", "Supervision process", "Vijeo Citect", "Unity Pro UL"] },
+      { "group": { "fr": "Support", "en": "Support" }, "items": ["Helpdesk", "Ticketing", "Reporting", "Formation utilisateurs"] }
+    ]
+  },
+  "experience": [
+    {
+      "title": { "fr": "Référent BE FTTH", "en": "FTTH Design Lead" },
+      "company": "OPTICAL TELECOM",
+      "date": "2022 – 2024",
+      "profiles": ["dev", "telecom"],
+      "bullets": {
+        "dev": ["Développement d'outils AutoLISP et VBA pour automatiser les workflows AutoCAD.", "Création de scripts pour calques, blocs, calculs géométriques, Excel → DXF.", "Extension QGIS Python pour traitement de données et génération SHP."],
+        "telecom": ["Études techniques (APS, APD, DFT, DOE) pour réseaux FTTH.", "Modélisation et conception sur AutoCAD et QGIS fibre optique.", "Optimisation des processus via automatisation."],
+        "it": ["Études techniques FTTH et automatisation des workflows."]
+      }
+    },
+    {
+      "title": { "fr": "Chargé d'études FTTH", "en": "FTTH Study Engineer" },
+      "company": "ID2S Telecom",
+      "date": "2020 – 2022",
+      "profiles": ["dev", "telecom"],
+      "bullets": {
+        "dev": ["Outils VBA pour automatisation et traitement de données FTTH.", "Structuration et fiabilisation des données techniques.", "Automatisation gestion de fichiers et workflows internes."],
+        "telecom": ["Modélisation réseaux télécoms dans SIG (QGIS, AutoCAD).", "Calcul de charge et préparation des livrables clients.", "Collaboration avec Orange, Axione, TDF, SFR, Bouygues, Kyntus."],
+        "it": ["Modélisation SIG et livrables clients."]
+      }
+    },
+    {
+      "title": { "fr": "Technicien réseaux informatiques", "en": "Network Technician" },
+      "company": "UNIVERS HIGH TECH",
+      "date": "Mai 2019 – Juin 2019",
+      "profiles": ["it"],
+      "bullets": { "it": ["Installation et configuration du système de pointage.", "Maintenance et mise à jour des équipements.", "Assistance technique et résolution d'incidents réseaux."] }
+    },
+    {
+      "title": { "fr": "Technicien maintenance informatique & électronique", "en": "IT & Electronics Maintenance Technician" },
+      "company": "INFOSAT",
+      "date": "Mar 2018 – Avr 2019",
+      "profiles": ["it"],
+      "bullets": { "it": ["Assemblage, diagnostic et maintenance PC et périphériques.", "Configuration routeurs, switchs, bornes Wi-Fi pour PME.", "Assistance helpdesk sur site et à distance."] }
+    },
+    {
+      "title": { "fr": "Technicien automatisme", "en": "Automation Technician" },
+      "company": "SCADELEC",
+      "date": "Jan 2018 – Fév 2018",
+      "profiles": ["it"],
+      "bullets": { "it": ["Maintenance et mise à niveau des stations automatisées RAMSA.", "Programmation et configuration d'automates programmables (PLC)."] }
+    },
+    {
+      "title": { "fr": "Automaticien Raffinage", "en": "Refining Automation Engineer" },
+      "company": "LES HUILERIES DU SOUSS BEL HASSAN",
+      "date": "Avr 2017 – Juin 2017 / Avr 2016 – Juin 2016",
+      "profiles": ["it"],
+      "bullets": { "it": ["Conception et développement d'un système de supervision du processus de raffinage.", "Programmation d'automates pour optimisation chaîne de production."] }
+    },
+    {
+      "title": { "fr": "Maintenance électrique", "en": "Electrical Maintenance" },
+      "company": "STE MAROCAINE DES EMBALLAGES FANTASIA",
+      "date": "Juil 2015 – Août 2015",
+      "profiles": ["it"],
+      "bullets": { "it": ["Maintenance électrique sur chaudière, dérouleuse DN14 et machines d'agrafage."] }
+    }
+  ],
+  "education": [
+    { "diploma": { "fr": "Développement Back-end intégré par AI", "en": "AI-Powered Back-end Development" }, "school": "Simplon Maghreb x Jobintech", "year": "2025–2026" },
+    { "diploma": { "fr": "Licence Pro — Automatisme & GTB", "en": "Professional Bachelor — Automation & BMS" }, "school": "ESTA Agadir", "year": "2016–2017" },
+    { "diploma": { "fr": "DUT — Génie Électrique", "en": "Associate Degree — Electrical Engineering" }, "school": "ESTA Agadir", "year": "2014–2016" },
+    { "diploma": { "fr": "Baccalauréat — Sciences & Technologies Électriques", "en": "High School Diploma — Electrical Sciences & Tech" }, "school": "Lycée Technique Al Idrissi", "year": "2011–2014" }
+  ],
+  "certifications": {
+    "provider": "Orange Data Center",
+    "items": ["GitLab CI/CD", "UML et Conception pour une Architecture Logicielle Claire", "5G & Design"]
+  },
+  "projects": [
+    {
+      "title": "FiberFlow",
+      "desc": { "fr": "Plateforme API-first d'audit FTTH — supervision PostGIS, scoring qualité pondéré et assistant IA Groq pour bureaux d'études télécoms.", "en": "API-first FTTH audit platform — PostGIS supervision, weighted quality scoring and Groq AI assistant for telecom design offices." },
+      "tags": ["Laravel 13", "PostGIS", "Groq AI", "Pest 4", "Docker"],
+      "profiles": ["dev", "telecom"],
+      "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine/fiberflow", "demo": null },
+      "image": "assets/img/projects/fiberflow.svg",
+      "featured": true
+    },
+    {
+      "title": "DocFormat",
+      "desc": { "fr": "Plateforme d'intelligence documentaire — analyse structure, règles de style, citations/bibliographie et détection d'abréviations sur .docx (PhpWord).", "en": "Document-intelligence platform — structure analysis, style rules, citations/bibliography and abbreviation detection on .docx (PhpWord)." },
+      "tags": ["Laravel 13", "React 19", "PhpWord", "Pest 256+", "Vite"],
+      "profiles": ["dev"],
+      "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine/docformat", "demo": null },
+      "image": "assets/img/projects/docformat.svg",
+      "featured": true
+    },
+    {
+      "title": "ThreadForgeAPI",
+      "desc": { "fr": "API headless Laravel qui transforme du contenu brut en posts X optimisés via IA structurée, tool-calling et mémoire (Groq Llama 4).", "en": "Headless Laravel API that transforms raw content into optimized X posts via structured AI, tool-calling and memory (Groq Llama 4)." },
+      "tags": ["Laravel 13", "Laravel AI", "Sanctum", "Pest", "Azure"],
+      "profiles": ["dev"],
+      "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine/ThreadForgeAPI", "demo": null },
+      "image": "assets/img/projects/threadforge.svg",
+      "featured": true
+    },
+    {
+      "title": "TalentMatch",
+      "desc": { "fr": "Assistant IA de présélection RH — analyse CV vs offre en 2 couches : scoring JSON structuré + agent conversationnel à mémoire.", "en": "AI pre-screening assistant for HR — CV vs job analysis in 2 layers: structured JSON scoring + conversational memory agent." },
+      "tags": ["Laravel 13", "Laravel AI", "Groq", "Pest", "Breeze"],
+      "profiles": ["dev"],
+      "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine/talentmatch", "demo": null },
+      "image": "assets/img/projects/talentmatch.svg"
+    },
+    {
+      "title": "Assistant Dépenses",
+      "desc": { "fr": "Extraction IA de reçus (OCR) — texte collé → Llama 4 Scout extrait lignes, catégories MAD et dashboard Chart.js.", "en": "AI receipt extraction (OCR) — pasted text → Llama 4 Scout extracts lines, MAD categories and Chart.js dashboard." },
+      "tags": ["Laravel 13", "Groq AI", "Chart.js", "Queue", "Pest"],
+      "profiles": ["dev"],
+      "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine/Assistant_Depenses", "demo": null },
+      "image": "assets/img/projects/assistant-depenses.svg"
+    },
+    {
+      "title": "CandidatureTracker",
+      "desc": { "fr": "Tracker de candidatures — suivi candidatures/entretiens/documents avec soft-delete, politiques et stats.", "en": "Job application tracker — candidatures/interviews/documents with soft-delete, policies and stats." },
+      "tags": ["Laravel 13", "SoftDeletes", "Policies", "Breeze", "Pest"],
+      "profiles": ["dev"],
+      "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine/candidaturetracker", "demo": null },
+      "image": "assets/img/projects/candidaturetracker.svg"
+    },
+    {
+      "title": "TaskManager Laravel",
+      "desc": { "fr": "Gestionnaire de tâches minimal — CRUD, pipeline ToDo/InProgress/Done, filtres et retards.", "en": "Minimal task manager — CRUD, ToDo/InProgress/Done pipeline, filters and overdue highlights." },
+      "tags": ["Laravel 13", "Breeze", "Tailwind", "MySQL", "MVC"],
+      "profiles": ["dev"],
+      "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine/TaskManagerLaravel", "demo": null },
+      "image": "assets/img/projects/taskmanager.svg"
+    },
+    {
+      "title": "Personal Blog Laravel",
+      "desc": { "fr": "Blog personnel — navigation publique (recherche/catégorie/temps de lecture) + dashboard privé brouillon/publié.", "en": "Personal blog — public browsing (search/category/reading time) + private draft/published dashboard." },
+      "tags": ["Laravel 13", "Breeze", "Tailwind", "MySQL", "Blade"],
+      "profiles": ["dev"],
+      "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine/PersonalBlogLaravel", "demo": null },
+      "image": "assets/img/projects/blog.svg"
+    },
+    {
+      "title": "AutoCAD AutoLISP Tools",
+      "desc": { "fr": "Suite AutoLISP + VBA pour automatiser la génération de plans FTTH dans AutoCAD (Excel → DXF).", "en": "AutoLISP + VBA suite to automate FTTH plan generation in AutoCAD (Excel → DXF)." },
+      "tags": ["AutoLISP", "VBA", "Excel", "AutoCAD"],
+      "profiles": ["telecom"],
+      "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine", "demo": null },
+      "image": "assets/img/projects/autocad.svg"
+    },
+    {
+      "title": "QGIS Python Extension",
+      "desc": { "fr": "Extension QGIS pour traitement données télécom et génération SHP (QGIS API, Python).", "en": "QGIS extension for telecom data processing and SHP generation (QGIS API, Python)." },
+      "tags": ["Python", "QGIS API", "PostGIS"],
+      "profiles": ["telecom"],
+      "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine", "demo": null },
+      "image": "assets/img/projects/qgis.svg"
+    },
+    {
+      "title": "GameCafé Manager — Aji L3bo",
+      "desc": { "fr": "OS café ludique — catalogue, réservations anti-conflit et dashboard live des sessions (projet pré-Laravel).", "en": "Board-game café OS — catalog, anti-overlap reservations and live session dashboard (pre-Laravel project)." },
+      "tags": ["PHP (Core)", "MySQL PDO", "XAMPP", "Legacy"],
+      "profiles": ["dev"],
+      "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine/GameCafe_Manager_PRJ", "demo": null },
+      "image": "assets/img/projects/gamecafe.svg",
+      "legacy": true
+    },
+    {
+      "title": "SurfSchool Manager — Taghazout",
+      "desc": { "fr": "Gestion école de surf — élèves/cours/inscriptions/paiements, calendrier events.php (pré-Laravel).", "en": "Surf school manager — students/lessons/enrollments/payments, events.php calendar (pre-Laravel)." },
+      "tags": ["PHP (Core)", "MySQL PDO", "Sessions", "Legacy"],
+      "profiles": ["dev"],
+      "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine/SurfSchool_Manager", "demo": null },
+      "image": "assets/img/projects/surfschool.svg",
+      "legacy": true
+    },
+    {
+      "title": "IT Automation Toolkit",
+      "desc": { "fr": "Outils d'automatisation et scripts réseau pour maintenance et déploiement.", "en": "Automation and network scripts for maintenance and deployment." },
+      "tags": ["Python", "Bash", "Networking", "PLC"],
+      "profiles": ["it"],
+      "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine", "demo": null },
+      "image": "assets/img/projects/it-toolkit.svg"
+    }
+  ],
+  "cv": {
+    "dev": "assets/cv/cv-dev.pdf",
+    "telecom": "assets/cv/cv-telecom.pdf",
+    "it": "assets/cv/cv-it.pdf"
+  },
+  "i18n": {
+    "nav": {
+      "about": { "fr": "À propos", "en": "About" },
+      "skills": { "fr": "Compétences", "en": "Skills" },
+      "projects": { "fr": "Projets", "en": "Projects" },
+      "contact": { "fr": "Contact", "en": "Contact" }
+    },
+    "hero": {
+      "greeting": { "fr": "Bonjour, je suis", "en": "Hello, I'm" },
+      "ctaProjects": { "fr": "Voir les projets", "en": "View Projects" },
+      "ctaExperience": { "fr": "Voir l'expérience", "en": "View Experience" },
+      "ctaCV": { "fr": "Télécharger CV", "en": "Download CV" },
+      "breadcrumb": { "fr": "Profil actuel", "en": "Current profile" },
+      "alsoAvailable": { "fr": "Aussi disponible :", "en": "Also available:" },
+      "coachmark": { "fr": "Recrutez en Télécom ou IT ? Changez de profil →", "en": "Hiring for Telecom or IT? Switch profile →" }
+    },
+    "sections": {
+      "aboutTitle": { "fr": "À Propos", "en": "About" },
+      "aboutSubtitle": { "fr": "Qui je suis et ce que je fais", "en": "Who I am and what I do" },
+      "skillsTitle": { "fr": "Compétences", "en": "Skills" },
+      "skillsSubtitle": { "fr": "Technologies, outils et domaines d'expertise", "en": "Technologies, tools and expertise" },
+      "expTitle": { "fr": "Expérience", "en": "Experience" },
+      "expSubtitle": { "fr": "Parcours professionnel et formations", "en": "Professional background and education" },
+      "projectsTitle": { "fr": "Projets", "en": "Projects" },
+      "projectsSubtitle": { "fr": "Réalisations et outils développés", "en": "Built tools and deliveries" },
+      "contactTitle": { "fr": "Contact", "en": "Contact" },
+      "contactSubtitle": { "fr": "Parlons de votre projet", "en": "Let's talk about your project" },
+      "education": { "fr": "Formation", "en": "Education" },
+      "certifications": { "fr": "Certifications", "en": "Certifications" }
+    },
+    "contact": {
+      "email": { "fr": "Email", "en": "Email" },
+      "phone": { "fr": "Téléphone", "en": "Phone" },
+      "location": { "fr": "Localisation", "en": "Location" },
+      "formName": { "fr": "Nom", "en": "Name" },
+      "formNamePh": { "fr": "Votre nom", "en": "Your name" },
+      "formEmail": { "fr": "Email", "en": "Email" },
+      "formEmailPh": { "fr": "votre@email.com", "en": "your@email.com" },
+      "formSubject": { "fr": "Sujet", "en": "Subject" },
+      "formSubjectPh": { "fr": "Sujet de votre message", "en": "Subject of your message" },
+      "formMessage": { "fr": "Message", "en": "Message" },
+      "formMessagePh": { "fr": "Votre message...", "en": "Your message..." },
+      "formSubmit": { "fr": "Envoyer le message", "en": "Send message" },
+      "formSending": { "fr": "Envoi...", "en": "Sending..." },
+      "formSuccess": { "fr": "Message envoyé ! Merci de m'avoir contacté.", "en": "Message sent! Thanks for reaching out." },
+      "formError": { "fr": "Erreur d'envoi. Réessayez ou contactez-moi directement.", "en": "Send failed. Try again or contact me directly." },
+      "errName": { "fr": "Veuillez entrer votre nom", "en": "Please enter your name" },
+      "errEmail": { "fr": "Veuillez entrer un email valide", "en": "Please enter a valid email" },
+      "errSubject": { "fr": "Veuillez entrer un sujet", "en": "Please enter a subject" },
+      "errMessage": { "fr": "Veuillez entrer votre message", "en": "Please enter your message" }
+    },
+    "footer": { "rights": { "fr": "Tous droits réservés.", "en": "All rights reserved." } }
+  }
+}

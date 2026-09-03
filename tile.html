@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Style Tile — Profile Switcher Variants</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/tokens.css"><link rel="stylesheet" href="css/base.css"><link rel="stylesheet" href="css/components/hero.css"><link rel="stylesheet" href="css/components/profile-switcher.css">
+<style>
+  body{padding:32px;background:var(--bg-primary);color:var(--text-primary)}
+  .tile{max-width:900px;margin:0 auto 64px;border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--bg-primary)}
+  .tile-head{padding:16px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:12px}
+  .tile-head strong{font-family:var(--font-heading)}
+  .badge{font-family:var(--font-mono);font-size:0.7rem;padding:4px 8px;border-radius:999px;background:var(--color-accent);color:#fff}
+  .tile-body{padding:32px}
+  .variant-label{font-family:var(--font-mono);font-size:0.75rem;color:var(--color-accent);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:12px}
+  h2{font-family:var(--font-heading);margin-bottom:8px}
+  .note{font-size:0.85rem;color:var(--text-secondary);margin-bottom:18px}
+  /* Variant B dock */
+  .dock{position:fixed;left:12px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px;z-index:10}
+  .dock-btn{width:56px;height:56px;border-radius:14px;background:var(--bg-card);border:1.5px solid var(--border);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;font-size:0.6rem;font-family:var(--font-mono);color:var(--text-secondary)}
+  .dock-btn.active{background:var(--color-accent);color:#fff;border-color:var(--color-accent)}
+  @media(max-width:900px){.dock{display:none}}
+</style>
+</head>
+<body data-profile="dev" data-mode="dark">
+<h1 style="font-family:var(--font-heading);text-align:center;margin-bottom:32px">Style Tile — Prominent Profile Switcher</h1>
+
+<div class="tile">
+  <div class="tile-head"><strong>Variant A — Hero Segmented Cards (Recommended)</strong><span class="badge">Selected</span></div>
+  <div class="tile-body">
+    <div class="variant-label">Hero — above fold</div>
+    <h2>Yassine BEN ESSAHRAOUI</h2>
+    <p class="note">3 cards centered under tagline. Active has accent bg + check. Always visible, can't miss. Scales to 3 cols desktop, stack mobile. + coachmark + breadcrumb.</p>
+    <div class="hero-switcher" style="margin:0 auto">
+      <button class="hero-switcher-card active"><span class="sw-icon">💻</span><span class="sw-text"><span class="sw-label">Dev</span><span class="sw-desc">PHP & Laravel · Web & Automation</span></span><span class="sw-check" style="opacity:1;transform:scale(1)">✓</span></button>
+      <button class="hero-switcher-card"><span class="sw-icon">📡</span><span class="sw-text"><span class="sw-label">Télécom</span><span class="sw-desc">FTTH · QGIS · AutoCAD</span></span><span class="sw-check">✓</span></button>
+      <button class="hero-switcher-card"><span class="sw-icon">🔧</span><span class="sw-text"><span class="sw-label">IT</span><span class="sw-desc">Helpdesk · Réseaux · Systèmes</span></span><span class="sw-check">✓</span></button>
+    </div>
+    <div class="coachmark" style="margin-top:14px"><span>✨ <strong>Recrutez en Télécom ou IT ? Changez de profil →</strong></span><button>✕</button></div>
+    <p class="note" style="margin-top:18px">Pros: Zero extra interaction, visible on first paint, emphasizes multi-profile expertise. Cons: Takes ~140px hero height.</p>
+  </div>
+</div>
+
+<div class="tile">
+  <div class="tile-head"><strong>Variant B — Floating Persona Dock (Alternative)</strong><span class="badge" style="background:var(--border);color:var(--text-secondary)">Alternative</span></div>
+  <div class="tile-body" style="position:relative;min-height:260px">
+    <div class="variant-label">Desktop: left rail dock / Mobile: bottom sheet</div>
+    <h2>Yassine BEN ESSAHRAOUI</h2>
+    <p class="note">Vertical dock stays visible while scrolling. Strong persona separation. Needs bottom sheet on mobile.</p>
+    <div style="display:flex;gap:12px;justify-content:center;margin-top:18px">
+      <button class="dock-btn active" style="width:92px;height:82px;border-radius:12px"><span style="font-size:1.4rem">💻</span>Dev</button>
+      <button class="dock-btn" style="width:92px;height:82px;border-radius:12px"><span style="font-size:1.4rem">📡</span>Telecom</button>
+      <button class="dock-btn" style="width:92px;height:82px;border-radius:12px"><span style="font-size:1.4rem">🔧</span>IT</button>
+    </div>
+    <p class="note" style="margin-top:18px">Pros: Persistent, doesn't consume hero space, feels like persona switcher (like Linear/Notion). Cons: Conflicts with scroll-top, less obvious on mobile, requires sheet.</p>
+    <div class="dock" aria-hidden="true"><button class="dock-btn active">💻 Dev</button><button class="dock-btn">📡</button><button class="dock-btn">🔧</button></div>
+  </div>
+</div>
+
+<div style="max-width:900px;margin:0 auto;text-align:center;padding:24px;color:var(--text-secondary);font-size:0.9rem">
+  <p>Implemented in site: <strong>Variant A</strong>. Tweak accent/border/radius per profile lives in <code>css/tokens.css</code>. Change hero-switcher look in <code>css/components/profile-switcher.css:1</code>.</p>
+  <p><a href="index.html">← Back to site</a> · Toggle profile via <code>?profile=telecom&lang=en</code></p>
+</div>
+</body>
+</html>
