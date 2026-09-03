@@ -11,7 +11,7 @@ export function initContactForm(i18nGet){
   const form=document.getElementById('contact-form');
   if(!form) return;
   // init emailjs if key present
-  if(window.emailjs && CONFIG.publicKey && CONFIG.publicKey!=='WsWwZmb8pEWjK7GYb'){
+  if(window.emailjs && CONFIG.publicKey && CONFIG.publicKey!=='YOUR_PUBLIC_KEY'){
     try{ window.emailjs.init(CONFIG.publicKey); }catch{}
   }
 
