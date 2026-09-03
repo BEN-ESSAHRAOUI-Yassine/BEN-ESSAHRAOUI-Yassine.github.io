@@ -8,12 +8,11 @@
   <meta property="og:title" content="Yassine BEN ESSAHRAOUI — Portfolio">
   <meta property="og:description" content="Développeur Full Stack · FTTH & GIS · IT Support & Networks — Agadir, Maroc.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ben-essahraoui-yassine.github.io/">
-  <meta name="theme-color" content="#0a0a0a">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%236366f1'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='monospace' font-weight='700' font-size='14'>YB</text></svg>">
+  <meta name="theme-color" content="#070A0D">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23D6FF2A'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' fill='%23070A0D' font-family='monospace' font-weight='700' font-size='14'>YB</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components/navbar.css">
@@ -22,10 +21,14 @@
   <link rel="stylesheet" href="css/components/sections.css">
   <script src="https://unpkg.com/lucide@0.511.0/dist/umd/lucide.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
   <script type="application/ld+json" id="person-schema"></script>
 </head>
 <body>
-  <!-- Navbar -->
+  <div id="grain" aria-hidden="true"></div>
+
   <nav id="navbar" aria-label="Navigation principale">
     <a href="#hero" class="nav-logo">Yassine BEN ESSAHRAOUI</a>
     <ul class="nav-links" role="list">
@@ -60,94 +63,114 @@
       <button class="profile-tab" data-profile="it">🔧 IT</button>
     </div>
     <div class="mobile-lang">
-      <span data-i18n="nav.lang">Langue:</span>
+      <span>Langue:</span>
       <div class="lang-toggle"><button class="lang-btn active" data-lang="fr">FR</button><button class="lang-btn" data-lang="en">EN</button></div>
     </div>
   </div>
 
   <!-- Hero -->
   <section id="hero">
-    <div class="hero-content">
-      <div class="hero-breadcrumb" id="hero-breadcrumb">
-        <span data-i18n="hero.breadcrumb">Profil actuel</span> <strong id="breadcrumb-profile">Dev</strong> <span style="opacity:0.5">·</span> <span data-i18n="hero.alsoAvailable">Aussi disponible :</span> <span id="breadcrumb-also"></span>
+    <div class="hero-grid">
+      <div class="hero-copy reveal">
+        <div class="hero-breadcrumb" id="hero-breadcrumb">
+          <span data-i18n="hero.breadcrumb">Profil actuel</span> <strong id="breadcrumb-profile">Dev</strong> <span style="opacity:0.45">·</span> <span data-i18n="hero.alsoAvailable">Aussi disponible :</span> <span id="breadcrumb-also"></span>
+        </div>
+        <div class="hero-eyebrow">Agadir — Morocco · 2016→2026</div>
+        <p class="hero-subtitle" id="hero-title">Développeur Full Stack</p>
+        <h1>
+          <span class="line-accent">Yassine BEN</span>
+          <span>ESSAHRAOUI</span>
+        </h1>
+        <div class="hero-typewriter" id="typewriter"><span id="typewriter-text"></span><span class="cursor"></span></div>
+        <p class="hero-tagline" id="hero-tagline">Des solutions web propres et efficaces — de l'idée au déploiement.</p>
+        <div class="hero-switcher" id="hero-switcher" role="tablist" aria-label="Switch profile"></div>
+        <div class="coachmark" id="coachmark">
+          <i data-lucide="sparkles" style="width:16px;height:16px;color:var(--color-accent)"></i>
+          <span data-i18n="hero.coachmark">Recrutez en Télécom ou IT ? Changez de profil →</span>
+          <button id="coachmark-close" aria-label="Dismiss"><i data-lucide="x" style="width:14px;height:14px"></i></button>
+        </div>
+        <div class="hero-ctas">
+          <a href="#projects" class="btn btn-primary" id="cta-primary"><span data-i18n="hero.ctaProjects">Voir les projets</span> <i data-lucide="arrow-right" style="width:16px;height:16px"></i></a>
+          <a id="cv-link" href="assets/cv/cv-dev.pdf" download class="btn btn-secondary"><i data-lucide="download" style="width:16px;height:16px"></i> <span data-i18n="hero.ctaCV">Télécharger CV</span></a>
+        </div>
       </div>
-      <p class="hero-title" id="hero-title">Développeur Full Stack</p>
-      <h1>Yassine BEN ESSAHRAOUI</h1>
-      <div class="hero-typewriter" id="typewriter"><span id="typewriter-text"></span><span class="cursor"></span></div>
-      <p class="hero-tagline" id="hero-tagline">Building clean, efficient web solutions — from idea to deployment.</p>
-
-      <!-- Prominent switcher -->
-      <div class="hero-switcher" id="hero-switcher" role="tablist" aria-label="Switch profile"></div>
-
-      <div class="coachmark" id="coachmark">
-        <i data-lucide="sparkles" style="width:16px;height:16px;color:var(--color-accent)"></i>
-        <span data-i18n="hero.coachmark">Recrutez en Télécom ou IT ? Changez de profil →</span>
-        <button id="coachmark-close" aria-label="Dismiss"><i data-lucide="x" style="width:16px;height:16px"></i></button>
-      </div>
-
-      <div class="hero-ctas">
-        <a href="#projects" class="btn btn-primary" id="cta-primary"><span data-i18n="hero.ctaProjects">Voir les projets</span> <i data-lucide="arrow-right" style="width:16px;height:16px"></i></a>
-        <a id="cv-link" href="assets/cv/cv-dev.pdf" download class="btn btn-secondary"><i data-lucide="download" style="width:16px;height:16px"></i> <span data-i18n="hero.ctaCV">Télécharger CV</span></a>
-      </div>
-      <button class="scroll-arrow" id="scroll-arrow" aria-label="Scroll to about"><i data-lucide="chevron-down" style="width:24px;height:24px"></i></button>
-    </div>
-  </section>
-
-  <!-- About -->
-  <section id="about" class="animate-on-scroll">
-    <div class="section-header">
-      <h2 data-i18n="sections.aboutTitle">À Propos</h2>
-      <p class="section-subtitle" data-i18n="sections.aboutSubtitle">Qui je suis et ce que je fais</p>
-      <div class="section-divider"></div>
-    </div>
-    <div class="about-grid">
-      <div class="about-photo"><div class="about-avatar" id="about-avatar">YB</div></div>
-      <div>
-        <p class="about-bio" id="about-bio"></p>
-        <div class="about-stats stagger-30" id="stats-container"></div>
+      <div class="hero-visual reveal" style="transition-delay:0.12s">
+        <div class="hero-blueprint" aria-hidden="true"></div>
+        <div class="hero-avatar-wrap" id="hero-avatar-wrap">
+          <img src="assets/img/avatar.jpg" alt="Yassine BEN ESSAHRAOUI" onerror="this.style.display='none'; this.parentElement.textContent='YB'; this.parentElement.style.display='grid'; this.parentElement.style.placeItems='center'; this.parentElement.style.fontFamily='var(--font-display)'; this.parentElement.style.fontSize='3rem'; this.parentElement.style.color='var(--color-accent)'">
+          <div class="hero-meta">
+            <span><strong>10</strong> GitHub repos · <strong>3</strong> profils</span>
+            <span style="color:var(--color-accent)">● Disponible</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Skills -->
-  <section id="skills" class="animate-on-scroll">
-    <div class="section-header">
-      <h2 data-i18n="sections.skillsTitle">Compétences</h2>
-      <p class="section-subtitle" data-i18n="sections.skillsSubtitle">Technologies, outils et domaines d'expertise</p>
-      <div class="section-divider"></div>
+  <!-- Marquee -->
+  <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee-track"></div></div>
+
+  <!-- About — editorial -->
+  <section id="about">
+    <div class="about-wrap reveal">
+      <div class="about-photo-col">
+        <div class="about-avatar" id="about-avatar"><img src="assets/img/avatar.jpg" alt="Yassine" onerror="this.style.display='none'; this.parentElement.textContent='YB'"></div>
+      </div>
+      <div class="about-manifesto">
+        <span class="section-label">About · À propos</span>
+        <p class="lead" id="about-bio"></p>
+        <p class="about-bio" style="margin-top:10px; font-family:var(--font-mono); font-size:0.72rem; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-secondary)">Full Stack · FTTH · IT — three lenses, one builder. I automate what others do by hand.</p>
+        <div class="about-stats" id="stats-container"></div>
+      </div>
     </div>
-    <div class="skills-container stagger-30" id="skills-container"></div>
+  </section>
+
+  <!-- Signal -->
+  <section id="signal">
+    <div class="reveal" style="text-align:center; margin-bottom:22px">
+      <span class="section-label">Signal · Triple profile</span>
+      <h2 class="section-heading" style="font-size: clamp(1.8rem, 4vw, 2.8rem)">Three brains, one bench.</h2>
+      <p class="section-sub" style="margin:0 auto">Dev writes it. Telecom draws it. IT keeps it running. Switch above — the page rewrites itself.</p>
+    </div>
+    <div class="signal-grid reveal" id="signal-grid"></div>
+  </section>
+
+  <!-- Skills — tag cloud -->
+  <section id="skills">
+    <div class="reveal" style="text-align:center; margin-bottom:18px">
+      <span class="section-label">Stacks & tools</span>
+      <h2 class="section-heading" style="font-size: clamp(1.8rem, 4vw, 2.8rem)">Technologies, tools and expertise</h2>
+    </div>
+    <div class="skills-cloud reveal" id="skills-container"></div>
   </section>
 
   <!-- Experience -->
-  <section id="experience" class="animate-on-scroll">
-    <div class="section-header">
-      <h2 data-i18n="sections.expTitle">Expérience</h2>
-      <p class="section-subtitle" data-i18n="sections.expSubtitle">Parcours professionnel et formations</p>
-      <div class="section-divider"></div>
+  <section id="experience">
+    <div class="reveal" style="text-align:center; margin-bottom:18px">
+      <span class="section-label">Experience</span>
+      <h2 class="section-heading" style="font-size: clamp(1.8rem, 4vw, 2.8rem)">Professional background and education</h2>
     </div>
-    <div class="timeline" id="timeline"></div>
+    <div class="timeline reveal" id="timeline"></div>
   </section>
 
-  <!-- Projects -->
-  <section id="projects" class="animate-on-scroll">
-    <div class="section-header">
-      <h2 data-i18n="sections.projectsTitle">Projets</h2>
-      <p class="section-subtitle" data-i18n="sections.projectsSubtitle">Réalisations et outils développés</p>
-      <div class="section-divider"></div>
+  <!-- Projects — case studies -->
+  <section id="projects">
+    <div class="reveal" style="text-align:center; margin-bottom:18px">
+      <span class="section-label">Selected work</span>
+      <h2 class="section-heading" style="font-size: clamp(1.8rem, 4vw, 2.8rem)">Built tools and deliveries</h2>
+      <p class="section-sub" style="margin:8px auto 0">FiberFlow first, then DocFormat, then ThreadForge — flagship case studies, then the rest.</p>
     </div>
-    <div class="projects-grid stagger-30" id="projects-container"></div>
+    <div class="projects-grid reveal" id="projects-container"></div>
   </section>
 
-  <!-- Contact -->
-  <section id="contact" class="animate-on-scroll">
-    <div class="section-header">
-      <h2 data-i18n="sections.contactTitle">Contact</h2>
-      <p class="section-subtitle" data-i18n="sections.contactSubtitle">Parlons de votre projet</p>
-      <div class="section-divider"></div>
+  <!-- Contact — paper slip -->
+  <section id="contact">
+    <div class="reveal" style="text-align:center; margin-bottom:18px">
+      <span class="section-label">Contact</span>
+      <h2 class="section-heading" style="font-size: clamp(1.8rem, 4vw, 2.8rem)">Let's talk about your project</h2>
     </div>
-    <div class="contact-grid">
-      <div class="contact-info" id="contact-info"></div>
+    <div class="contact-grid reveal">
+      <div class="contact-card" id="contact-info"></div>
       <form class="contact-form" id="contact-form" novalidate>
         <input type="text" name="company" id="hp-company" class="form-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
         <div class="form-group" id="form-group-name">
@@ -172,7 +195,7 @@
         </div>
         <button type="submit" class="btn-submit" id="form-submit"><span data-i18n="contact.formSubmit">Envoyer le message</span></button>
         <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
-        <div class="form-success" id="form-success"><i data-lucide="check-circle" style="width:24px;height:24px;margin-bottom:8px"></i> <span data-i18n="contact.formSuccess">Message envoyé !</span></div>
+        <div class="form-success" id="form-success" style="display:none; text-align:center; padding:14px; color:var(--color-accent)"><i data-lucide="check-circle" style="width:18px;height:18px"></i> <span data-i18n="contact.formSuccess">Message envoyé !</span></div>
       </form>
     </div>
   </section>
@@ -186,7 +209,7 @@
     </div>
   </footer>
 
-  <button id="scroll-top" aria-label="Retour en haut"><i data-lucide="arrow-up" style="width:20px;height:20px"></i></button>
+  <button id="scroll-top" aria-label="Retour en haut"><i data-lucide="arrow-up" style="width:18px;height:18px"></i></button>
 
   <script type="module" src="js/app.js"></script>
 </body>

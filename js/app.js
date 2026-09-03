@@ -3,7 +3,7 @@ import { initI18n, setLang } from './modules/i18n.js';
 import { initTypewriter, initScrollAnimations } from './modules/animations.js';
 import { initNavbar } from './modules/navbar.js';
 import { initContactForm } from './modules/email.js';
-import { renderHeroSwitcher, renderStats, renderSkills, renderTimeline, renderProjects, renderContact } from './modules/render.js';
+import { renderHeroSwitcher, renderStats, renderSkills, renderTimeline, renderProjects, renderContact, renderMarquee, renderSignal } from './modules/render.js';
 
 let content=null;
 
@@ -19,6 +19,7 @@ function applyProfileRender(profile){
   renderSkills(content, profile, lang);
   renderTimeline(content, profile, lang);
   renderProjects(content, profile, lang);
+  renderSignal(content, profile, lang);
   // re-trigger animations for new elements
   setTimeout(()=> initScrollAnimations(), 50);
   if(window.lucide) window.lucide.createIcons();
@@ -52,6 +53,7 @@ function init(){
     initI18n(content);
     // hero switcher
     renderHeroSwitcher(content);
+    renderMarquee(content);
     // contact static
     const lang=document.documentElement.lang||'fr';
     renderContact(content, lang);

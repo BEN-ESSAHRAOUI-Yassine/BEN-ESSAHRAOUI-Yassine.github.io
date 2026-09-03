@@ -1,45 +1,39 @@
-/* ===== Prominent Hero Profile Switcher — Variant A ===== */
+/* Tickets */
 .hero-switcher{
-  display:grid; grid-template-columns:1fr; gap:10px; max-width:720px; margin:0 auto 8px; text-align:left;
+  display:grid; grid-template-columns:1fr; gap:12px; margin-top:18px;
 }
-.hero-switcher-card{
-  display:flex; align-items:center; gap:14px; padding:14px 16px; border-radius:12px;
-  background:var(--bg-card); border:1.5px solid var(--border); cursor:pointer; text-align:left; width:100%;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast), background var(--transition-fast);
-}
-.hero-switcher-card:hover{ border-color:var(--color-accent-border); transform:translateY(-1px); box-shadow:var(--shadow-accent); }
-.hero-switcher-card.active{ background:var(--color-accent); border-color:var(--color-accent); color:#fff; box-shadow:var(--shadow-accent); }
-.hero-switcher-card.active .sw-icon{ background:rgba(255,255,255,0.18); color:#fff; border-color:rgba(255,255,255,0.25); }
-.hero-switcher-card.active .sw-label, .hero-switcher-card.active .sw-desc{ color:#fff; }
-.hero-switcher-card.active .sw-check{ opacity:1; transform:scale(1); }
-.sw-icon{
-  width:44px; height:44px; border-radius:10px; display:flex; align-items:center; justify-content:center; flex-shrink:0;
-  background:var(--color-accent-soft); border:1px solid var(--color-accent-border); color:var(--color-accent); font-size:1.25rem;
-}
-.sw-text{ flex:1; min-width:0; }
-.sw-label{ display:block; font-family:var(--font-heading); font-weight:700; font-size:0.95rem; color:var(--text-primary); line-height:1.2; }
-.sw-desc{ display:block; font-family:var(--font-mono); font-size:0.72rem; color:var(--text-secondary); margin-top:2px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
-.sw-check{
-  width:28px; height:28px; border-radius:50%; background:rgba(255,255,255,0.2); display:flex; align-items:center; justify-content:center;
-  opacity:0; transform:scale(0.7); transition: opacity var(--transition-fast), transform var(--transition-fast); flex-shrink:0;
-}
-.sw-check i{ width:16px; height:16px; }
+@media (min-width: 560px){ .hero-switcher{ grid-template-columns: repeat(3, 1fr); } }
 
+.hero-switcher-card{
+  position:relative; display:flex; flex-direction:column; gap:10px; padding:16px 14px 14px; border-radius:16px;
+  background:var(--bg-card); border:1.5px solid var(--border); cursor:pointer; text-align:left;
+  transform: rotate(var(--rot, 0deg)); transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s, background 0.3s;
+}
+.hero-switcher-card:nth-child(1){ --rot:-1deg; }
+.hero-switcher-card:nth-child(2){ --rot:0.6deg; }
+.hero-switcher-card:nth-child(3){ --rot:-0.7deg; }
+.hero-switcher-card:hover{ transform: rotate(0deg) translateY(-3px); border-color:var(--color-accent-border); box-shadow: var(--shadow-accent); }
+.hero-switcher-card.active{ background:var(--color-accent); border-color:var(--color-accent); color:var(--bg-primary); transform: rotate(0deg) translateY(-2px); box-shadow: var(--shadow-accent); }
+.hero-switcher-card.active .sw-icon{ background:rgba(0,0,0,0.12); border-color:rgba(0,0,0,0.12); color:var(--bg-primary); }
+.hero-switcher-card.active .sw-label, .hero-switcher-card.active .sw-desc{ color:var(--bg-primary); }
+.hero-switcher-card.active .sw-check{ opacity:1; transform:scale(1); }
+
+.sw-icon{ width:36px; height:36px; border-radius:10px; display:flex; align-items:center; justify-content:center; background:var(--color-accent-soft); border:1px solid var(--color-accent-border); color:var(--color-accent); }
+.sw-label{ font-family:var(--font-display); font-size:1rem; line-height:1; }
+.sw-desc{ font-family:var(--font-mono); font-size:0.62rem; color:var(--text-secondary); line-height:1.4; }
+.sw-check{ position:absolute; top:10px; right:10px; width:22px; height:22px; border-radius:50%; background:rgba(0,0,0,0.14); display:flex; align-items:center; justify-content:center; opacity:0; transform:scale(0.7); transition: opacity 0.25s, transform 0.25s; }
+
+/* Coachmark */
 .coachmark{
-  display:flex; align-items:center; gap:10px; justify-content:center; flex-wrap:wrap;
-  margin:14px auto 0; max-width:720px; padding:10px 14px; border-radius:var(--radius-pill);
-  background:var(--bg-card); border:1px solid var(--color-accent-border); color:var(--text-secondary); font-size:0.82rem;
+  display:flex; align-items:center; gap:10px; margin-top:14px; padding:10px 14px; border-radius:var(--radius-pill);
+  background:var(--bg-card); border:1px solid var(--color-accent-border); color:var(--text-secondary); font-size:0.78rem; font-family:var(--font-mono);
 }
-.coachmark strong{ color:var(--color-accent); }
-.coachmark button{
-  margin-left:auto; background:none; border:none; cursor:pointer; color:var(--text-secondary); display:flex; align-items:center; padding:4px;
-}
+.coachmark button{ margin-left:auto; background:none; border:none; cursor:pointer; color:var(--text-secondary); display:flex; padding:4px; }
 .coachmark.hidden{ display:none; }
 
-/* Desktop 3 cols */
-@media (min-width:768px){
-  .hero-switcher{ grid-template-columns:repeat(3,1fr); gap:12px; }
-  .hero-switcher-card{ flex-direction:column; align-items:flex-start; padding:18px 16px; gap:12px; }
-  .sw-check{ position:absolute; top:10px; right:10px; }
-  .hero-switcher-card{ position:relative; }
+/* Perforated ticket edge */
+.hero-switcher-card::before, .hero-switcher-card::after{
+  content:''; position:absolute; width:10px; height:10px; background:var(--bg-primary); border:1px solid var(--border); border-radius:50%; top:50%;
 }
+.hero-switcher-card::before{ left:-5px; transform:translateY(-50%); }
+.hero-switcher-card::after{ right:-5px; transform:translateY(-50%); }

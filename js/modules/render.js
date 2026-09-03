@@ -50,9 +50,35 @@ export function renderSkills(content, profile, lang){
     const div=document.createElement('div');
     div.className='skill-group';
     div.setAttribute('data-show-in', profile);
-    div.innerHTML=`<h3 class="skill-group-title">${g.group[lang]||g.group.fr}</h3><div class="skill-badges">${g.items.map(i=>`<span class="skill-badge">${i}</span>`).join('')}</div>`;
+    div.innerHTML=`<h3 class="skill-group-title">${g.group[lang]||g.group.fr}</h3><div class="skill-cloud">${g.items.map(i=>`<span class="skill-pill">${i}</span>`).join('')}</div>`;
     container.appendChild(div);
   });
+}
+
+export function renderMarquee(content){
+  const track=document.getElementById('marquee-track');
+  if(!track) return;
+  const items=['Orange','SFR','Bouygues','Axione','TDF','Kyntus','Laravel 13','PostGIS','Groq AI','Pest','React 19','PhpWord','Sanctum','Docker','Telescope'];
+  const doubled=[...items, ...items];
+  track.innerHTML=doubled.map(s=>`<span>${s}</span>`).join('');
+}
+
+export function renderSignal(content, profile, lang){
+  const grid=document.getElementById('signal-grid');
+  if(!grid) return;
+  const map={
+    dev: {icon:'code-2', title: lang==='fr'?'Dev — Il code':'Dev — He ships', desc: lang==='fr'?'Laravel 13, Pest 256+, queues, AI agents. De l’idée au prod.':'Laravel 13, Pest 256+, queues, AI agents. Idea to prod.'},
+    telecom:{icon:'antenna', title: lang==='fr'?'Télécom — Il dessine':'Telecom — He maps', desc: lang==='fr'?'FTTH, PostGIS, AutoCAD/QGIS, scoring qualité. Le réseau devient logiciel.':'FTTH, PostGIS, AutoCAD/QGIS, quality scoring. Network as software.'},
+    it:{icon:'wrench', title: lang==='fr'?'IT — Il maintient':'IT — He keeps it up', desc: lang==='fr'?'Réseaux, helpdesk, PLC, parc. Quand ça casse, il répare.':'Networks, helpdesk, PLC, fleet. When it breaks, he fixes.'}
+  };
+  grid.innerHTML=Object.entries(map).map(([key,m])=>`
+    <div class="signal-card" data-signal="${key}" style="${key===profile?'border-color:var(--color-accent)':''}">
+      <i data-lucide="${m.icon}" style="width:20px;height:20px;color:var(--color-accent)"></i>
+      <h3>${m.title}</h3>
+      <p>${m.desc}</p>
+    </div>
+  `).join('');
+  if(window.lucide) window.lucide.createIcons();
 }
 
 export function renderTimeline(content, profile, lang){

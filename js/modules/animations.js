@@ -8,7 +8,6 @@ export function initTypewriter(content){
     if(prof?.roles) return prof.roles[lang]||prof.roles.fr||prof.roles.en||[];
     return ['Full Stack Developer'];
   }
-
   function start(){
     if(typewriterTimeout) clearTimeout(typewriterTimeout);
     const el=document.getElementById('typewriter-text');
@@ -17,7 +16,6 @@ export function initTypewriter(content){
     let roleIndex=0, charIndex=0, isDeleting=false;
     const baseSpeed=80;
     el.textContent='';
-
     function type(){
       const cur=roles[roleIndex]||'';
       if(!isDeleting){
@@ -34,21 +32,62 @@ export function initTypewriter(content){
     }
     typewriterTimeout=setTimeout(type, 300);
   }
-
   start();
-  // re-init on profile/lang change
   window.addEventListener('profilechange', start);
   window.addEventListener('langchange', start);
-  // also expose for profiles.js to call after set
   return start;
 }
 
 export function initScrollAnimations(){
-  const els=document.querySelectorAll('.animate-on-scroll:not(.initialized)');
-  if(!els.length) return;
-  const obs=new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target);} });},{threshold:0.1, rootMargin:'0px 0px -40px 0px'});
-  els.forEach(el=>{ obs.observe(el); el.classList.add('initialized'); });
-  const stags=document.querySelectorAll('.stagger-30:not(.stagger-init)');
-  const sobs=new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); sobs.unobserve(e.target);} });},{threshold:0.1});
-  stags.forEach(el=>{ sobs.observe(el); el.classList.add('stagger-init'); });
+  // Lenis
+  let lenis=null;
+  if(window.Lenis){
+    lenis=new window.Lenis({ lerp:0.08, wheelMultiplier:0.9 });
+    function raf(time){ lenis.raf(time); requestAnimationFrame(raf); }
+    requestAnimationFrame(raf);
+  }
+
+  // GSAP
+  if(window.gsap && window.ScrollTrigger){
+    window.gsap.registerPlugin(window.ScrollTrigger);
+    // Hero immediate (no ScrollTrigger — above fold)
+    const heroCopy=document.querySelector('.hero-copy.reveal');
+    if(heroCopy){
+      window.gsap.fromTo(heroCopy, { y:18, opacity:0 }, { y:0, opacity:1, duration:0.7, ease:'power3.out', delay:0.15 });
+    }
+    const heroVisual=document.querySelector('.hero-visual.reveal');
+    if(heroVisual){
+      window.gsap.fromTo(heroVisual, { y:18, opacity:0 }, { y:0, opacity:1, duration:0.7, ease:'power3.out', delay:0.25 });
+    }
+    // Other reveals (skip hero)
+    const reveals=document.querySelectorAll('.reveal:not(.hero-copy):not(.hero-visual)');
+    reveals.forEach(el=>{
+      window.gsap.fromTo(el,
+        { y:28, opacity:0 },
+        { y:0, opacity:1, duration:0.7, ease:'power3.out',
+          scrollTrigger:{ trigger:el, start:'top 88%', once:true }
+        }
+      );
+    });
+    // Hero tickets stagger — immediate after hero copy
+    const cards=document.querySelectorAll('.hero-switcher-card');
+    if(cards.length){
+      window.gsap.fromTo(cards, { y:16, opacity:0 }, { y:0, opacity:1, duration:0.55, stagger:0.08, ease:'power3.out', delay:0.45 });
+    }
+    // Parallax on avatar wrap
+    const wrap=document.getElementById('hero-avatar-wrap');
+    if(wrap){
+      window.gsap.to(wrap, { yPercent:-3, ease:'none', scrollTrigger:{ trigger:'#hero', start:'top top', end:'bottom top', scrub:0.6 } });
+    }
+    // Projects stagger
+    window.gsap.utils.toArray('.project-card').forEach((card,i)=>{
+      window.gsap.from(card, { y:22, opacity:0, duration:0.5, delay: (i%2)*0.06, ease:'power2.out', scrollTrigger:{ trigger:card, start:'top 88%', once:true } });
+    });
+  } else {
+    // Fallback IntersectionObserver
+    const els=document.querySelectorAll('.reveal:not(.initialized)');
+    if(!els.length) return;
+    const obs=new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target);} });},{threshold:0.1, rootMargin:'0px 0px -40px 0px'});
+    els.forEach(el=>{ obs.observe(el); el.classList.add('initialized'); el.classList.add('reveal'); });
+  }
 }
