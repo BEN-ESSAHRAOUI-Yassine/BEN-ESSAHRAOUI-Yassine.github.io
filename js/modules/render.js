@@ -96,16 +96,24 @@ export function renderTimeline(content, profile, lang){
     div.innerHTML=`<div class="timeline-dot"></div><div class="timeline-content"><h3>${item.title[lang]||item.title.fr}</h3><span class="timeline-company">${item.company}</span><div class="timeline-date">${item.date}</div><ul>${bullets.map(b=>`<li>${b}</li>`).join('')}</ul></div>`;
     container.appendChild(div);
   });
-  // Education — distinct atelier cards
+  // Education & Certs — render OUTSIDE timeline as proper subsections (not grid items)
+  const expSection=document.getElementById('experience');
+  // cleanup previous atelier blocks
+  expSection.querySelectorAll('.edu-block, .cert-block').forEach(el=>el.remove());
+
   const eduLabel=content.i18n?.sections?.education?.[lang]||'Formation';
-  const eduHeader=document.createElement('div');
-  eduHeader.className='timeline-label';
-  eduHeader.setAttribute('data-show-in','all');
-  eduHeader.innerHTML=`<span class="timeline-label-icon"><i data-lucide="graduation-cap" style="width:16px;height:16px"></i></span><span>${eduLabel}</span><span class="timeline-label-line"></span>`;
-  container.appendChild(eduHeader);
-  const eduGrid=document.createElement('div');
-  eduGrid.className='edu-grid';
-  eduGrid.setAttribute('data-show-in','all');
+  const eduBlock=document.createElement('div');
+  eduBlock.className='edu-block';
+  eduBlock.setAttribute('data-show-in','all');
+  eduBlock.innerHTML=`
+    <div class="subsection-header">
+      <span class="section-label">🎓 ${eduLabel}</span>
+      <h3 class="subsection-title">${eduLabel}</h3>
+    </div>
+    <div class="edu-grid" id="edu-grid-inner"></div>
+  `;
+  expSection.appendChild(eduBlock);
+  const eduGridEl=eduBlock.querySelector('#edu-grid-inner');
   const eduIcons=['sparkles','cpu','zap','scroll-text'];
   (content.education||[]).forEach((e,i)=>{
     const card=document.createElement('div');
@@ -118,30 +126,30 @@ export function renderTimeline(content, profile, lang){
       </div>
       <div class="education-year">${e.year}</div>
     `;
-    eduGrid.appendChild(card);
+    eduGridEl.appendChild(card);
   });
-  container.appendChild(eduGrid);
-  // Certs — provider card with pills
+
   const certLabel=content.i18n?.sections?.certifications?.[lang]||'Certifications';
-  const certHeader=document.createElement('div');
-  certHeader.className='timeline-label';
-  certHeader.setAttribute('data-show-in','all');
-  certHeader.innerHTML=`<span class="timeline-label-icon"><i data-lucide="award" style="width:16px;height:16px"></i></span><span>${certLabel}</span><span class="timeline-label-line"></span>`;
-  container.appendChild(certHeader);
-  const certCard=document.createElement('div');
-  certCard.className='cert-card';
-  certCard.setAttribute('data-show-in','all');
+  const certBlock=document.createElement('div');
+  certBlock.className='cert-block';
+  certBlock.setAttribute('data-show-in','all');
   const prov=content.certifications?.provider||'';
   const pills=(content.certifications?.items||[]).map(i=>`<span class="cert-pill"><i data-lucide="badge-check" style="width:12px;height:12px"></i>${i}</span>`).join('');
-  certCard.innerHTML=`
-    <div class="cert-head">
-      <span class="cert-provider-label">Provider</span>
-      <strong class="cert-provider">${prov}</strong>
-      <span class="cert-count">${(content.certifications?.items||[]).length} certs</span>
+  certBlock.innerHTML=`
+    <div class="subsection-header">
+      <span class="section-label">📜 ${certLabel}</span>
+      <h3 class="subsection-title">${certLabel}</h3>
     </div>
-    <div class="cert-list">${pills}</div>
+    <div class="cert-card">
+      <div class="cert-head">
+        <span class="cert-provider-label">Provider</span>
+        <strong class="cert-provider">${prov}</strong>
+        <span class="cert-count">${(content.certifications?.items||[]).length} certs</span>
+      </div>
+      <div class="cert-list">${pills}</div>
+    </div>
   `;
-  container.appendChild(certCard);
+  expSection.appendChild(certBlock);
   if(window.lucide) window.lucide.createIcons();
 }
 
