@@ -1,51 +1,40 @@
-export function initNavbar(){
-  const navbar=document.getElementById('navbar');
-  const sections=document.querySelectorAll('section[id]');
-  const navLinks=document.querySelectorAll('.nav-links a');
+// Quiet sticky header: scroll border, mobile menu, light/dark
+export function initNavbar() {
+  const header = document.getElementById('site-header');
+  const onScroll = () => header?.classList.toggle('scrolled', window.scrollY > 24);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
-  window.addEventListener('scroll', ()=>{
-    if(window.scrollY>60) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');
-    let current='';
-    sections.forEach(sec=>{ const top=sec.offsetTop-120; const bottom=top+sec.offsetHeight; if(window.scrollY>=top && window.scrollY<bottom) current=sec.id; });
-    navLinks.forEach(a=>{ a.classList.remove('active'); if(a.getAttribute('href')==='#'+current) a.classList.add('active'); });
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  toggle?.addEventListener('click', () => {
+    const open = menu.hidden;
+    menu.hidden = !open;
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
-
-  const btn=document.getElementById('scroll-top');
-  window.addEventListener('scroll', ()=>{ if(window.scrollY>300) btn.classList.add('visible'); else btn.classList.remove('visible'); });
-  btn.addEventListener('click', ()=> window.scrollTo({top:0, behavior:'smooth'}));
-
-  const hamburger=document.getElementById('hamburger');
-  const menu=document.getElementById('mobile-menu');
-  hamburger.addEventListener('click', ()=>{
-    const open=hamburger.classList.toggle('open');
-    menu.classList.toggle('open', open);
-    hamburger.setAttribute('aria-expanded', open?'true':'false');
-  });
-  menu.querySelectorAll('a').forEach(a=> a.addEventListener('click', ()=>{
-    hamburger.classList.remove('open'); menu.classList.remove('open'); hamburger.setAttribute('aria-expanded','false');
+  menu?.querySelectorAll('a').forEach((a) => a.addEventListener('click', () => {
+    menu.hidden = true;
+    toggle.setAttribute('aria-expanded', 'false');
   }));
-  // coachmark close
-  const cm=document.getElementById('coachmark');
-  const cmClose=document.getElementById('coachmark-close');
-  const seen=localStorage.getItem('coachmarkSeen');
-  if(seen) cm?.classList.add('hidden');
-  cmClose?.addEventListener('click', ()=>{ cm.classList.add('hidden'); localStorage.setItem('coachmarkSeen','1'); });
 
-  document.getElementById('scroll-arrow')?.addEventListener('click', ()=> document.getElementById('about')?.scrollIntoView({behavior:'smooth'}));
-  document.getElementById('mode-toggle')?.addEventListener('click', toggleMode);
+  const modeBtn = document.getElementById('mode-toggle');
+  const paint = () => {
+    const mode = document.documentElement.getAttribute('data-mode') || 'light';
+    const icon = modeBtn?.querySelector('i, svg');
+    modeBtn?.setAttribute('aria-label', mode === 'light' ? 'Dark mode' : 'Light mode');
+    if (window.lucide && modeBtn) {
+      modeBtn.innerHTML = `<i data-lucide="${mode === 'light' ? 'moon' : 'sun'}"></i>`;
+      window.lucide.createIcons();
+    }
+  };
+  modeBtn?.addEventListener('click', () => {
+    const cur = document.documentElement.getAttribute('data-mode') || 'light';
+    const next = cur === 'light' ? 'dark' : 'light';
+    document.documentElement.setAttribute('data-mode', next);
+    try { localStorage.setItem('mode', next); } catch {}
+    paint();
+  });
+  paint();
 
-  // init mode icon from html
-  updateModeIcon(document.documentElement.getAttribute('data-mode')||'dark');
-}
-
-function toggleMode(){
-  const cur=document.documentElement.getAttribute('data-mode');
-  const next=cur==='dark'?'light':'dark';
-  document.documentElement.setAttribute('data-mode', next);
-  localStorage.setItem('mode', next);
-  updateModeIcon(next);
-}
-function updateModeIcon(mode){
-  const icon=document.querySelector('#mode-toggle i');
-  if(icon){ icon.setAttribute('data-lucide', mode==='dark'?'sun':'moon'); if(window.lucide) window.lucide.createIcons(); }
+  if (window.lucide) window.lucide.createIcons();
 }

@@ -1,107 +1,101 @@
-/* Atelier Noir — Cinematic Tech Tokens */
+/* Design tokens — portfolio_design.md spec */
 :root {
-  --font-display: 'Instrument Serif', 'Times New Roman', serif;
-  --font-body: 'Inter', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-  --nav-height: 72px;
-  --max-width: 1280px;
-  --section-padding: 96px 24px;
-  --radius: 20px;
-  --radius-pill: 999px;
-  --transition: 0.42s cubic-bezier(0.22,1,0.36,1);
-  --ink: #070A0D;
-  --paper: #F6F1E7;
-  --watermark: rgba(7,10,13,0.035);
+  --font-display: 'Oswald', sans-serif;
+  --font-domain: 'Viga', sans-serif;
+  --font-ui: 'Manrope', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+  --font-editorial: 'Libre Baskerville', serif;
+  --font-hand: 'Satisfy', cursive;
+  --max-width: 1120px;
+  --section-pad: 96px 24px;
+  --radius: 10px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur: 700ms;
+  --ink: #1a1d21;
+  --ink-soft: #4a4f55;
+  --ink-faint: #8a8f96;
+  --paper: #ffffff;
+  --line: #e4e4e0;
+  /* dark derived */
+  --d-ink: #ececea;
+  --d-ink-soft: #b9bdc2;
+  --d-paper: #141619;
+  --d-card: #1c1f23;
+  --d-line: #2a2e33;
 }
 
-/* Dev — Electric Lime */
-[data-profile="dev"][data-mode="dark"] {
-  --bg-primary: #070A0D;
-  --bg-secondary: #11161B;
-  --bg-card: #151B22;
-  --bg-grain: rgba(214,255,42,0.05);
-  --text-primary: #F6F1E7;
-  --text-secondary: #8FA3B3;
-  --color-accent: #D6FF2A;
-  --color-accent-hover: #E6FF6B;
-  --color-accent-soft: rgba(214,255,42,0.13);
-  --color-accent-border: rgba(214,255,42,0.30);
-  --shadow-accent: 0 20px 70px rgba(214,255,42,0.20);
-  --border: #1E2A36;
-  --watermark: rgba(214,255,42,0.04);
+/* Domain environments — light */
+[data-domain="development"][data-mode="light"] {
+  --env: #E5E5E5;
+  --env-deep: #d4d4d4;
+  --env-soft: #f1f1f1;
+  --bg: #fbfbfa;
+  --card: #ffffff;
+  --text: #1a1d21;
+  --text-soft: #4a4f55;
+  --text-faint: #8a8f96;
+  --border: #e4e4e0;
+  --accent: #1a1d21;
 }
-[data-profile="dev"][data-mode="light"] {
-  --bg-primary: #F6F1E7;
-  --bg-secondary: #EDE8DC;
-  --bg-card: #FFFFFF;
-  --bg-grain: rgba(214,255,42,0.07);
-  --text-primary: #0A0F0A;
-  --text-secondary: #5A6A5A;
-  --color-accent: #5A7A00;
-  --color-accent-hover: #4A6300;
-  --color-accent-soft: rgba(90,122,0,0.11);
-  --color-accent-border: rgba(90,122,0,0.24);
-  --shadow-accent: 0 20px 70px rgba(90,122,0,0.16);
-  --border: #E2DDD2;
-  --watermark: rgba(90,122,0,0.035);
+[data-domain="telecom"][data-mode="light"] {
+  --env: #BBDEFB;
+  --env-deep: #90CAF9;
+  --env-soft: #E3F2FD;
+  --bg: #fbfdff;
+  --card: #ffffff;
+  --text: #1a1d21;
+  --text-soft: #3d4f5f;
+  --text-faint: #7a8f9f;
+  --border: #d4e4ef;
+  --accent: #1565C0;
 }
-
-/* Telecom — Cyan */
-[data-profile="telecom"][data-mode="dark"] {
-  --bg-primary: #041212;
-  --bg-secondary: #0A1E1E;
-  --bg-card: #0F2A2A;
-  --bg-grain: rgba(0,229,204,0.05);
-  --text-primary: #E8FFFD;
-  --text-secondary: #7AB8B8;
-  --color-accent: #00E5CC;
-  --color-accent-hover: #4DF0DC;
-  --color-accent-soft: rgba(0,229,204,0.14);
-  --color-accent-border: rgba(0,229,204,0.28);
-  --shadow-accent: 0 18px 60px rgba(0,229,204,0.20);
-  --border: #134141;
-}
-[data-profile="telecom"][data-mode="light"] {
-  --bg-primary: #EEFFFD;
-  --bg-secondary: #DDF5F2;
-  --bg-card: #FFFFFF;
-  --bg-grain: rgba(0,229,204,0.06);
-  --text-primary: #041212;
-  --text-secondary: #3C6E6E;
-  --color-accent: #00877A;
-  --color-accent-hover: #006E64;
-  --color-accent-soft: rgba(0,135,122,0.10);
-  --color-accent-border: rgba(0,135,122,0.22);
-  --shadow-accent: 0 18px 60px rgba(0,135,122,0.14);
-  --border: #CDE8E4;
+[data-domain="it"][data-mode="light"] {
+  --env: #B2DFDB;
+  --env-deep: #80CBC4;
+  --env-soft: #E0F2F1;
+  --bg: #fbfdfc;
+  --card: #ffffff;
+  --text: #1a1d21;
+  --text-soft: #3d5451;
+  --text-faint: #75918d;
+  --border: #d2e5e2;
+  --accent: #00695C;
 }
 
-/* IT — Burnt Orange */
-[data-profile="it"][data-mode="dark"] {
-  --bg-primary: #0F0A06;
-  --bg-secondary: #1C130A;
-  --bg-card: #211706;
-  --bg-grain: rgba(255,107,44,0.05);
-  --text-primary: #FFF4E6;
-  --text-secondary: #B08A6A;
-  --color-accent: #FF6B2C;
-  --color-accent-hover: #FF8A55;
-  --color-accent-soft: rgba(255,107,44,0.14);
-  --color-accent-border: rgba(255,107,44,0.28);
-  --shadow-accent: 0 18px 60px rgba(255,107,44,0.20);
-  --border: #3A2212;
+/* Domain environments — dark (derived, not inverted) */
+[data-domain="development"][data-mode="dark"] {
+  --env: #2a2d31;
+  --env-deep: #1c1f23;
+  --env-soft: #22262a;
+  --bg: #141619;
+  --card: #1c1f23;
+  --text: #ececea;
+  --text-soft: #b9bdc2;
+  --text-faint: #7d8288;
+  --border: #2a2e33;
+  --accent: #E5E5E5;
 }
-[data-profile="it"][data-mode="light"] {
-  --bg-primary: #FFF5EC;
-  --bg-secondary: #FDEAD5;
-  --bg-card: #FFFFFF;
-  --bg-grain: rgba(255,107,44,0.06);
-  --text-primary: #1A0F00;
-  --text-secondary: #7A5A3A;
-  --color-accent: #D94A0A;
-  --color-accent-hover: #B03D08;
-  --color-accent-soft: rgba(217,74,10,0.10);
-  --color-accent-border: rgba(217,74,10,0.22);
-  --shadow-accent: 0 18px 60px rgba(217,74,10,0.14);
-  --border: #F5D6B8;
+[data-domain="telecom"][data-mode="dark"] {
+  --env: #16283a;
+  --env-deep: #0e1c2a;
+  --env-soft: #1b3049;
+  --bg: #101820;
+  --card: #16202b;
+  --text: #e8f1f8;
+  --text-soft: #a9c0d2;
+  --text-faint: #6d8496;
+  --border: #233747;
+  --accent: #BBDEFB;
+}
+[data-domain="it"][data-mode="dark"] {
+  --env: #142825;
+  --env-deep: #0d1d1b;
+  --env-soft: #1a332f;
+  --bg: #101715;
+  --card: #16211f;
+  --text: #e6f2ef;
+  --text-soft: #a7c2bd;
+  --text-faint: #6d8a85;
+  --border: #223734;
+  --accent: #B2DFDB;
 }

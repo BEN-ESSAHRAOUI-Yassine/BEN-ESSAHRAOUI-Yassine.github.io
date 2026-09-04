@@ -1,99 +1,69 @@
-import { initProfiles, setProfile, getCurrentProfile } from './modules/profiles.js';
-import { initI18n, setLang } from './modules/i18n.js';
-import { initTypewriter, initScrollAnimations } from './modules/animations.js';
+import { initDomain, getDomain, onDomainChange } from './modules/domain.js';
+import { initI18n, getLang } from './modules/i18n.js';
+import { initScrollAnimations } from './modules/animations.js';
 import { initNavbar } from './modules/navbar.js';
 import { initContactForm } from './modules/email.js';
-import { renderHeroSwitcher, renderStats, renderSkills, renderTimeline, renderProjects, renderContact, renderMarquee, renderSignal } from './modules/render.js';
+import { renderAll } from './modules/render.js';
 
-let content=null;
+let content = null;
 
-async function loadContent(){
-  const res=await fetch('data/content.json', {cache:'no-store'});
-  if(!res.ok) throw new Error('Failed to load content.json');
+async function load() {
+  const res = await fetch('data/content.json', { cache: 'no-store' });
+  if (!res.ok) throw new Error('content.json failed');
   return res.json();
 }
 
-function applyProfileRender(profile){
-  const lang=document.documentElement.lang||'fr';
-  renderStats(content, profile, lang);
-  renderSkills(content, profile, lang);
-  renderTimeline(content, profile, lang);
-  renderProjects(content, profile, lang);
-  renderSignal(content, profile, lang);
-  // re-trigger animations for new elements
-  setTimeout(()=> initScrollAnimations(), 50);
-  if(window.lucide) window.lucide.createIcons();
+function paintLinks() {
+  const m = content.meta?.links || {};
+  const set = (id, href) => { const a = document.getElementById(id); if (a && href) a.href = href; };
+  set('c-linkedin', m.linkedin); set('c-github', m.github);
+  set('f-linkedin', m.linkedin); set('f-github', m.github);
+  const em = content.meta?.email;
+  if (em) {
+    const ce = document.getElementById('c-email');
+    if (ce) { ce.href = `mailto:${em}`; ce.textContent = em; }
+    set('f-email', `mailto:${em}`);
+  }
+  const y = document.getElementById('year');
+  if (y) y.textContent = new Date().getFullYear();
+  const schema = document.getElementById('person-schema');
+  if (schema) {
+    schema.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'Person',
+      name: content.meta?.name,
+      url: location.origin + location.pathname,
+      sameAs: [m.linkedin, m.github].filter(Boolean),
+    });
+  }
 }
 
-function init(){
-  // mode from storage or system
-  const savedMode=localStorage.getItem('mode');
-  if(savedMode) document.documentElement.setAttribute('data-mode', savedMode);
-  else if(window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) document.documentElement.setAttribute('data-mode','light');
+function render() {
+  renderAll(content, getDomain(), getLang());
+}
 
-  // set mode icon later via navbar
+function init() {
+  const savedMode = localStorage.getItem('mode');
+  if (savedMode) document.documentElement.setAttribute('data-mode', savedMode);
+  else if (window.matchMedia?.('(prefers-color-scheme: dark)').matches) {
+    document.documentElement.setAttribute('data-mode', 'dark');
+  }
 
-  loadContent().then(c=>{
-    content=c;
-
-    // schema
-    const schemaEl=document.getElementById('person-schema');
-    if(schemaEl){
-      schemaEl.textContent=JSON.stringify({
-        "@context":"https://schema.org",
-        "@type":"Person",
-        "name": content.meta.name,
-        "url": location.origin+location.pathname,
-        "sameAs":[content.meta.links.linkedin, content.meta.links.github],
-        "jobTitle": content.profiles.dev.title.en
-      });
-    }
-
-    // i18n first
+  load().then((c) => {
+    content = c;
     initI18n(content);
-    // hero switcher
-    renderHeroSwitcher(content);
-    renderMarquee(content);
-    // contact static
-    const lang=document.documentElement.lang||'fr';
-    renderContact(content, lang);
-
-    // profiles with callback to re-render
-    initProfiles(content, { onChange: (profile, lang)=> {
-      applyProfileRender(profile);
-      // dispatch for typewriter
-      window.dispatchEvent(new CustomEvent('profilechange', {detail:{profile}}));
-    }});
-
-    // initial render for default profile
-    const initialProfile=getCurrentProfile();
-    applyProfileRender(initialProfile);
-
-    // listen to switcher requests (hero cards)
-    window.addEventListener('requestProfileChange', (e)=> setProfile(e.detail.profile, content));
-    // lang change re-renders
-    window.addEventListener('langchange', (e)=>{
-      const lang=e.detail.lang;
-      const profile=getCurrentProfile();
-      renderHeroSwitcher(content);
-      // need to re-mark active hero card
-      document.querySelectorAll('.hero-switcher-card').forEach(card=>{
-        card.classList.toggle('active', card.dataset.profile===profile);
-      });
-      applyProfileRender(profile);
-      renderContact(content, lang);
-      if(window.lucide) window.lucide.createIcons();
-    });
-
-    initTypewriter(content);
+    initDomain();
+    paintLinks();
+    render();
+    onDomainChange(() => render());
+    window.addEventListener('langchange', render);
     initScrollAnimations();
     initNavbar();
     initContactForm();
-
-    if(window.lucide) window.lucide.createIcons();
-  }).catch(err=>{
+    if (window.lucide) window.lucide.createIcons();
+  }).catch((err) => {
     console.error(err);
-    document.body.insertAdjacentHTML('afterbegin', `<div style="background:#ef4444;color:white;padding:12px;text-align:center">Failed to load data/content.json — check JSON validity.</div>`);
+    document.body.insertAdjacentHTML('afterbegin', '<p style="padding:12px;text-align:center">Failed to load content.</p>');
   });
 }
 

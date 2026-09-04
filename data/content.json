@@ -9,6 +9,32 @@
       "github": "https://github.com/BEN-ESSAHRAOUI-Yassine"
     }
   },
+  "domains": {
+    "development": {
+      "name": { "fr": "DEVELOPMENT", "en": "DEVELOPMENT" },
+      "short": { "fr": "Dév", "en": "Dev" },
+      "heroTitle": { "fr": "DÉVELOPPEUR LOGICIEL", "en": "SOFTWARE DEVELOPER" },
+      "statement": { "fr": "Je conçois des systèmes numériques pratiques.", "en": "I build practical digital systems." },
+      "stack": "Laravel · PHP · JavaScript · Python · SQL",
+      "competencesSub": { "fr": "Ce que je construis, par couches.", "en": "What I build, by layer." }
+    },
+    "telecom": {
+      "name": { "fr": "TELECOM", "en": "TELECOM" },
+      "short": { "fr": "Télécom", "en": "Telecom" },
+      "heroTitle": { "fr": "INGÉNIEUR FTTH", "en": "FTTH ENGINEER" },
+      "statement": { "fr": "J'étudie et audite les réseaux fibre.", "en": "I design and audit fiber networks." },
+      "stack": "FTTH · GIS · QGIS · AutoCAD · Network Design",
+      "competencesSub": { "fr": "De l'étude au contrôle qualité.", "en": "From study to quality audit." }
+    },
+    "it": {
+      "name": { "fr": "IT", "en": "IT" },
+      "short": { "fr": "IT", "en": "IT" },
+      "heroTitle": { "fr": "IT / SYSTÈMES", "en": "IT / SYSTEMS" },
+      "statement": { "fr": "Je garde les systèmes stables et automatisés.", "en": "I keep systems stable and automated." },
+      "stack": "Infrastructure · Automation · Linux · Docker · Networks",
+      "competencesSub": { "fr": "Systèmes, réseaux, automatisation.", "en": "Systems, networks, automation." }
+    }
+  },
   "profiles": {
     "dev": {
       "label": { "fr": "Dev", "en": "Dev" },
@@ -46,6 +72,23 @@
         "en": ["IT Support Technician", "Network & Hardware Specialist", "Systems Administrator"]
       }
     }
+  },
+  "faq": {
+    "development": [
+      { "q": { "fr": "Quel type d'applications construisez-vous ?", "en": "What kind of applications do you build?" }, "a": { "fr": "Des applications web Laravel : APIs, back-offices, outils métier et automatisations.", "en": "Laravel web apps: APIs, back-offices, business tools and automations." } },
+      { "q": { "fr": "Avec quelles technologies travaillez-vous ?", "en": "What technologies do you work with?" }, "a": { "fr": "PHP, Laravel, JavaScript, Python, SQL, MySQL, REST APIs, Git.", "en": "PHP, Laravel, JavaScript, Python, SQL, MySQL, REST APIs, Git." } },
+      { "q": { "fr": "Pouvez-vous reprendre une application existante ?", "en": "Can you work on existing applications?" }, "a": { "fr": "Oui — audit, correction, refactorisation et nouvelles fonctionnalités.", "en": "Yes — audit, fixes, refactoring and new features." } }
+    ],
+    "telecom": [
+      { "q": { "fr": "Quels travaux FTTH prenez-vous en charge ?", "en": "What kind of FTTH work do you handle?" }, "a": { "fr": "Études APS / APD / DFT / DOE, conception et audit qualité.", "en": "APS / APD / DFT / DOE studies, design and quality audits." } },
+      { "q": { "fr": "Quels outils SIG utilisez-vous ?", "en": "What GIS tools do you use?" }, "a": { "fr": "QGIS, AutoCAD, ArcGIS, FiberGIS, GraceTHD.", "en": "QGIS, AutoCAD, ArcGIS, FiberGIS, GraceTHD." } },
+      { "q": { "fr": "Pouvez-vous contribuer aux audits réseau ?", "en": "Can you contribute to network studies and audits?" }, "a": { "fr": "Oui — analyse, scoring qualité et livrables opérateurs.", "en": "Yes — analysis, quality scoring and operator deliverables." } }
+    ],
+    "it": [
+      { "q": { "fr": "Sur quels systèmes intervenez-vous ?", "en": "What kind of systems do you work with?" }, "a": { "fr": "Postes Windows / Linux, réseaux LAN / WAN, serveurs et parc.", "en": "Windows / Linux workstations, LAN / WAN networks, servers and fleet." } },
+      { "q": { "fr": "Travaillez-vous avec Linux et Docker ?", "en": "Do you work with Linux and Docker?" }, "a": { "fr": "Oui — déploiement, maintenance et conteneurisation.", "en": "Yes — deployment, maintenance and containerization." } },
+      { "q": { "fr": "Pouvez-vous automatiser des workflows ?", "en": "Can you automate technical workflows?" }, "a": { "fr": "Oui — scripts Python / Bash et outillage sur mesure.", "en": "Yes — Python / Bash scripts and custom tooling." } }
+    ]
   },
   "about": {
     "dev": {
@@ -295,55 +338,38 @@
   },
   "i18n": {
     "nav": {
-      "about": { "fr": "À propos", "en": "About" },
-      "skills": { "fr": "Compétences", "en": "Skills" },
-      "projects": { "fr": "Projets", "en": "Projects" },
-      "contact": { "fr": "Contact", "en": "Contact" }
+      "competences": { "fr": "Compétences", "en": "Competences" },
+      "work": { "fr": "Projets", "en": "Projects" },
+      "faq": { "fr": "FAQ", "en": "FAQ" },
+      "contact": { "fr": "Contactez-moi", "en": "Contact Me" }
     },
     "hero": {
-      "greeting": { "fr": "Bonjour, je suis", "en": "Hello, I'm" },
-      "ctaProjects": { "fr": "Voir les projets", "en": "View Projects" },
-      "ctaExperience": { "fr": "Voir l'expérience", "en": "View Experience" },
-      "ctaCV": { "fr": "Télécharger CV", "en": "Download CV" },
-      "breadcrumb": { "fr": "Profil actuel", "en": "Current profile" },
-      "alsoAvailable": { "fr": "Aussi disponible :", "en": "Also available:" },
-      "coachmark": { "fr": "Recrutez en Télécom ou IT ? Changez de profil →", "en": "Hiring for Telecom or IT? Switch profile →" }
+      "kicker": { "fr": "Une personne — trois dimensions", "en": "One person — three dimensions" },
+      "cta": { "fr": "Contactez-moi", "en": "Contact Me" }
     },
     "sections": {
-      "aboutTitle": { "fr": "À Propos", "en": "About" },
-      "aboutSubtitle": { "fr": "Qui je suis et ce que je fais", "en": "Who I am and what I do" },
-      "skillsTitle": { "fr": "Compétences", "en": "Skills" },
-      "skillsSubtitle": { "fr": "Technologies, outils et domaines d'expertise", "en": "Technologies, tools and expertise" },
-      "expTitle": { "fr": "Expérience", "en": "Experience" },
-      "expSubtitle": { "fr": "Parcours professionnel et formations", "en": "Professional background and education" },
-      "projectsTitle": { "fr": "Projets", "en": "Projects" },
-      "projectsSubtitle": { "fr": "Réalisations et outils développés", "en": "Built tools and deliveries" },
-      "contactTitle": { "fr": "Contact", "en": "Contact" },
-      "contactSubtitle": { "fr": "Parlons de votre projet", "en": "Let's talk about your project" },
-      "education": { "fr": "Formation", "en": "Education" },
-      "certifications": { "fr": "Certifications", "en": "Certifications" }
+      "competences": { "fr": "COMPÉTENCES", "en": "COMPETENCES" },
+      "workProjects": { "fr": "PROJETS", "en": "PROJECTS" },
+      "workProjectsSub": { "fr": "Sélection — un projet vedette, puis les autres.", "en": "Selection — one featured project, then the rest." },
+      "workTelecom": { "fr": "RÉSEAU FTTH", "en": "FTTH NETWORK" },
+      "workTelecomSub": { "fr": "De la fibre au foyer — conception et audit.", "en": "From fiber to home — design and audit." },
+      "workIt": { "fr": "SYSTÈMES", "en": "SYSTEMS" },
+      "workItSub": { "fr": "Infrastructure, réseau, services, automatisation.", "en": "Infrastructure, network, services, automation." },
+      "faq": { "fr": "FAQ", "en": "FAQ" },
+      "contact": { "fr": "CONTACT", "en": "CONTACT" }
     },
     "contact": {
+      "name": { "fr": "Nom", "en": "Name" },
       "email": { "fr": "Email", "en": "Email" },
-      "phone": { "fr": "Téléphone", "en": "Phone" },
-      "location": { "fr": "Localisation", "en": "Location" },
-      "formName": { "fr": "Nom", "en": "Name" },
-      "formNamePh": { "fr": "Votre nom", "en": "Your name" },
-      "formEmail": { "fr": "Email", "en": "Email" },
-      "formEmailPh": { "fr": "votre@email.com", "en": "your@email.com" },
-      "formSubject": { "fr": "Sujet", "en": "Subject" },
-      "formSubjectPh": { "fr": "Sujet de votre message", "en": "Subject of your message" },
-      "formMessage": { "fr": "Message", "en": "Message" },
-      "formMessagePh": { "fr": "Votre message...", "en": "Your message..." },
-      "formSubmit": { "fr": "Envoyer le message", "en": "Send message" },
-      "formSending": { "fr": "Envoi...", "en": "Sending..." },
-      "formSuccess": { "fr": "Message envoyé ! Merci de m'avoir contacté.", "en": "Message sent! Thanks for reaching out." },
-      "formError": { "fr": "Erreur d'envoi. Réessayez ou contactez-moi directement.", "en": "Send failed. Try again or contact me directly." },
+      "message": { "fr": "Message", "en": "Message" },
+      "send": { "fr": "Envoyer", "en": "Send" },
+      "sending": { "fr": "Envoi…", "en": "Sending…" },
+      "sent": { "fr": "Message envoyé. Merci.", "en": "Message sent. Thank you." },
+      "failed": { "fr": "Échec d'envoi. Réessayez ou écrivez-moi directement.", "en": "Send failed. Try again or email me directly." },
       "errName": { "fr": "Veuillez entrer votre nom", "en": "Please enter your name" },
       "errEmail": { "fr": "Veuillez entrer un email valide", "en": "Please enter a valid email" },
-      "errSubject": { "fr": "Veuillez entrer un sujet", "en": "Please enter a subject" },
       "errMessage": { "fr": "Veuillez entrer votre message", "en": "Please enter your message" }
     },
-    "footer": { "rights": { "fr": "Tous droits réservés.", "en": "All rights reserved." } }
+    "a11y": { "skip": { "fr": "Aller au contenu", "en": "Skip to content" } }
   }
 }

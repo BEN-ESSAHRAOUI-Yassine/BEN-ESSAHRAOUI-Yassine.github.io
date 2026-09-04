@@ -1,217 +1,181 @@
 <!DOCTYPE html>
-<html lang="fr" data-profile="dev" data-mode="dark">
+<html lang="fr" data-domain="development" data-mode="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yassine BEN ESSAHRAOUI — Portfolio</title>
-  <meta name="description" content="Yassine BEN ESSAHRAOUI — Développeur Full Stack, Référent BE FTTH & Technicien IT. Portfolio multi-profil avec projets et expérience.">
-  <meta property="og:title" content="Yassine BEN ESSAHRAOUI — Portfolio">
-  <meta property="og:description" content="Développeur Full Stack · FTTH & GIS · IT Support & Networks — Agadir, Maroc.">
+  <title>Yassine BEN ESSAHRAOUI — Development · Telecom · IT</title>
+  <meta name="description" content="Yassine BEN ESSAHRAOUI — one person, three professional dimensions: software development, telecom FTTH engineering, IT systems.">
+  <meta property="og:title" content="Yassine BEN ESSAHRAOUI — Development · Telecom · IT">
+  <meta property="og:description" content="Software development · FTTH & GIS · IT systems — one portfolio, three domains.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#070A0D">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23D6FF2A'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' fill='%23070A0D' font-family='monospace' font-weight='700' font-size='14'>YB</text></svg>">
+  <meta property="og:url" content="https://ben-essahraoui-yassine.github.io/">
+  <meta name="theme-color" content="#E5E5E5">
+  <link rel="canonical" href="https://ben-essahraoui-yassine.github.io/">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231a1d21'/><text x='50%' y='58%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700' font-size='15'>Y</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Viga&family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=Libre+Baskerville:ital@0;1&family=Satisfy&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components/navbar.css">
   <link rel="stylesheet" href="css/components/hero.css">
-  <link rel="stylesheet" href="css/components/profile-switcher.css">
   <link rel="stylesheet" href="css/components/sections.css">
-  <script src="https://unpkg.com/lucide@0.511.0/dist/umd/lucide.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+  <script src="https://unpkg.com/lucide@0.511.0/dist/umd/lucide.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
   <script type="application/ld+json" id="person-schema"></script>
 </head>
 <body>
-  <div id="grain" aria-hidden="true"></div>
-  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
-  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+  <a class="skip" href="#hero" data-i18n="a11y.skip">Skip to content</a>
 
-  <nav id="navbar" aria-label="Navigation principale">
-    <a href="#hero" class="nav-logo">Yassine BEN ESSAHRAOUI</a>
-    <ul class="nav-links" role="list">
-      <li><a href="#about" data-i18n="nav.about">À propos</a></li>
-      <li><a href="#skills" data-i18n="nav.skills">Compétences</a></li>
-      <li><a href="#projects" data-i18n="nav.projects">Projets</a></li>
-      <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
-    </ul>
-    <div class="nav-right">
-      <div class="profile-tabs" role="tablist" aria-label="Profiles">
-        <button class="profile-tab active" role="tab" aria-selected="true" data-profile="dev">💻 Dev</button>
-        <button class="profile-tab" role="tab" aria-selected="false" data-profile="telecom">📡 Telecom</button>
-        <button class="profile-tab" role="tab" aria-selected="false" data-profile="it">🔧 IT</button>
+  <header id="site-header">
+    <div class="header-inner">
+      <a href="#hero" class="brand" aria-label="Yassine — home">YASSINE</a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="#competences" data-i18n="nav.competences">Competences</a>
+        <a href="#work" data-i18n="nav.work">Projects</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="#contact" class="nav-cta" data-i18n="nav.contact">Contact Me</a>
+      </nav>
+      <div class="header-controls">
+        <div class="lang" role="group" aria-label="Language">
+          <button data-lang="en" aria-pressed="false">EN</button>
+          <span aria-hidden="true">/</span>
+          <button data-lang="fr" class="on" aria-pressed="true">FR</button>
+        </div>
+        <button id="mode-toggle" class="icon-btn" aria-label="Light / dark">
+          <i data-lucide="sun"></i>
+        </button>
+        <button id="menu-toggle" class="icon-btn only-mobile" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+          <i data-lucide="menu"></i>
+        </button>
       </div>
-      <div class="lang-toggle" role="group" aria-label="Language">
-        <button class="lang-btn active" data-lang="fr" aria-pressed="true">FR</button>
-        <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
-      </div>
-      <button class="mode-toggle" id="mode-toggle" aria-label="Toggle theme"><i data-lucide="sun"></i></button>
-      <button class="hamburger" id="hamburger" aria-label="Menu mobile" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
-  </nav>
+    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile" hidden>
+      <a href="#competences" data-i18n="nav.competences">Competences</a>
+      <a href="#work" data-i18n="nav.work">Projects</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a href="#contact" data-i18n="nav.contact">Contact Me</a>
+    </nav>
+  </header>
 
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="#about" data-i18n="nav.about">À propos</a>
-    <a href="#skills" data-i18n="nav.skills">Compétences</a>
-    <a href="#projects" data-i18n="nav.projects">Projets</a>
-    <a href="#contact" data-i18n="nav.contact">Contact</a>
-    <div class="mobile-profile-tabs" role="tablist" aria-label="Profiles mobile">
-      <button class="profile-tab active" data-profile="dev">💻 Dev</button>
-      <button class="profile-tab" data-profile="telecom">📡 Telecom</button>
-      <button class="profile-tab" data-profile="it">🔧 IT</button>
-    </div>
-    <div class="mobile-lang">
-      <span>Langue:</span>
-      <div class="lang-toggle"><button class="lang-btn active" data-lang="fr">FR</button><button class="lang-btn" data-lang="en">EN</button></div>
-    </div>
-  </div>
+  <main>
+    <!-- HERO / DOMAIN EXPERIENCE -->
+    <section id="hero" aria-roledescription="carousel" aria-label="Professional domains">
+      <div class="wrap hero-wrap">
+        <p class="hero-kicker" data-i18n="hero.kicker">One person — three dimensions</p>
 
-  <!-- Hero -->
-  <section id="hero">
-    <div class="hero-grid">
-      <div class="hero-copy reveal">
-        <div class="hero-breadcrumb" id="hero-breadcrumb">
-          <span data-i18n="hero.breadcrumb">Profil actuel</span> <strong id="breadcrumb-profile">Dev</strong> <span style="opacity:0.45">·</span> <span data-i18n="hero.alsoAvailable">Aussi disponible :</span> <span id="breadcrumb-also"></span>
-        </div>
-        <div class="hero-eyebrow">Agadir — Morocco · 2016→2026</div>
-        <p class="hero-subtitle" id="hero-title">Développeur Full Stack</p>
-        <h1>
-          <span class="line-accent">Yassine BEN</span>
-          <span>ESSAHRAOUI</span>
-        </h1>
-        <div class="hero-typewriter" id="typewriter"><span id="typewriter-text"></span><span class="cursor"></span></div>
-        <p class="hero-tagline" id="hero-tagline">Des solutions web propres et efficaces — de l'idée au déploiement.</p>
-        <div class="hero-switcher" id="hero-switcher" role="tablist" aria-label="Switch profile"></div>
-        <div class="coachmark" id="coachmark">
-          <i data-lucide="sparkles" style="width:16px;height:16px;color:var(--color-accent)"></i>
-          <span data-i18n="hero.coachmark">Recrutez en Télécom ou IT ? Changez de profil →</span>
-          <button id="coachmark-close" aria-label="Dismiss"><i data-lucide="x" style="width:14px;height:14px"></i></button>
-        </div>
-        <div class="hero-ctas">
-          <a href="#projects" class="btn btn-primary" id="cta-primary"><span data-i18n="hero.ctaProjects">Voir les projets</span> <i data-lucide="arrow-right" style="width:16px;height:16px"></i></a>
-          <a id="cv-link" href="assets/cv/cv-dev.pdf" download class="btn btn-secondary"><i data-lucide="download" style="width:16px;height:16px"></i> <span data-i18n="hero.ctaCV">Télécharger CV</span></a>
-        </div>
-      </div>
-      <div class="hero-visual reveal" style="transition-delay:0.12s">
-        <div class="hero-blueprint" aria-hidden="true"></div>
-        <div class="hero-avatar-wrap" id="hero-avatar-wrap">
-          <img src="assets/img/avatar.jpg" alt="Yassine BEN ESSAHRAOUI" onerror="this.style.display='none'; this.parentElement.textContent='YB'; this.parentElement.style.display='grid'; this.parentElement.style.placeItems='center'; this.parentElement.style.fontFamily='var(--font-display)'; this.parentElement.style.fontSize='3rem'; this.parentElement.style.color='var(--color-accent)'">
-          <div class="hero-meta">
-            <span><strong>10</strong> GitHub repos · <strong>3</strong> profils</span>
-            <span style="color:var(--color-accent)">● Disponible</span>
+        <div class="domain-stage" id="domain-stage">
+          <p class="domain-top" id="domain-top" aria-hidden="true">DEVELOPMENT</p>
+
+          <div class="domain-row">
+            <button class="domain-side" id="domain-prev" aria-label="Previous domain">
+              <span class="side-name" id="side-prev-name">TELECOM</span>
+              <span class="side-arrow" aria-hidden="true">&lt;</span>
+            </button>
+
+            <figure class="portrait-card">
+              <div class="portrait-env" id="portrait-env">
+                <img src="assets/img/avatar.png" alt="Portrait of Yassine BEN ESSAHRAOUI" id="portrait-img" fetchpriority="high">
+              </div>
+              <figcaption class="portrait-cap">
+                <strong id="hero-name">YASSINE BEN ESSAHRAOUI</strong>
+                <span class="domain-title" id="hero-domain">SOFTWARE DEVELOPER</span>
+                <span class="domain-statement" id="hero-statement">I build practical digital systems.</span>
+                <span class="domain-stack" id="hero-stack">Laravel · PHP · JavaScript · Python · SQL</span>
+                <a href="#contact" class="btn" id="hero-cta" data-i18n="hero.cta">Contact Me</a>
+              </figcaption>
+            </figure>
+
+            <button class="domain-side" id="domain-next" aria-label="Next domain">
+              <span class="side-arrow" aria-hidden="true">&gt;</span>
+              <span class="side-name" id="side-next-name">IT</span>
+            </button>
+          </div>
+
+          <div class="domain-meta">
+            <div class="domain-dots" role="tablist" aria-label="Domains" id="domain-dots"></div>
+            <p class="domain-count" aria-live="polite"><span id="domain-index">01</span> / 03</p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Marquee -->
-  <div class="marquee" aria-hidden="true"><div class="marquee-track" id="marquee-track"></div></div>
-
-  <!-- About — editorial -->
-  <section id="about">
-    <div class="about-wrap reveal">
-      <div class="about-photo-col">
-        <div class="about-avatar" id="about-avatar"><img src="assets/img/avatar.jpg" alt="Yassine" onerror="this.style.display='none'; this.parentElement.textContent='YB'"></div>
+    <!-- COMPETENCES -->
+    <section id="competences">
+      <div class="wrap">
+        <h2 class="section-title" data-i18n="sections.competences">COMPETENCES</h2>
+        <p class="section-sub" id="competences-sub"></p>
+        <div class="clusters" id="clusters"></div>
       </div>
-      <div class="about-manifesto">
-        <span class="section-label">About · À propos</span>
-        <p class="lead" id="about-bio"></p>
-        <p class="about-bio" style="margin-top:10px; font-family:var(--font-mono); font-size:0.72rem; letter-spacing:0.04em; text-transform:uppercase; color:var(--text-secondary)">Full Stack · FTTH · IT — three lenses, one builder. I automate what others do by hand.</p>
-        <div class="about-stats" id="stats-container"></div>
+    </section>
+
+    <!-- DOMAIN-SPECIFIC: projects OR showcase -->
+    <section id="work">
+      <div class="wrap">
+        <h2 class="section-title" id="work-title">PROJECTS</h2>
+        <p class="section-sub" id="work-sub"></p>
+        <div id="work-body"></div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Signal -->
-  <section id="signal">
-    <div class="reveal" style="text-align:center; margin-bottom:22px">
-      <span class="section-label">Signal · Triple profile</span>
-      <h2 class="section-heading" style="font-size: clamp(1.8rem, 4vw, 2.8rem)">Three brains, one bench.</h2>
-      <p class="section-sub" style="margin:0 auto">Dev writes it. Telecom draws it. IT keeps it running. Switch above — the page rewrites itself.</p>
-    </div>
-    <div class="signal-grid reveal" id="signal-grid"></div>
-  </section>
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="wrap faq-wrap">
+        <h2 class="section-title" data-i18n="sections.faq">FAQ</h2>
+        <div class="accordion" id="faq-list"></div>
+      </div>
+    </section>
 
-  <!-- Skills — tag cloud -->
-  <section id="skills">
-    <div class="reveal" style="text-align:center; margin-bottom:18px">
-      <span class="section-label">Stacks & tools</span>
-      <h2 class="section-heading" style="font-size: clamp(1.8rem, 4vw, 2.8rem)">Technologies, tools and expertise</h2>
-    </div>
-    <div class="skills-cloud reveal" id="skills-container"></div>
-  </section>
-
-  <!-- Experience -->
-  <section id="experience">
-    <div class="reveal" style="text-align:center; margin-bottom:18px">
-      <span class="section-label">Experience</span>
-      <h2 class="section-heading" style="font-size: clamp(1.8rem, 4vw, 2.8rem)">Professional background and education</h2>
-    </div>
-    <div class="timeline reveal" id="timeline"></div>
-  </section>
-
-  <!-- Projects — case studies -->
-  <section id="projects">
-    <div class="reveal" style="text-align:center; margin-bottom:18px">
-      <span class="section-label">Selected work</span>
-      <h2 class="section-heading" style="font-size: clamp(1.8rem, 4vw, 2.8rem)">Built tools and deliveries</h2>
-      <p class="section-sub" style="margin:8px auto 0">FiberFlow first, then DocFormat, then ThreadForge — flagship case studies, then the rest.</p>
-    </div>
-    <div class="projects-grid reveal" id="projects-container"></div>
-  </section>
-
-  <!-- Contact — paper slip -->
-  <section id="contact">
-    <div class="reveal" style="text-align:center; margin-bottom:18px">
-      <span class="section-label">Contact</span>
-      <h2 class="section-heading" style="font-size: clamp(1.8rem, 4vw, 2.8rem)">Let's talk about your project</h2>
-    </div>
-    <div class="contact-grid reveal">
-      <div class="contact-card" id="contact-info"></div>
-      <form class="contact-form" id="contact-form" novalidate>
-        <input type="text" name="company" id="hp-company" class="form-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <div class="form-group" id="form-group-name">
-          <label for="form-name" data-i18n="contact.formName">Nom</label>
-          <input type="text" id="form-name" name="name" required>
-          <div class="form-error" data-i18n="contact.errName">Veuillez entrer votre nom</div>
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="wrap contact-wrap">
+        <h2 class="section-title" data-i18n="sections.contact">CONTACT</h2>
+        <div class="contact-grid">
+          <div class="contact-links">
+            <a id="c-email" href="mailto:ybenessahraoui@gmail.com">ybenessahraoui@gmail.com</a>
+            <a id="c-linkedin" href="https://www.linkedin.com/in/yassine-ben-essahraoui-bb7b41125" target="_blank" rel="noopener">LinkedIn</a>
+            <a id="c-github" href="https://github.com/BEN-ESSAHRAOUI-Yassine" target="_blank" rel="noopener">GitHub</a>
+          </div>
+          <form id="contact-form" novalidate>
+            <input type="text" name="company" id="hp" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
+            <div class="field">
+              <label for="f-name" data-i18n="contact.name">Name</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" required>
+              <p class="err" data-i18n="contact.errName">Please enter your name</p>
+            </div>
+            <div class="field">
+              <label for="f-email" data-i18n="contact.email">Email</label>
+              <input id="f-email" name="email" type="email" autocomplete="email" required>
+              <p class="err" data-i18n="contact.errEmail">Please enter a valid email</p>
+            </div>
+            <div class="field">
+              <label for="f-msg" data-i18n="contact.message">Message</label>
+              <textarea id="f-msg" name="message" rows="5" required></textarea>
+              <p class="err" data-i18n="contact.errMessage">Please enter your message</p>
+            </div>
+            <button type="submit" class="btn" id="send-btn"><span data-i18n="contact.send">Send</span></button>
+            <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
+          </form>
         </div>
-        <div class="form-group" id="form-group-email">
-          <label for="form-email" data-i18n="contact.formEmail">Email</label>
-          <input type="email" id="form-email" name="email" required>
-          <div class="form-error" data-i18n="contact.errEmail">Veuillez entrer un email valide</div>
-        </div>
-        <div class="form-group" id="form-group-subject">
-          <label for="form-subject" data-i18n="contact.formSubject">Sujet</label>
-          <input type="text" id="form-subject" name="subject" required>
-          <div class="form-error" data-i18n="contact.errSubject">Veuillez entrer un sujet</div>
-        </div>
-        <div class="form-group" id="form-group-message">
-          <label for="form-message" data-i18n="contact.formMessage">Message</label>
-          <textarea id="form-message" name="message" required></textarea>
-          <div class="form-error" data-i18n="contact.errMessage">Veuillez entrer votre message</div>
-        </div>
-        <button type="submit" class="btn-submit" id="form-submit"><span data-i18n="contact.formSubmit">Envoyer le message</span></button>
-        <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
-        <div class="form-success" id="form-success" style="display:none; text-align:center; padding:14px; color:var(--color-accent)"><i data-lucide="check-circle" style="width:18px;height:18px"></i> <span data-i18n="contact.formSuccess">Message envoyé !</span></div>
-      </form>
-    </div>
-  </section>
+      </div>
+    </section>
+  </main>
 
-  <footer id="footer">
-    <p>© <span id="footer-year"></span> Yassine BEN ESSAHRAOUI. <span data-i18n="footer.rights">Tous droits réservés.</span></p>
-    <div class="footer-links">
-      <a id="footer-linkedin" href="#" target="_blank" rel="noopener">LinkedIn</a>
-      <a id="footer-github" href="#" target="_blank" rel="noopener">GitHub</a>
-      <a id="footer-email" href="#">Email</a>
+  <footer id="site-footer">
+    <div class="wrap foot-grid">
+      <div>
+        <p class="foot-name">Yassine Ben Essahraoui</p>
+        <p class="foot-pos" id="foot-pos">Software · Fiber · Systems</p>
+      </div>
+      <nav class="foot-links" aria-label="Footer">
+        <a id="f-linkedin" href="https://www.linkedin.com/in/yassine-ben-essahraoui-bb7b41125" target="_blank" rel="noopener">LinkedIn</a>
+        <a id="f-github" href="https://github.com/BEN-ESSAHRAOUI-Yassine" target="_blank" rel="noopener">GitHub</a>
+        <a id="f-email" href="mailto:ybenessahraoui@gmail.com">Email</a>
+      </nav>
+      <p class="hand">Thanks for being here.</p>
+      <p class="copy">© <span id="year"></span> Yassine Ben Essahraoui</p>
     </div>
   </footer>
-
-  <button id="scroll-top" aria-label="Retour en haut"><i data-lucide="arrow-up" style="width:18px;height:18px"></i></button>
 
   <script type="module" src="js/app.js"></script>
 </body>
