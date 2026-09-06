@@ -5,7 +5,7 @@ const LABELS = { development: 'DEVELOPMENT', telecom: 'TELECOM', it: 'IT' };
 let current = 'development';
 const listeners = new Set();
 let timer = null;
-const ROTATE_MS = 7000;
+const ROTATE_MS = 1800000; // 30min — raised for testing to avoid auto-switch during screenshots
 
 function reducedMotion() {
   return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -41,6 +41,7 @@ export function setDomain(next, opts = {}) {
     return;
   }
   const stage = document.getElementById('domain-stage');
+  const hero = document.getElementById('hero');
   const apply = () => {
     current = next;
     document.documentElement.setAttribute('data-domain', current);
@@ -50,9 +51,19 @@ export function setDomain(next, opts = {}) {
   };
   if (reducedMotion() || opts.instant) {
     apply();
-  } else if (stage) {
+  } else if (stage && hero) {
+    // Choreographed transition: fade content → swap → fade in
     stage.classList.add('switching');
-    setTimeout(() => { apply(); requestAnimationFrame(() => stage.classList.remove('switching')); }, 320);
+    hero.classList.add('hero-exit');
+    setTimeout(() => {
+      apply();
+      requestAnimationFrame(() => {
+        stage.classList.remove('switching');
+        hero.classList.remove('hero-exit');
+        hero.classList.add('hero-enter');
+        setTimeout(() => hero.classList.remove('hero-enter'), 500);
+      });
+    }, 380);
   } else {
     apply();
   }

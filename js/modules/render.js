@@ -36,8 +36,7 @@ export function renderClusters(content, domain, lang) {
   const groups = content.skills?.[key] || [];
   const d = content.domains?.[domain];
   if (sub && d) sub.textContent = t(d.competencesSub, lang);
-  // Visual grouping: max 3 clusters, max ~12 items, no giant lists
-  const clusters = groups.slice(0, 3).map((g) => ({
+  const clusters = groups.map((g) => ({
     title: t(g.group, lang),
     items: (g.items || []).slice(0, 8),
   }));
@@ -84,8 +83,11 @@ function projectsHtml(content, lang) {
   };
   return `
     <article class="proj-featured">
-      <img src="${feat.image || ''}" alt="${escapeHtml(feat.title)}" loading="lazy" onerror="this.style.display='none'">
+      <div class="proj-featured-img">
+        <img src="${feat.image || ''}" alt="${escapeHtml(feat.title)}" loading="lazy" onerror="this.parentElement.classList.add('no-img')">
+      </div>
       <div>
+        <span class="proj-badge">Featured</span>
         <h3 class="proj-name">${escapeHtml(feat.title)}</h3>
         <p class="proj-desc">${escapeHtml(t(feat.desc, lang))}</p>
         ${tags(feat)}${links(feat)}
@@ -94,6 +96,9 @@ function projectsHtml(content, lang) {
     <div class="proj-grid">
       ${shown.map((p) => `
         <article class="proj-card">
+          <div class="proj-card-icon">
+            <img src="${p.image || ''}" alt="" loading="lazy" onerror="this.style.display='none'">
+          </div>
           <h3>${escapeHtml(p.title)}</h3>
           <p>${escapeHtml(t(p.desc, lang))}</p>
           ${tags(p)}${links(p)}
@@ -102,39 +107,81 @@ function projectsHtml(content, lang) {
 }
 
 function telecomShowcaseHtml(lang) {
-  const ink = 'var(--text-soft)';
-  const acc = 'var(--accent)';
   return `
-  <div class="showcase" role="img" aria-label="FTTH network: fiber to SRO to PB to homes">
-    <svg viewBox="0 0 640 300" aria-hidden="true">
-      <path class="fiber-flow" d="M320 30 V70" stroke="${acc}" stroke-width="2" fill="none"/>
-      <path class="fiber-flow" d="M320 110 V150 M240 150 H400 M240 150 V190 M400 150 V190 M240 230 V260 M400 230 V260" stroke="${acc}" stroke-width="2" fill="none"/>
-      <g class="node"><rect x="270" y="8" width="100" height="30" rx="6" fill="var(--card)" stroke="var(--border)"/><text x="320" y="27" text-anchor="middle" class="show-label">FIBER</text></g>
-      <g class="node"><rect x="270" y="70" width="100" height="34" rx="6" fill="var(--card)" stroke="var(--border)"/><text x="320" y="91" text-anchor="middle" class="show-label">SRO</text></g>
-      <g class="node"><rect x="190" y="190" width="100" height="34" rx="6" fill="var(--card)" stroke="var(--border)"/><text x="240" y="211" text-anchor="middle" class="show-label">PB</text></g>
-      <g class="node"><rect x="350" y="190" width="100" height="34" rx="6" fill="var(--card)" stroke="var(--border)"/><text x="400" y="211" text-anchor="middle" class="show-label">PB</text></g>
-      <g class="node"><rect x="190" y="260" width="100" height="30" rx="6" fill="var(--card)" stroke="var(--border)"/><text x="240" y="279" text-anchor="middle" class="show-label">HOME</text></g>
-      <g class="node"><rect x="350" y="260" width="100" height="30" rx="6" fill="var(--card)" stroke="var(--border)"/><text x="400" y="279" text-anchor="middle" class="show-label">HOME</text></g>
-      <text x="320" y="135" text-anchor="middle" class="show-label">GIS · AUDIT</text>
+  <div class="showcase telecom-showcase" role="img" aria-label="FTTH network topology: fiber to SRO to PB to homes">
+    <svg viewBox="0 0 700 340" aria-hidden="true" class="telecom-svg">
+      <!-- Fiber backbone -->
+      <path class="fiber-line fiber-backbone" d="M350 40 L350 100" stroke="var(--accent)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+      <!-- SRO to PB split -->
+      <path class="fiber-line fiber-split-l" d="M350 140 L350 170 L220 170 L220 210" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path class="fiber-line fiber-split-r" d="M350 170 L480 170 L480 210" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <!-- PB to Home -->
+      <path class="fiber-line fiber-home-l" d="M220 250 L220 280" stroke="var(--accent)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="4 4"/>
+      <path class="fiber-line fiber-home-r" d="M480 250 L480 280" stroke="var(--accent)" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-dasharray="4 4"/>
+
+      <!-- Signal pulse -->
+      <circle class="signal-pulse" cx="350" cy="40" r="4" fill="var(--accent)" opacity="0.6">
+        <animate attributeName="cy" values="40;280" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;0.1;0.6" dur="3s" repeatCount="indefinite"/>
+      </circle>
+
+      <!-- Nodes -->
+      <g class="node" data-label="FIBER">
+        <rect x="300" y="18" width="100" height="34" rx="4" fill="var(--card)" stroke="var(--accent)" stroke-width="1.5"/>
+        <text x="350" y="40" text-anchor="middle" class="show-label">FIBER</text>
+      </g>
+      <g class="node" data-label="SRO">
+        <rect x="300" y="104" width="100" height="34" rx="4" fill="var(--card)" stroke="var(--border)"/>
+        <text x="350" y="126" text-anchor="middle" class="show-label">SRO</text>
+      </g>
+      <g class="node" data-label="PB">
+        <rect x="170" y="214" width="100" height="34" rx="4" fill="var(--card)" stroke="var(--border)"/>
+        <text x="220" y="236" text-anchor="middle" class="show-label">PB</text>
+      </g>
+      <g class="node" data-label="PB">
+        <rect x="430" y="214" width="100" height="34" rx="4" fill="var(--card)" stroke="var(--border)"/>
+        <text x="480" y="236" text-anchor="middle" class="show-label">PB</text>
+      </g>
+      <g class="node" data-label="HOME">
+        <rect x="175" y="284" width="90" height="28" rx="4" fill="var(--env-soft)" stroke="var(--border)"/>
+        <text x="220" y="303" text-anchor="middle" class="show-label show-label-sm">HOME</text>
+      </g>
+      <g class="node" data-label="HOME">
+        <rect x="435" y="284" width="90" height="28" rx="4" fill="var(--env-soft)" stroke="var(--border)"/>
+        <text x="480" y="303" text-anchor="middle" class="show-label show-label-sm">HOME</text>
+      </g>
+
+      <!-- Labels -->
+      <text x="350" y="165" text-anchor="middle" class="show-label-soft">GIS · AUDIT · DESIGN</text>
     </svg>
+    <div class="telecom-tags">
+      <span>FTTH</span><span>Network Design</span><span>GIS</span><span>Fiber</span><span>Analysis</span><span>Audit</span>
+    </div>
   </div>`;
 }
 
 function itShowcaseHtml(content, lang) {
-  const key = 'it';
-  const groups = (content.skills?.[key] || []).slice(0, 6);
-  const flow = ['SYSTEMS', 'INFRASTRUCTURE', 'NETWORK', 'SERVICES', 'AUTOMATION', 'DATA'];
+  const flow = [
+    { label: 'SYSTEMS', desc: 'Windows · Linux · Deployment' },
+    { label: 'INFRASTRUCTURE', desc: 'Servers · Storage · Cloud' },
+    { label: 'NETWORK', desc: 'LAN · WAN · Wi-Fi · Switches' },
+    { label: 'SERVICES', desc: 'Helpdesk · Ticketing · Support' },
+    { label: 'AUTOMATION', desc: 'PLC · Scripts · Supervision' },
+    { label: 'DATA', desc: 'Databases · Reporting · Analytics' },
+  ];
   return `
-  <div class="showcase" role="img" aria-label="IT systems architecture">
-    <svg viewBox="0 0 640 ${90 + flow.length * 0}" aria-hidden="true" style="display:none"></svg>
-    <div class="clusters" style="margin-top:0">
-      ${groups.map((g) => `
-        <div class="cluster">
-          <h3>${escapeHtml(t(g.group, lang))}</h3>
-          <ul>${(g.items || []).slice(0, 6).map((i) => `<li>${escapeHtml(i)}</li>`).join('')}</ul>
+  <div class="showcase it-showcase" role="img" aria-label="IT infrastructure architecture">
+    <div class="it-arch">
+      ${flow.map((f, i) => `
+        <div class="it-node" style="--i:${i}">
+          <div class="it-node-dot"></div>
+          ${i < flow.length - 1 ? '<div class="it-node-line"></div>' : ''}
+          <div class="it-node-content">
+            <span class="it-node-label">${f.label}</span>
+            <span class="it-node-desc">${f.desc}</span>
+          </div>
         </div>`).join('')}
     </div>
-    <p class="section-sub" style="margin-top:18px">${flow.join('  ↓  ')}</p>
   </div>`;
 }
 
