@@ -1,10 +1,17 @@
-// Minimal FR/EN — spec: everything visible must be translatable
+// Minimal FR/EN — everything visible is translatable via content.json : i18n
 let contentRef = null;
 let lang = 'fr';
 
 export function getLang() { return lang; }
 
 function pick(obj, l) {
+  if (obj == null) return '';
+  if (typeof obj === 'string') return obj;
+  return obj[l] || obj.en || obj.fr || '';
+}
+
+/** Translate a content object ({fr,en} or plain string). */
+export function t(obj, l = lang) {
   if (obj == null) return '';
   if (typeof obj === 'string') return obj;
   return obj[l] || obj.en || obj.fr || '';
@@ -46,12 +53,23 @@ export function setLang(next) {
   window.dispatchEvent(new CustomEvent('langchange', { detail: { lang } }));
 }
 
-function apply() {
+export function apply() {
   document.documentElement.lang = lang;
+  // text content
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const v = lookup(el.getAttribute('data-i18n'), lang);
     if (v !== null) el.textContent = v;
   });
+  // arbitrary attributes: data-i18n-attr="aria-label:key,alt:key2"
+  document.querySelectorAll('[data-i18n-attr]').forEach((el) => {
+    el.getAttribute('data-i18n-attr').split(',').forEach((pair) => {
+      const [attr, key] = pair.split(':').map((s) => s.trim());
+      if (!attr || !key) return;
+      const v = lookup(key, lang);
+      if (v !== null) el.setAttribute(attr, v);
+    });
+  });
+  // language switch state
   document.querySelectorAll('.lang button').forEach((b) => {
     const on = b.dataset.lang === lang;
     b.classList.toggle('on', on);

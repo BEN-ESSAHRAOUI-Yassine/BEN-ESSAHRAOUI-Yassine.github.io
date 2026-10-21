@@ -1,9 +1,9 @@
-import { initDomain, getDomain, onDomainChange } from './modules/domain.js';
 import { initI18n, getLang } from './modules/i18n.js';
-import { initScrollAnimations } from './modules/animations.js';
+import { initHero } from './modules/hero.js';
+import { initScrollAnimations, revealNew } from './modules/animations.js';
 import { initNavbar } from './modules/navbar.js';
 import { initContactForm } from './modules/email.js';
-import { renderAll } from './modules/render.js';
+import { renderAll, initWork } from './modules/render.js';
 
 let content = null;
 
@@ -39,7 +39,8 @@ function paintLinks() {
 }
 
 function render() {
-  renderAll(content, getDomain(), getLang());
+  renderAll(content, getLang());
+  revealNew();
 }
 
 function init() {
@@ -52,14 +53,14 @@ function init() {
   load().then((c) => {
     content = c;
     initI18n(content);
-    initDomain();
     paintLinks();
+    initWork(content);
     render();
-    onDomainChange(() => render());
     window.addEventListener('langchange', render);
+    initHero();
     initScrollAnimations();
     initNavbar();
-    initContactForm();
+    initContactForm(content.i18n?.contact);
     if (window.lucide) window.lucide.createIcons();
   }).catch((err) => {
     console.error(err);

@@ -10,113 +10,126 @@
     }
   },
   "domains": {
-    "development": {
-      "name": { "fr": "DEVELOPMENT", "en": "DEVELOPMENT" },
-      "short": { "fr": "Dév", "en": "Dev" },
-      "heroTitle": { "fr": "DÉVELOPPEUR LOGICIEL", "en": "SOFTWARE DEVELOPER" },
-      "statement": { "fr": "Je conçois des systèmes numériques pratiques.", "en": "I build practical digital systems." },
+    "spec": {
+      "index": "01",
+      "label": { "fr": "SPEC", "en": "SPEC" },
+      "markerSub": { "fr": "Développement logiciel", "en": "Software Development" },
+      "kicker": {
+        "fr": "Développement logiciel & développement guidé par les spécifications",
+        "en": "Software Development & Spec-Driven Development"
+      },
+      "heading": { "fr": "Des exigences à un logiciel fiable.", "en": "From requirements to reliable software." },
+      "intro": {
+        "fr": "J'aborde le développement logiciel avec des exigences claires, une architecture réfléchie, une implémentation soignée et une validation rigoureuse.",
+        "en": "I approach software development through clear requirements, deliberate architecture, implementation and validation."
+      },
+      "steps": [
+        { "n": "01", "label": { "fr": "Exigences", "en": "Requirements" }, "desc": { "fr": "Recueillir et clarifier ce que le système doit faire.", "en": "Collect and clarify what the system must do." } },
+        { "n": "02", "label": { "fr": "Spécification", "en": "Specification" }, "desc": { "fr": "Structurer modèles de données, interfaces et décisions techniques.", "en": "Structure data models, interfaces and technical decisions." } },
+        { "n": "03", "label": { "fr": "Implémentation", "en": "Implementation" }, "desc": { "fr": "Construire avec Laravel, PHP, JavaScript, Python et SQL.", "en": "Build with Laravel, PHP, JavaScript, Python and SQL." } },
+        { "n": "04", "label": { "fr": "Validation", "en": "Validation" }, "desc": { "fr": "Tester, relire et itérer jusqu'à un comportement fiable.", "en": "Test, review and iterate until behaviour is reliable." } }
+      ],
+      "panelCaption": {
+        "fr": "Traçabilité : exigences → modèle → API → tests",
+        "en": "Traceability: requirements → model → API → tests"
+      },
       "stack": "Laravel · PHP · JavaScript · Python · SQL",
-      "competencesSub": { "fr": "Ce que je construis, par couches.", "en": "What I build, by layer." }
+      "link": { "fr": "Voir les projets SPEC", "en": "See SPEC projects" }
     },
-    "telecom": {
-      "name": { "fr": "TELECOM", "en": "TELECOM" },
-      "short": { "fr": "Télécom", "en": "Telecom" },
-      "heroTitle": { "fr": "INGÉNIEUR FTTH", "en": "FTTH ENGINEER" },
-      "statement": { "fr": "J'étudie et audite les réseaux fibre.", "en": "I design and audit fiber networks." },
-      "stack": "FTTH · GIS · QGIS · AutoCAD · Network Design",
-      "competencesSub": { "fr": "De l'étude au contrôle qualité.", "en": "From study to quality audit." }
+    "field": {
+      "index": "02",
+      "label": { "fr": "FIELD", "en": "FIELD" },
+      "markerSub": { "fr": "Génie civil & télécoms", "en": "Civil & Telecom Engineering" },
+      "kicker": {
+        "fr": "Génie civil & télécommunications — réseaux fibre optique",
+        "en": "Civil Engineering & Telecommunications — fiber networks"
+      },
+      "heading": { "fr": "Concevoir l'infrastructure qui nous connecte.", "en": "Engineering the infrastructure that connects us." },
+      "intro": {
+        "fr": "Les télécommunications et les infrastructures exigent de la précision, des données structurées et des livrables techniques compréhensibles et vérifiables.",
+        "en": "Telecommunications and infrastructure work require precision, structured data, and engineering deliverables that can be understood and verified."
+      },
+      "steps": [
+        { "n": "01", "label": { "fr": "Études réseau", "en": "Network studies" }, "desc": { "fr": "Études APS · APD · DFT · DOE pour les déploiements FTTH.", "en": "APS · APD · DFT · DOE studies for FTTH deployments." } },
+        { "n": "02", "label": { "fr": "Données spatiales", "en": "Spatial data" }, "desc": { "fr": "Modéliser les réseaux dans QGIS, AutoCAD et ArcGIS.", "en": "Model networks in QGIS, AutoCAD and ArcGIS." } },
+        { "n": "03", "label": { "fr": "Coordination GC", "en": "Civil coordination" }, "desc": { "fr": "Piquetage, plans et coordination de chantiers.", "en": "Staking out, drawings and site coordination." } },
+        { "n": "04", "label": { "fr": "Audit qualité", "en": "Quality audit" }, "desc": { "fr": "Analyse, scoring qualité et livrables opérateurs.", "en": "Analysis, quality scoring and operator deliverables." } }
+      ],
+      "panelCaption": {
+        "fr": "Fibre jusqu'au logement : SRO → PB → client",
+        "en": "Fiber to the home: SRO → PB → subscriber"
+      },
+      "stack": "FTTH · QGIS · AutoCAD · ArcGIS · GIS",
+      "link": { "fr": "Voir les projets FIELD", "en": "See FIELD projects" }
     },
-    "it": {
-      "name": { "fr": "IT", "en": "IT" },
-      "short": { "fr": "IT", "en": "IT" },
-      "heroTitle": { "fr": "IT / SYSTÈMES", "en": "IT / SYSTEMS" },
-      "statement": { "fr": "Je garde les systèmes stables et automatisés.", "en": "I keep systems stable and automated." },
-      "stack": "Infrastructure · Automation · Linux · Docker · Networks",
-      "competencesSub": { "fr": "Systèmes, réseaux, automatisation.", "en": "Systems, networks, automation." }
+    "flow": {
+      "index": "03",
+      "label": { "fr": "FLOW", "en": "FLOW" },
+      "markerSub": { "fr": "Systèmes IT & automatisation", "en": "IT Systems & Automation" },
+      "kicker": {
+        "fr": "Systèmes informatiques & automatisation",
+        "en": "IT Systems & Automation"
+      },
+      "heading": { "fr": "Faire fonctionner ensemble des systèmes complexes.", "en": "Make complex systems work together." },
+      "intro": {
+        "fr": "Je construis et connecte des systèmes techniques pour réduire le travail répétitif, améliorer la cohérence et simplifier le suivi des processus.",
+        "en": "I build and connect technical systems to reduce repetitive work, improve consistency and make workflows easier to manage."
+      },
+      "steps": [
+        { "n": "01", "label": { "fr": "Systèmes", "en": "Systems" }, "desc": { "fr": "Postes Windows et Linux, déploiement et gestion de parc.", "en": "Windows and Linux workstations, deployment and fleet management." } },
+        { "n": "02", "label": { "fr": "Réseaux", "en": "Networks" }, "desc": { "fr": "LAN / WAN, switchs, routage et Wi-Fi.", "en": "LAN / WAN, switches, routing and Wi-Fi." } },
+        { "n": "03", "label": { "fr": "Automatisation", "en": "Automation" }, "desc": { "fr": "Scripts Python et Bash, automates et supervision de process.", "en": "Python and Bash scripts, PLCs and process supervision." } },
+        { "n": "04", "label": { "fr": "Intégration", "en": "Integration" }, "desc": { "fr": "Connecter outils et services dans des workflows reproductibles.", "en": "Connect tools and services into repeatable workflows." } }
+      ],
+      "panelCaption": {
+        "fr": "Déclencheur → script → service → suivi",
+        "en": "Trigger → script → service → monitoring"
+      },
+      "stack": "Windows · Linux · LAN/WAN · Python · PLC",
+      "link": { "fr": "Voir les projets FLOW", "en": "See FLOW projects" }
     }
   },
   "profiles": {
-    "dev": {
-      "label": { "fr": "Dev", "en": "Dev" },
-      "icon": "💻",
-      "lucide": "code-2",
+    "spec": {
       "title": { "fr": "Développeur Full Stack", "en": "Full Stack Developer" },
-      "heroDesc": { "fr": "PHP & Laravel · Web & Automation", "en": "PHP & Laravel · Web & Automation" },
-      "tagline": { "fr": "Des solutions web propres et efficaces — de l'idée au déploiement.", "en": "Building clean, efficient web solutions — from idea to deployment." },
-      "roles": {
-        "fr": ["Développeur Full Stack", "Ingénieur PHP & Laravel", "Créateur d'automatisations Web"],
-        "en": ["Full Stack Developer", "PHP & Laravel Engineer", "Web Automation Builder"]
-      }
+      "tagline": { "fr": "Des solutions web propres et efficaces — de l'idée au déploiement.", "en": "Building clean, efficient web solutions — from idea to deployment." }
     },
-    "telecom": {
-      "label": { "fr": "Télécom", "en": "Telecom" },
-      "icon": "📡",
-      "lucide": "antenna",
-      "title": { "fr": "Référent BE FTTH & Géomaticien", "en": "FTTH Design Lead & GIS Specialist" },
-      "heroDesc": { "fr": "FTTH · QGIS · AutoCAD", "en": "FTTH · QGIS · AutoCAD" },
-      "tagline": { "fr": "Conception de réseaux fibre et automatisation de workflows techniques depuis 2016.", "en": "Designing fiber networks and automating technical workflows since 2016." },
-      "roles": {
-        "fr": ["Ingénieur Réseau FTTH", "Spécialiste SIG & AutoCAD", "Expert Automatisation Workflows"],
-        "en": ["FTTH Network Engineer", "GIS & AutoCAD Specialist", "Workflow Automation Expert"]
-      }
+    "field": {
+      "title": { "fr": "Référent BE FTTH & géomaticien", "en": "FTTH Design Lead & GIS Specialist" },
+      "tagline": { "fr": "Conception de réseaux fibre et automatisation de workflows techniques depuis 2016.", "en": "Designing fiber networks and automating technical workflows since 2016." }
     },
-    "it": {
-      "label": { "fr": "IT", "en": "IT" },
-      "icon": "🔧",
-      "lucide": "wrench",
-      "title": { "fr": "Technicien Support & Réseaux", "en": "IT Support & Network Technician" },
-      "heroDesc": { "fr": "Helpdesk · Réseaux · Systèmes", "en": "Helpdesk · Networks · Systems" },
-      "tagline": { "fr": "Maintenir les systèmes opérationnels — du helpdesk à l'infrastructure réseau.", "en": "Keeping systems running — from helpdesk to network infrastructure." },
-      "roles": {
-        "fr": ["Technicien Support IT", "Spécialiste Réseaux & Matériel", "Administrateur Systèmes"],
-        "en": ["IT Support Technician", "Network & Hardware Specialist", "Systems Administrator"]
-      }
+    "flow": {
+      "title": { "fr": "Technicien support & réseaux", "en": "IT Support & Network Technician" },
+      "tagline": { "fr": "Maintenir les systèmes opérationnels — du helpdesk à l'infrastructure réseau.", "en": "Keeping systems running — from helpdesk to network infrastructure." }
     }
   },
-  "faq": {
-    "development": [
-      { "q": { "fr": "Quel type d'applications construisez-vous ?", "en": "What kind of applications do you build?" }, "a": { "fr": "Des applications web Laravel : APIs, back-offices, outils métier et automatisations.", "en": "Laravel web apps: APIs, back-offices, business tools and automations." } },
-      { "q": { "fr": "Avec quelles technologies travaillez-vous ?", "en": "What technologies do you work with?" }, "a": { "fr": "PHP, Laravel, JavaScript, Python, SQL, MySQL, REST APIs, Git.", "en": "PHP, Laravel, JavaScript, Python, SQL, MySQL, REST APIs, Git." } },
-      { "q": { "fr": "Pouvez-vous reprendre une application existante ?", "en": "Can you work on existing applications?" }, "a": { "fr": "Oui — audit, correction, refactorisation et nouvelles fonctionnalités.", "en": "Yes — audit, fixes, refactoring and new features." } }
-    ],
-    "telecom": [
-      { "q": { "fr": "Quels travaux FTTH prenez-vous en charge ?", "en": "What kind of FTTH work do you handle?" }, "a": { "fr": "Études APS / APD / DFT / DOE, conception et audit qualité.", "en": "APS / APD / DFT / DOE studies, design and quality audits." } },
-      { "q": { "fr": "Quels outils SIG utilisez-vous ?", "en": "What GIS tools do you use?" }, "a": { "fr": "QGIS, AutoCAD, ArcGIS, FiberGIS, GraceTHD.", "en": "QGIS, AutoCAD, ArcGIS, FiberGIS, GraceTHD." } },
-      { "q": { "fr": "Pouvez-vous contribuer aux audits réseau ?", "en": "Can you contribute to network studies and audits?" }, "a": { "fr": "Oui — analyse, scoring qualité et livrables opérateurs.", "en": "Yes — analysis, quality scoring and operator deliverables." } }
-    ],
-    "it": [
-      { "q": { "fr": "Sur quels systèmes intervenez-vous ?", "en": "What kind of systems do you work with?" }, "a": { "fr": "Postes Windows / Linux, réseaux LAN / WAN, serveurs et parc.", "en": "Windows / Linux workstations, LAN / WAN networks, servers and fleet." } },
-      { "q": { "fr": "Travaillez-vous avec Linux et Docker ?", "en": "Do you work with Linux and Docker?" }, "a": { "fr": "Oui — déploiement, maintenance et conteneurisation.", "en": "Yes — deployment, maintenance and containerization." } },
-      { "q": { "fr": "Pouvez-vous automatiser des workflows ?", "en": "Can you automate technical workflows?" }, "a": { "fr": "Oui — scripts Python / Bash et outillage sur mesure.", "en": "Yes — Python / Bash scripts and custom tooling." } }
-    ]
-  },
   "about": {
-    "dev": {
+    "spec": {
       "fr": "Développeur Full Stack spécialisé en PHP et Laravel, avec une solide expérience en automatisation industrielle et télécoms. Autonome, rigoureux et orienté qualité du code.",
       "en": "Full Stack Developer specialized in PHP and Laravel, with solid experience in industrial and telecom automation. Autonomous, rigorous and code-quality driven."
     },
-    "telecom": {
-      "fr": "Référent BE FTTH avec 4+ ans d'expérience en études de réseaux fibre optique, conception AutoCAD/QGIS, et automatisation de workflows techniques.",
-      "en": "FTTH Design Lead with 4+ years in fiber network studies, AutoCAD/QGIS design and technical workflow automation."
+    "field": {
+      "fr": "Référent BE FTTH avec 4+ ans d'expérience en études de réseaux fibre optique, conception AutoCAD/QGIS et automatisation de workflows techniques.",
+      "en": "FTTH Design Lead with 4+ years of experience in fiber network studies, AutoCAD/QGIS design and technical workflow automation."
     },
-    "it": {
-      "fr": "Technicien polyvalent en maintenance informatique, réseaux et support utilisateurs. Expérience sur des environnements LAN/WAN, postes Windows/Linux, et gestion de parc.",
+    "flow": {
+      "fr": "Technicien polyvalent en maintenance informatique, réseaux et support utilisateurs. Expérience sur des environnements LAN/WAN, postes Windows/Linux et gestion de parc.",
       "en": "Versatile technician in IT maintenance, networks and user support. Experience with LAN/WAN, Windows/Linux workstations and asset management."
     },
     "stats": {
-      "dev": [
+      "spec": [
         { "value": 7, "suffix": "+", "label": { "fr": "Années d'exp.", "en": "Years exp." } },
         { "value": 6, "suffix": "+", "label": { "fr": "Projets web", "en": "Web projects" } },
         { "value": 3, "suffix": "", "label": { "fr": "Certifications", "en": "Certifications" } },
         { "value": 20, "suffix": "+", "label": { "fr": "Technologies", "en": "Technologies" } }
       ],
-      "telecom": [
+      "field": [
         { "value": 4, "suffix": "+", "label": { "fr": "Années FTTH", "en": "Years FTTH" } },
         { "value": 100, "suffix": "+", "label": { "fr": "Études réalisées", "en": "Studies delivered" } },
         { "value": 2, "suffix": "", "label": { "fr": "AutoCAD + QGIS", "en": "AutoCAD + QGIS" } },
         { "value": 6, "suffix": "", "label": { "fr": "Clients opérateurs", "en": "Operator clients" } }
       ],
-      "it": [
+      "flow": [
         { "value": 6, "suffix": "+", "label": { "fr": "Années terrain", "en": "Years field" } },
         { "value": 2, "suffix": "", "label": { "fr": "LAN / WAN", "en": "LAN / WAN" } },
         { "value": 2, "suffix": "", "label": { "fr": "Windows + Linux", "en": "Windows + Linux" } },
@@ -125,89 +138,129 @@
     }
   },
   "skills": {
-    "dev": [
+    "spec": [
       { "group": { "fr": "Frontend", "en": "Frontend" }, "items": ["HTML5", "CSS3", "JavaScript"] },
       { "group": { "fr": "Backend", "en": "Backend" }, "items": ["PHP", "Laravel", "Blade"] },
-      { "group": { "fr": "Base de données", "en": "Database" }, "items": ["MySQL", "SQL", "Modélisation relationnelle"] },
-      { "group": { "fr": "DevOps / Outils", "en": "DevOps / Tools" }, "items": ["Git", "GitHub", "XAMPP", "Vite", "Composer", "VS Code"] },
+      { "group": { "fr": "Bases de données", "en": "Databases" }, "items": ["MySQL", "SQL", { "fr": "Modélisation relationnelle", "en": "Relational modeling" }, "PostGIS"] },
+      { "group": { "fr": "DevOps / Outils", "en": "DevOps / Tools" }, "items": ["Git", "GitHub", "Docker", "XAMPP", "Vite", "Composer", "VS Code"] },
       { "group": { "fr": "Outils IA", "en": "AI Tools" }, "items": ["Claude Code", "AntiGravity", "OpenCode"] },
       { "group": { "fr": "Langages", "en": "Languages" }, "items": ["Python", "VBA", "AutoLISP"] },
       { "group": { "fr": "Gestion de projet", "en": "Project Mgmt" }, "items": ["Jira", "Agile (Kanban)", "Scrum"] }
     ],
-    "telecom": [
+    "field": [
       { "group": { "fr": "Études réseau", "en": "Network studies" }, "items": ["FTTH", "FTTA", "APS", "APD", "DFT", "DOE", "VDR"] },
       { "group": { "fr": "Calculs & livrables", "en": "Calcs & deliverables" }, "items": ["CAPFT", "COMAC", "TOPOCALC"] },
-      { "group": { "fr": "CAO/DAO", "en": "CAD/GIS" }, "items": ["AutoCAD", "QGIS", "ArcGIS", "FiberGIS", "Fiberscript"] },
+      { "group": { "fr": "CAO / SIG", "en": "CAD / GIS" }, "items": ["AutoCAD", "QGIS", "ArcGIS", "FiberGIS", "Fiberscript"] },
       { "group": { "fr": "Automatisation", "en": "Automation" }, "items": ["AutoLISP", "VBA", "Python (QGIS API)"] },
-      { "group": { "fr": "Génie civil", "en": "Civil works" }, "items": ["Piquetage", "Coordination chantiers", "Plans GC"] },
+      { "group": { "fr": "Génie civil", "en": "Civil works" }, "items": [{ "fr": "Piquetage", "en": "Staking out" }, { "fr": "Coordination chantiers", "en": "Site coordination" }, { "fr": "Plans GC", "en": "Civil plans" }] },
       { "group": { "fr": "Clients", "en": "Clients" }, "items": ["Orange", "SFR", "Bouygues", "Axione", "TDF", "Kyntus"] }
     ],
-    "it": [
-      { "group": { "fr": "Systèmes", "en": "Systems" }, "items": ["Windows", "Linux", "Déploiement postes"] },
-      { "group": { "fr": "Réseaux", "en": "Networks" }, "items": ["LAN", "WAN", "Switchs", "Routeurs", "Wi-Fi", "Câblage"] },
-      { "group": { "fr": "Maintenance", "en": "Maintenance" }, "items": ["PC", "Imprimantes", "Serveurs", "Périphériques"] },
+    "flow": [
+      { "group": { "fr": "Systèmes", "en": "Systems" }, "items": ["Windows", "Linux", { "fr": "Déploiement postes", "en": "Workstation deployment" }] },
+      { "group": { "fr": "Réseaux", "en": "Networks" }, "items": ["LAN", "WAN", { "fr": "Switchs", "en": "Switches" }, { "fr": "Routeurs", "en": "Routers" }, "Wi-Fi", { "fr": "Câblage", "en": "Cabling" }] },
+      { "group": { "fr": "Maintenance", "en": "Maintenance" }, "items": ["PC", { "fr": "Imprimantes", "en": "Printers" }, { "fr": "Serveurs", "en": "Servers" }, { "fr": "Périphériques", "en": "Peripherals" }] },
       { "group": { "fr": "Outils", "en": "Tools" }, "items": ["XAMPP", "VS Code", "Active Directory", "Antivirus"] },
-      { "group": { "fr": "Automatisme", "en": "Automation" }, "items": ["PLC", "Supervision process", "Vijeo Citect", "Unity Pro UL"] },
-      { "group": { "fr": "Support", "en": "Support" }, "items": ["Helpdesk", "Ticketing", "Reporting", "Formation utilisateurs"] }
+      { "group": { "fr": "Automatisme", "en": "Automation" }, "items": ["PLC", { "fr": "Supervision process", "en": "Process supervision" }, "Vijeo Citect", "Unity Pro UL"] },
+      { "group": { "fr": "Support", "en": "Support" }, "items": ["Helpdesk", "Ticketing", "Reporting", { "fr": "Formation utilisateurs", "en": "User training" }] }
     ]
   },
   "experience": [
     {
       "title": { "fr": "Référent BE FTTH", "en": "FTTH Design Lead" },
       "company": "OPTICAL TELECOM",
-      "date": "2022 – 2024",
-      "profiles": ["dev", "telecom"],
+      "date": { "fr": "2022 – 2024", "en": "2022 – 2024" },
+      "domains": ["spec", "field"],
       "bullets": {
-        "dev": ["Développement d'outils AutoLISP et VBA pour automatiser les workflows AutoCAD.", "Création de scripts pour calques, blocs, calculs géométriques, Excel → DXF.", "Extension QGIS Python pour traitement de données et génération SHP."],
-        "telecom": ["Études techniques (APS, APD, DFT, DOE) pour réseaux FTTH.", "Modélisation et conception sur AutoCAD et QGIS fibre optique.", "Optimisation des processus via automatisation."],
-        "it": ["Études techniques FTTH et automatisation des workflows."]
+        "field": [
+          { "fr": "Études techniques (APS, APD, DFT, DOE) pour réseaux FTTH.", "en": "Technical studies (APS, APD, DFT, DOE) for FTTH networks." },
+          { "fr": "Modélisation et conception sur AutoCAD et QGIS fibre optique.", "en": "Modeling and design in AutoCAD and QGIS for fiber optic networks." },
+          { "fr": "Optimisation des processus via automatisation.", "en": "Process optimization through automation." }
+        ],
+        "spec": [
+          { "fr": "Développement d'outils AutoLISP et VBA pour automatiser les workflows AutoCAD.", "en": "Development of AutoLISP and VBA tools to automate AutoCAD workflows." },
+          { "fr": "Création de scripts pour calques, blocs, calculs géométriques, Excel → DXF.", "en": "Creation of scripts for layers, blocks, geometric calculations, Excel → DXF." },
+          { "fr": "Extension QGIS Python pour traitement de données et génération SHP.", "en": "Python QGIS extension for data processing and SHP generation." }
+        ]
       }
     },
     {
       "title": { "fr": "Chargé d'études FTTH", "en": "FTTH Study Engineer" },
       "company": "ID2S Telecom",
-      "date": "2020 – 2022",
-      "profiles": ["dev", "telecom"],
+      "date": { "fr": "2020 – 2022", "en": "2020 – 2022" },
+      "domains": ["spec", "field"],
       "bullets": {
-        "dev": ["Outils VBA pour automatisation et traitement de données FTTH.", "Structuration et fiabilisation des données techniques.", "Automatisation gestion de fichiers et workflows internes."],
-        "telecom": ["Modélisation réseaux télécoms dans SIG (QGIS, AutoCAD).", "Calcul de charge et préparation des livrables clients.", "Collaboration avec Orange, Axione, TDF, SFR, Bouygues, Kyntus."],
-        "it": ["Modélisation SIG et livrables clients."]
+        "field": [
+          { "fr": "Modélisation réseaux télécoms dans SIG (QGIS, AutoCAD).", "en": "Telecom network modeling in GIS (QGIS, AutoCAD)." },
+          { "fr": "Calcul de charge et préparation des livrables clients.", "en": "Load calculation and preparation of client deliverables." },
+          { "fr": "Collaboration avec Orange, Axione, TDF, SFR, Bouygues, Kyntus.", "en": "Collaboration with Orange, Axione, TDF, SFR, Bouygues, Kyntus." }
+        ],
+        "spec": [
+          { "fr": "Outils VBA pour automatisation et traitement de données FTTH.", "en": "VBA tools for automation and FTTH data processing." },
+          { "fr": "Structuration et fiabilisation des données techniques.", "en": "Structuring and validating technical data." },
+          { "fr": "Automatisation de la gestion de fichiers et des workflows internes.", "en": "Automation of file management and internal workflows." }
+        ]
       }
     },
     {
       "title": { "fr": "Technicien réseaux informatiques", "en": "Network Technician" },
       "company": "UNIVERS HIGH TECH",
-      "date": "Mai 2019 – Juin 2019",
-      "profiles": ["it"],
-      "bullets": { "it": ["Installation et configuration du système de pointage.", "Maintenance et mise à jour des équipements.", "Assistance technique et résolution d'incidents réseaux."] }
+      "date": { "fr": "Mai 2019 – Juin 2019", "en": "May 2019 – Jun 2019" },
+      "domains": ["flow"],
+      "bullets": {
+        "flow": [
+          { "fr": "Installation et configuration du système de pointage.", "en": "Installation and configuration of the time-tracking system." },
+          { "fr": "Maintenance et mise à jour des équipements.", "en": "Maintenance and updates of equipment." },
+          { "fr": "Assistance technique et résolution d'incidents réseaux.", "en": "Technical support and network incident resolution." }
+        ]
+      }
     },
     {
       "title": { "fr": "Technicien maintenance informatique & électronique", "en": "IT & Electronics Maintenance Technician" },
       "company": "INFOSAT",
-      "date": "Mar 2018 – Avr 2019",
-      "profiles": ["it"],
-      "bullets": { "it": ["Assemblage, diagnostic et maintenance PC et périphériques.", "Configuration routeurs, switchs, bornes Wi-Fi pour PME.", "Assistance helpdesk sur site et à distance."] }
+      "date": { "fr": "Mar 2018 – Avr 2019", "en": "Mar 2018 – Apr 2019" },
+      "domains": ["flow"],
+      "bullets": {
+        "flow": [
+          { "fr": "Assemblage, diagnostic et maintenance de PC et périphériques.", "en": "Assembly, diagnostics and maintenance of PCs and peripherals." },
+          { "fr": "Configuration de routeurs, switchs et bornes Wi-Fi pour PME.", "en": "Configuration of routers, switches and Wi-Fi access points for SMBs." },
+          { "fr": "Assistance helpdesk sur site et à distance.", "en": "On-site and remote helpdesk support." }
+        ]
+      }
     },
     {
       "title": { "fr": "Technicien automatisme", "en": "Automation Technician" },
       "company": "SCADELEC",
-      "date": "Jan 2018 – Fév 2018",
-      "profiles": ["it"],
-      "bullets": { "it": ["Maintenance et mise à niveau des stations automatisées RAMSA.", "Programmation et configuration d'automates programmables (PLC)."] }
+      "date": { "fr": "Jan 2018 – Fév 2018", "en": "Jan 2018 – Feb 2018" },
+      "domains": ["flow"],
+      "bullets": {
+        "flow": [
+          { "fr": "Maintenance et mise à niveau des stations automatisées RAMSA.", "en": "Maintenance and upgrade of RAMSA automated stations." },
+          { "fr": "Programmation et configuration d'automates programmables (PLC).", "en": "Programming and configuration of programmable logic controllers (PLC)." }
+        ]
+      }
     },
     {
-      "title": { "fr": "Automaticien Raffinage", "en": "Refining Automation Engineer" },
+      "title": { "fr": "Automaticien raffinage", "en": "Refining Automation Engineer" },
       "company": "LES HUILERIES DU SOUSS BEL HASSAN",
-      "date": "Avr 2017 – Juin 2017 / Avr 2016 – Juin 2016",
-      "profiles": ["it"],
-      "bullets": { "it": ["Conception et développement d'un système de supervision du processus de raffinage.", "Programmation d'automates pour optimisation chaîne de production."] }
+      "date": { "fr": "Avr 2017 – Juin 2017 / Avr 2016 – Juin 2016", "en": "Apr 2017 – Jun 2017 / Apr 2016 – Jun 2016" },
+      "domains": ["flow"],
+      "bullets": {
+        "flow": [
+          { "fr": "Conception et développement d'un système de supervision du processus de raffinage.", "en": "Design and development of a refining process supervision system." },
+          { "fr": "Programmation d'automates pour optimisation de la chaîne de production.", "en": "PLC programming to optimize the production line." }
+        ]
+      }
     },
     {
       "title": { "fr": "Maintenance électrique", "en": "Electrical Maintenance" },
       "company": "STE MAROCAINE DES EMBALLAGES FANTASIA",
-      "date": "Juil 2015 – Août 2015",
-      "profiles": ["it"],
-      "bullets": { "it": ["Maintenance électrique sur chaudière, dérouleuse DN14 et machines d'agrafage."] }
+      "date": { "fr": "Juil 2015 – Août 2015", "en": "Jul 2015 – Aug 2015" },
+      "domains": ["flow"],
+      "bullets": {
+        "flow": [
+          { "fr": "Maintenance électrique sur chaudière, dérouleuse DN14 et machines d'agrafage.", "en": "Electrical maintenance on boiler, DN14 decoiler and stapling machines." }
+        ]
+      }
     }
   ],
   "education": [
@@ -225,34 +278,32 @@
       "title": "FiberFlow",
       "desc": { "fr": "Plateforme API-first d'audit FTTH — supervision PostGIS, scoring qualité pondéré et assistant IA Groq pour bureaux d'études télécoms.", "en": "API-first FTTH audit platform — PostGIS supervision, weighted quality scoring and Groq AI assistant for telecom design offices." },
       "tags": ["Laravel 13", "PostGIS", "Groq AI", "Pest 4", "Docker"],
-      "profiles": ["dev", "telecom"],
+      "domains": ["spec", "field"],
       "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine/fiberflow", "demo": null },
       "image": "assets/img/projects/fiberflow.svg",
       "featured": true
     },
     {
       "title": "DocFormat",
-      "desc": { "fr": "Plateforme d'intelligence documentaire — analyse structure, règles de style, citations/bibliographie et détection d'abréviations sur .docx (PhpWord).", "en": "Document-intelligence platform — structure analysis, style rules, citations/bibliography and abbreviation detection on .docx (PhpWord)." },
-      "tags": ["Laravel 13", "React 19", "PhpWord", "Pest 256+", "Vite"],
-      "profiles": ["dev"],
+      "desc": { "fr": "Plateforme d'intelligence documentaire — analyse de structure, règles de style, citations/bibliographie et détection d'abréviations sur .docx (PhpWord).", "en": "Document-intelligence platform — structure analysis, style rules, citations/bibliography and abbreviation detection on .docx (PhpWord)." },
+      "tags": ["Laravel 13", "React 19", "PhpWord", "Pest", "Vite"],
+      "domains": ["spec"],
       "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine/docformat", "demo": null },
-      "image": "assets/img/projects/docformat.svg",
-      "featured": true
+      "image": "assets/img/projects/docformat.svg"
     },
     {
       "title": "ThreadForgeAPI",
       "desc": { "fr": "API headless Laravel qui transforme du contenu brut en posts X optimisés via IA structurée, tool-calling et mémoire (Groq Llama 4).", "en": "Headless Laravel API that transforms raw content into optimized X posts via structured AI, tool-calling and memory (Groq Llama 4)." },
       "tags": ["Laravel 13", "Laravel AI", "Sanctum", "Pest", "Azure"],
-      "profiles": ["dev"],
+      "domains": ["spec"],
       "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine/ThreadForgeAPI", "demo": null },
-      "image": "assets/img/projects/threadforge.svg",
-      "featured": true
+      "image": "assets/img/projects/threadforge.svg"
     },
     {
       "title": "TalentMatch",
       "desc": { "fr": "Assistant IA de présélection RH — analyse CV vs offre en 2 couches : scoring JSON structuré + agent conversationnel à mémoire.", "en": "AI pre-screening assistant for HR — CV vs job analysis in 2 layers: structured JSON scoring + conversational memory agent." },
       "tags": ["Laravel 13", "Laravel AI", "Groq", "Pest", "Breeze"],
-      "profiles": ["dev"],
+      "domains": ["spec"],
       "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine/talentmatch", "demo": null },
       "image": "assets/img/projects/talentmatch.svg"
     },
@@ -260,31 +311,31 @@
       "title": "Assistant Dépenses",
       "desc": { "fr": "Extraction IA de reçus (OCR) — texte collé → Llama 4 Scout extrait lignes, catégories MAD et dashboard Chart.js.", "en": "AI receipt extraction (OCR) — pasted text → Llama 4 Scout extracts lines, MAD categories and Chart.js dashboard." },
       "tags": ["Laravel 13", "Groq AI", "Chart.js", "Queue", "Pest"],
-      "profiles": ["dev"],
+      "domains": ["spec"],
       "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine/Assistant_Depenses", "demo": null },
       "image": "assets/img/projects/assistant-depenses.svg"
     },
     {
       "title": "CandidatureTracker",
-      "desc": { "fr": "Tracker de candidatures — suivi candidatures/entretiens/documents avec soft-delete, politiques et stats.", "en": "Job application tracker — candidatures/interviews/documents with soft-delete, policies and stats." },
+      "desc": { "fr": "Tracker de candidatures — suivi candidatures/entretiens/documents avec soft-delete, politiques et statistiques.", "en": "Job application tracker — applications/interviews/documents with soft-delete, policies and stats." },
       "tags": ["Laravel 13", "SoftDeletes", "Policies", "Breeze", "Pest"],
-      "profiles": ["dev"],
+      "domains": ["spec"],
       "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine/candidaturetracker", "demo": null },
       "image": "assets/img/projects/candidaturetracker.svg"
     },
     {
       "title": "TaskManager Laravel",
-      "desc": { "fr": "Gestionnaire de tâches minimal — CRUD, pipeline ToDo/InProgress/Done, filtres et retards.", "en": "Minimal task manager — CRUD, ToDo/InProgress/Done pipeline, filters and overdue highlights." },
+      "desc": { "fr": "Gestionnaire de tâches minimal — CRUD, pipeline ToDo/InProgress/Done, filtres et mise en avant des retards.", "en": "Minimal task manager — CRUD, ToDo/InProgress/Done pipeline, filters and overdue highlights." },
       "tags": ["Laravel 13", "Breeze", "Tailwind", "MySQL", "MVC"],
-      "profiles": ["dev"],
+      "domains": ["spec"],
       "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine/TaskManagerLaravel", "demo": null },
       "image": "assets/img/projects/taskmanager.svg"
     },
     {
       "title": "Personal Blog Laravel",
-      "desc": { "fr": "Blog personnel — navigation publique (recherche/catégorie/temps de lecture) + dashboard privé brouillon/publié.", "en": "Personal blog — public browsing (search/category/reading time) + private draft/published dashboard." },
+      "desc": { "fr": "Blog personnel — navigation publique (recherche/catégorie/temps de lecture) + tableau de bord privé brouillon/publié.", "en": "Personal blog — public browsing (search/category/reading time) + private draft/published dashboard." },
       "tags": ["Laravel 13", "Breeze", "Tailwind", "MySQL", "Blade"],
-      "profiles": ["dev"],
+      "domains": ["spec"],
       "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine/PersonalBlogLaravel", "demo": null },
       "image": "assets/img/projects/blog.svg"
     },
@@ -292,71 +343,219 @@
       "title": "AutoCAD AutoLISP Tools",
       "desc": { "fr": "Suite AutoLISP + VBA pour automatiser la génération de plans FTTH dans AutoCAD (Excel → DXF).", "en": "AutoLISP + VBA suite to automate FTTH plan generation in AutoCAD (Excel → DXF)." },
       "tags": ["AutoLISP", "VBA", "Excel", "AutoCAD"],
-      "profiles": ["telecom"],
+      "domains": ["field"],
       "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine", "demo": null },
       "image": "assets/img/projects/autocad.svg"
     },
     {
       "title": "QGIS Python Extension",
-      "desc": { "fr": "Extension QGIS pour traitement données télécom et génération SHP (QGIS API, Python).", "en": "QGIS extension for telecom data processing and SHP generation (QGIS API, Python)." },
+      "desc": { "fr": "Extension QGIS pour traitement de données télécom et génération de SHP (API QGIS, Python).", "en": "QGIS extension for telecom data processing and SHP generation (QGIS API, Python)." },
       "tags": ["Python", "QGIS API", "PostGIS"],
-      "profiles": ["telecom"],
+      "domains": ["field"],
       "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine", "demo": null },
       "image": "assets/img/projects/qgis.svg"
     },
     {
       "title": "GameCafé Manager — Aji L3bo",
-      "desc": { "fr": "OS café ludique — catalogue, réservations anti-conflit et dashboard live des sessions (projet pré-Laravel).", "en": "Board-game café OS — catalog, anti-overlap reservations and live session dashboard (pre-Laravel project)." },
+      "desc": { "fr": "OS de café ludique — catalogue, réservations anti-conflit et tableau de bord live des sessions (projet pré-Laravel).", "en": "Board-game café OS — catalogue, anti-overlap reservations and live session dashboard (pre-Laravel project)." },
       "tags": ["PHP (Core)", "MySQL PDO", "XAMPP", "Legacy"],
-      "profiles": ["dev"],
+      "domains": ["spec"],
       "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine/GameCafe_Manager_PRJ", "demo": null },
       "image": "assets/img/projects/gamecafe.svg",
       "legacy": true
     },
     {
       "title": "SurfSchool Manager — Taghazout",
-      "desc": { "fr": "Gestion école de surf — élèves/cours/inscriptions/paiements, calendrier events.php (pré-Laravel).", "en": "Surf school manager — students/lessons/enrollments/payments, events.php calendar (pre-Laravel)." },
+      "desc": { "fr": "Gestion d'école de surf — élèves/cours/inscriptions/paiements, calendrier events.php (pré-Laravel).", "en": "Surf school manager — students/lessons/enrollments/payments, events.php calendar (pre-Laravel)." },
       "tags": ["PHP (Core)", "MySQL PDO", "Sessions", "Legacy"],
-      "profiles": ["dev"],
+      "domains": ["spec"],
       "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine/SurfSchool_Manager", "demo": null },
       "image": "assets/img/projects/surfschool.svg",
       "legacy": true
     },
     {
       "title": "IT Automation Toolkit",
-      "desc": { "fr": "Outils d'automatisation et scripts réseau pour maintenance et déploiement.", "en": "Automation and network scripts for maintenance and deployment." },
+      "desc": { "fr": "Outils d'automatisation et scripts réseau pour la maintenance et le déploiement.", "en": "Automation and network scripts for maintenance and deployment." },
       "tags": ["Python", "Bash", "Networking", "PLC"],
-      "profiles": ["it"],
+      "domains": ["flow"],
       "links": { "github": "https://github.com/BEN-ESSAHRAOUI-Yassine", "demo": null },
       "image": "assets/img/projects/it-toolkit.svg"
     }
   ],
   "cv": {
-    "dev": "assets/cv/cv-dev.pdf",
-    "telecom": "assets/cv/cv-telecom.pdf",
-    "it": "assets/cv/cv-it.pdf"
+    "spec": "assets/cv/cv-dev.pdf",
+    "field": "assets/cv/cv-telecom.pdf",
+    "flow": "assets/cv/cv-it.pdf",
+    "automation": "assets/cv/cv-automation.pdf"
   },
+  "faq": [
+    {
+      "domain": null,
+      "q": { "fr": "Comment vos trois domaines se complètent-ils ?", "en": "How do your three domains complement each other?" },
+      "a": { "fr": "Le logiciel, les réseaux fibre et l'IT partagent la même logique d'ingénierie : comprendre un besoin, le structurer, l'implémenter et le vérifier. L'automatisation est le fil commun — que ce soit dans du code, sur un plan AutoCAD ou dans un parc informatique.", "en": "Software, fiber networks and IT share the same engineering logic: understand a requirement, structure it, implement it and verify it. Automation is the common thread — whether in code, on an AutoCAD drawing or across an IT fleet." }
+    },
+    {
+      "domain": null,
+      "q": { "fr": "Quelle est la meilleure façon de vous contacter ?", "en": "What is the best way to reach you?" },
+      "a": { "fr": "Via le formulaire de contact de cette page, ou directement par email et LinkedIn. Je réponds généralement sous quelques jours.", "en": "Through the contact form on this page, or directly by email and LinkedIn. I usually reply within a few days." }
+    },
+    {
+      "domain": "spec",
+      "q": { "fr": "Quel type d'applications construisez-vous ?", "en": "What kind of applications do you build?" },
+      "a": { "fr": "Des applications web Laravel : APIs, back-offices, outils métier et automatisations.", "en": "Laravel web apps: APIs, back-offices, business tools and automations." }
+    },
+    {
+      "domain": "spec",
+      "q": { "fr": "Avec quelles technologies travaillez-vous ?", "en": "What technologies do you work with?" },
+      "a": { "fr": "PHP, Laravel, JavaScript, Python, SQL, MySQL, REST APIs, Git.", "en": "PHP, Laravel, JavaScript, Python, SQL, MySQL, REST APIs, Git." }
+    },
+    {
+      "domain": "spec",
+      "q": { "fr": "Pouvez-vous reprendre une application existante ?", "en": "Can you work on existing applications?" },
+      "a": { "fr": "Oui — audit, correction, refactorisation et nouvelles fonctionnalités.", "en": "Yes — audit, fixes, refactoring and new features." }
+    },
+    {
+      "domain": "field",
+      "q": { "fr": "Quels travaux FTTH prenez-vous en charge ?", "en": "What kind of FTTH work do you handle?" },
+      "a": { "fr": "Études APS / APD / DFT / DOE, conception et audit qualité.", "en": "APS / APD / DFT / DOE studies, design and quality audits." }
+    },
+    {
+      "domain": "field",
+      "q": { "fr": "Quels outils SIG utilisez-vous ?", "en": "What GIS tools do you use?" },
+      "a": { "fr": "QGIS, AutoCAD, ArcGIS, FiberGIS, GraceTHD.", "en": "QGIS, AutoCAD, ArcGIS, FiberGIS, GraceTHD." }
+    },
+    {
+      "domain": "field",
+      "q": { "fr": "Pouvez-vous contribuer aux audits réseau ?", "en": "Can you contribute to network studies and audits?" },
+      "a": { "fr": "Oui — analyse, scoring qualité et livrables opérateurs.", "en": "Yes — analysis, quality scoring and operator deliverables." }
+    },
+    {
+      "domain": "flow",
+      "q": { "fr": "Sur quels systèmes intervenez-vous ?", "en": "What kind of systems do you work with?" },
+      "a": { "fr": "Postes Windows / Linux, réseaux LAN / WAN, serveurs et parc.", "en": "Windows / Linux workstations, LAN / WAN networks, servers and fleet." }
+    },
+    {
+      "domain": "flow",
+      "q": { "fr": "Travaillez-vous avec Linux et Docker ?", "en": "Do you work with Linux and Docker?" },
+      "a": { "fr": "Oui — déploiement, maintenance et conteneurisation.", "en": "Yes — deployment, maintenance and containerization." }
+    },
+    {
+      "domain": "flow",
+      "q": { "fr": "Pouvez-vous automatiser des workflows ?", "en": "Can you automate technical workflows?" },
+      "a": { "fr": "Oui — scripts Python / Bash et outillage sur mesure.", "en": "Yes — Python / Bash scripts and custom tooling." }
+    }
+  ],
   "i18n": {
     "nav": {
-      "competences": { "fr": "Compétences", "en": "Competences" },
+      "spec": { "fr": "SPEC", "en": "SPEC" },
+      "field": { "fr": "FIELD", "en": "FIELD" },
+      "flow": { "fr": "FLOW", "en": "FLOW" },
       "work": { "fr": "Projets", "en": "Projects" },
+      "competences": { "fr": "Compétences", "en": "Competences" },
+      "about": { "fr": "À propos", "en": "About" },
       "faq": { "fr": "FAQ", "en": "FAQ" },
-      "contact": { "fr": "Contactez-moi", "en": "Contact Me" }
+      "contact": { "fr": "Contact", "en": "Contact" }
     },
     "hero": {
-      "kicker": { "fr": "Une personne — trois dimensions", "en": "One person — three dimensions" },
-      "cta": { "fr": "Contactez-moi", "en": "Contact Me" }
+      "kicker": { "fr": "INGÉNIERIE MULTIDISCIPLINAIRE / 001", "en": "MULTIDISCIPLINARY ENGINEERING / 001" },
+      "h1": { "fr": "Un esprit. Trois dimensions de l'ingénierie.", "en": "One mind. Three engineering dimensions." },
+      "support": {
+        "fr": "Je développe des logiciels pratiques, travaille sur des infrastructures de télécommunications et conçois des systèmes techniques qui facilitent la gestion de processus complexes.",
+        "en": "I build practical software, work with telecommunications infrastructure, and create technical systems that make complex processes easier to manage."
+      },
+      "ctaPrimary": { "fr": "Découvrir mes projets", "en": "Explore my work" },
+      "ctaSecondary": { "fr": "Me contacter", "en": "Get in touch" },
+      "figDoc": { "fr": "DOC · PORTFOLIO", "en": "DOC · PORTFOLIO" },
+      "figSheet": { "fr": "PLANCHE 1/1", "en": "SHEET 1/1" },
+      "figConcept": { "fr": "UNE PERSONNE — TROIS DIMENSIONS", "en": "ONE PERSON — THREE DIMENSIONS" },
+      "portraitAlt": { "fr": "Portrait de Yassine BEN ESSAHRAOUI", "en": "Portrait of Yassine BEN ESSAHRAOUI" },
+      "diagramLabel": {
+        "fr": "Schéma : portrait entouré des trois domaines SPEC, FIELD et FLOW",
+        "en": "Diagram: portrait surrounded by the three domains SPEC, FIELD and FLOW"
+      },
+      "markerHint": { "fr": "Naviguer vers la section du domaine", "en": "Navigate to the domain section" }
     },
     "sections": {
-      "competences": { "fr": "COMPÉTENCES", "en": "COMPETENCES" },
-      "workProjects": { "fr": "PROJETS", "en": "PROJECTS" },
-      "workProjectsSub": { "fr": "Sélection — un projet vedette, puis les autres.", "en": "Selection — one featured project, then the rest." },
-      "workTelecom": { "fr": "RÉSEAU FTTH", "en": "FTTH NETWORK" },
-      "workTelecomSub": { "fr": "De la fibre au foyer — conception et audit.", "en": "From fiber to home — design and audit." },
-      "workIt": { "fr": "SYSTÈMES", "en": "SYSTEMS" },
-      "workItSub": { "fr": "Infrastructure, réseau, services, automatisation.", "en": "Infrastructure, network, services, automation." },
-      "faq": { "fr": "FAQ", "en": "FAQ" },
-      "contact": { "fr": "CONTACT", "en": "CONTACT" }
+      "work": {
+        "eyebrow": { "fr": "§ 04 — ÉTUDES DE CAS", "en": "§ 04 — CASE STUDIES" },
+        "title": { "fr": "Projets sélectionnés", "en": "Selected projects" },
+        "sub": {
+          "fr": "Chaque projet est présenté par domaine : le problème, l'approche technique et les outils.",
+          "en": "Each project is presented by domain: the problem, the technical approach and the tools."
+        }
+      },
+      "competences": {
+        "eyebrow": { "fr": "§ 06 — COMPÉTENCES", "en": "§ 06 — COMPETENCES" },
+        "title": { "fr": "Compétences", "en": "Competences" },
+        "sub": {
+          "fr": "Trois ensembles de compétences, une même rigueur d'ingénierie.",
+          "en": "Three sets of skills, one engineering habit."
+        }
+      },
+      "about": {
+        "eyebrow": { "fr": "§ 07 — À PROPOS", "en": "§ 07 — ABOUT" },
+        "title": { "fr": "Parcours & expérience", "en": "Background & experience" },
+        "sub": {
+          "fr": "Un parcours qui relie le logiciel, les réseaux fibre et les systèmes informatiques.",
+          "en": "A path that connects software, fiber networks and IT systems."
+        },
+        "rolesTitle": { "fr": "Trois dimensions, trois rôles", "en": "Three dimensions, three roles" },
+        "experienceTitle": { "fr": "Expérience", "en": "Experience" },
+        "educationTitle": { "fr": "Formation", "en": "Education" },
+        "certificationsTitle": { "fr": "Certifications", "en": "Certifications" },
+        "cvTitle": { "fr": "CV", "en": "Résumé" },
+        "cvSub": {
+          "fr": "Un CV par domaine — version PDF.",
+          "en": "One résumé per domain — PDF version."
+        },
+        "cvSpec": { "fr": "CV — Logiciel", "en": "CV — Software" },
+        "cvField": { "fr": "CV — Télécom", "en": "CV — Telecom" },
+        "cvFlow": { "fr": "CV — Informatique", "en": "CV — IT" },
+        "cvAutomation": { "fr": "CV — Automatisme", "en": "CV — Automation" }
+      },
+      "faq": {
+        "eyebrow": { "fr": "§ 08 — FAQ", "en": "§ 08 — FAQ" },
+        "title": { "fr": "Questions fréquentes", "en": "Frequently asked questions" },
+        "sub": {
+          "fr": "Le profil, l'approche technique et la meilleure façon de travailler ensemble.",
+          "en": "The profile, the technical approach and the best way to work together."
+        }
+      },
+      "contact": {
+        "eyebrow": { "fr": "§ 09 — CONTACT", "en": "§ 09 — CONTACT" },
+        "title": { "fr": "Un défi technique ?", "en": "Have a technical challenge?" },
+        "sub": {
+          "fr": "Parlons logiciel, infrastructure ou automatisation.",
+          "en": "Let's discuss software, infrastructure or automation."
+        },
+        "direct": { "fr": "Contact direct", "en": "Direct contact" },
+        "formNote": {
+          "fr": "Vos informations servent uniquement à répondre à votre message.",
+          "en": "Your details are only used to answer your message."
+        }
+      }
+    },
+    "work": {
+      "filterLabel": { "fr": "Filtrer par domaine", "en": "Filter by domain" },
+      "filterAll": { "fr": "Tous", "en": "All" },
+      "more": { "fr": "Autres projets", "en": "More projects" },
+      "featured": { "fr": "Projet vedette", "en": "Featured project" },
+      "early": { "fr": "Travail précoce", "en": "Early work" },
+      "github": { "fr": "Code source", "en": "Source code" },
+      "demo": { "fr": "Démo", "en": "Demo" },
+      "count": { "fr": "{n} projets affichés", "en": "{n} projects shown" },
+      "countOne": { "fr": "{n} projet affiché", "en": "{n} project shown" },
+      "problem": { "fr": "Problème", "en": "Problem" },
+      "approach": { "fr": "Approche", "en": "Approach" },
+      "tools": { "fr": "Outils", "en": "Tools" },
+      "artifacts": {
+        "spec": { "fr": "Extrait de spécification — requirements → tests", "en": "Specification excerpt — requirements → tests" },
+        "field": { "fr": "Plan de référence — topologie FTTH", "en": "Reference plan — FTTH topology" },
+        "flow": { "fr": "Schéma d'automatisation — flux de traitement", "en": "Automation diagram — processing flow" }
+      }
+    },
+    "skills": {
+      "items": { "fr": "compétences", "en": "skills" }
     },
     "contact": {
       "name": { "fr": "Nom", "en": "Name" },
@@ -366,10 +565,38 @@
       "sending": { "fr": "Envoi…", "en": "Sending…" },
       "sent": { "fr": "Message envoyé. Merci.", "en": "Message sent. Thank you." },
       "failed": { "fr": "Échec d'envoi. Réessayez ou écrivez-moi directement.", "en": "Send failed. Try again or email me directly." },
+      "wait": { "fr": "Veuillez patienter…", "en": "Please wait…" },
+      "mailOpen": { "fr": "Client mail ouvert.", "en": "Mail client opened." },
       "errName": { "fr": "Veuillez entrer votre nom", "en": "Please enter your name" },
       "errEmail": { "fr": "Veuillez entrer un email valide", "en": "Please enter a valid email" },
       "errMessage": { "fr": "Veuillez entrer votre message", "en": "Please enter your message" }
     },
-    "a11y": { "skip": { "fr": "Aller au contenu", "en": "Skip to content" } }
+    "footer": {
+      "tagline": { "fr": "Logiciel · Fibre · Systèmes", "en": "Software · Fiber · Systems" },
+      "thanks": { "fr": "Merci de votre visite.", "en": "Thanks for being here." },
+      "links": { "fr": "Liens", "en": "Links" }
+    },
+    "diagram": {
+      "req": { "fr": "EXIGENCE", "en": "REQUIREMENT" },
+      "model": { "fr": "MODÈLE", "en": "MODEL" },
+      "api": { "fr": "API", "en": "API" },
+      "tests": { "fr": "TESTS", "en": "TESTS" },
+      "specCol": { "fr": "SPÉCIFICATION", "en": "SPECIFICATION" },
+      "implCol": { "fr": "IMPLÉMENTATION", "en": "IMPLEMENTATION" },
+      "home": { "fr": "LOGEMENT", "en": "HOME" },
+      "fiber": { "fr": "FIBRE", "en": "FIBER" },
+      "gis": { "fr": "GIS · AUDIT · CONCEPTION", "en": "GIS · AUDIT · DESIGN" },
+      "storage": { "fr": "STOCKAGE", "en": "STORAGE" },
+      "monitoring": { "fr": "SUIVI", "en": "MONITORING" },
+      "recovery": { "fr": "REPRISE", "en": "RECOVERY" },
+      "trigger": { "fr": "DÉCLENCHEUR", "en": "TRIGGER" },
+      "flowTools": { "fr": "PYTHON · BASH · PLC · API", "en": "PYTHON · BASH · PLC · API" }
+    },
+    "a11y": {
+      "skip": { "fr": "Aller au contenu", "en": "Skip to content" },
+      "langGroup": { "fr": "Langue", "en": "Language" },
+      "modeToggle": { "fr": "Mode clair / sombre", "en": "Light / dark mode" },
+      "menu": { "fr": "Menu", "en": "Menu" }
+    }
   }
 }

@@ -1,0 +1,180 @@
+/* ═══════════════════════════════════════════════════════════════
+   DOMAINS — three visual worlds: SPEC · FIELD · FLOW
+   Shared foundation, distinct rhythm and panels
+   ═══════════════════════════════════════════════════════════════ */
+.domain { position: relative; }
+.domain-spec { background: var(--bg); }
+.domain-field { background: var(--bg-alt); }
+
+.domain-grid {
+  display: grid;
+  gap: clamp(36px, 5vw, 64px);
+  align-items: start;
+}
+@media (min-width: 1000px) {
+  .domain-grid { grid-template-columns: minmax(0, 1.02fr) minmax(0, 1fr); }
+  .domain-field .domain-visual { order: -1; }
+}
+
+/* ── Copy column ─────────────────────────────────────────────── */
+.dom-tag {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  color: var(--ink);
+  border: 1px solid color-mix(in srgb, var(--ink) 35%, transparent);
+  border-radius: 999px;
+  padding: 3px 11px;
+  letter-spacing: 0.12em;
+}
+.dom-kicker {
+  color: var(--text-faint);
+  letter-spacing: 0.12em;
+}
+
+.domain-heading {
+  font-size: clamp(1.75rem, 3.3vw, 2.5rem);
+  margin: 20px 0 14px;
+  max-width: 18ch;
+  text-wrap: balance;
+}
+.domain-intro {
+  font-size: 0.98rem;
+  color: var(--text-soft);
+  max-width: 54ch;
+}
+
+.steps {
+  list-style: none;
+  margin-top: 28px;
+  max-width: 580px;
+  border-top: 1px solid var(--line);
+}
+.steps li {
+  display: grid;
+  grid-template-columns: 46px 1fr;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
+}
+.step-n {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--ink);
+  padding-top: 3px;
+}
+.step-label {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.step-desc {
+  display: block;
+  font-size: 0.86rem;
+  color: var(--text-soft);
+  margin-top: 1px;
+}
+
+.domain-stack {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-top: 24px;
+}
+
+/* ── Visual column ───────────────────────────────────────────── */
+@media (min-width: 1000px) {
+  .domain-visual { position: sticky; top: 104px; }
+}
+
+.panel {
+  background: var(--support);
+  border-radius: var(--radius-lg);
+  padding: clamp(16px, 2.4vw, 26px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: var(--shadow);
+}
+.panel-svg { width: 100%; height: auto; display: block; }
+.panel-svg text {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  fill: rgba(255, 255, 255, 0.6);
+}
+.panel-caption {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+  margin-top: 14px;
+}
+.panel-caption::before {
+  content: '';
+  width: 18px;
+  height: 1px;
+  background: var(--ink);
+  flex-shrink: 0;
+}
+
+/* ── SPEC diagram: traceability matrix ───────────────────────── */
+.pn-label text { fill: rgba(255, 255, 255, 0.42); font-size: 8.5px; }
+.pn-box rect { fill: rgba(255, 255, 255, 0.05); stroke: rgba(255, 255, 255, 0.24); }
+.pn-text text { fill: #DCE7F5; font-size: 8px; letter-spacing: 0.12em; }
+.pn-line path { fill: none; stroke: var(--spec-accent); stroke-width: 1.2; opacity: 0.85; }
+.pn-target rect { fill: rgba(96, 165, 250, 0.12); stroke: var(--spec-accent); }
+.pn-text-acc text { fill: var(--spec-accent); }
+.pn-caption text { fill: rgba(255, 255, 255, 0.32); font-size: 7.5px; letter-spacing: 0.16em; }
+
+/* ── FIELD diagram: FTTH topology ────────────────────────────── */
+.contour path { fill: none; stroke: rgba(134, 185, 154, 0.16); stroke-width: 1; }
+.fiber-line path { fill: none; stroke: var(--field-accent); stroke-width: 1.6; stroke-linecap: round; }
+.fnode rect { fill: rgba(255, 255, 255, 0.05); stroke: rgba(255, 255, 255, 0.26); }
+.fnode text { fill: #D8E6DD; font-size: 9px; }
+.fnode-main rect { stroke: var(--field-accent); fill: rgba(134, 185, 154, 0.12); }
+.fnode-main text { fill: var(--field-accent); }
+.fnode-home rect { fill: rgba(134, 185, 154, 0.07); }
+.fnode-home text { font-size: 7.5px; letter-spacing: 0.06em; fill: rgba(216, 230, 221, 0.75); }
+.fnode-soft { font-size: 8px; letter-spacing: 0.14em; fill: rgba(255, 255, 255, 0.34) !important; }
+.signal-pulse { fill: var(--field-accent); }
+
+/* ── FLOW diagram: automation pipeline ───────────────────────── */
+.pipe-node rect { fill: rgba(255, 255, 255, 0.05); stroke: rgba(255, 255, 255, 0.26); }
+.pipe-node text { fill: #E3DEF2; font-size: 8.5px; letter-spacing: 0.12em; }
+.pipe-node-acc rect { fill: rgba(183, 148, 246, 0.12); stroke: var(--flow-accent); }
+.pipe-node-acc text { fill: var(--flow-accent); }
+.pipe-line path { fill: none; stroke: rgba(255, 255, 255, 0.3); stroke-width: 1.4; stroke-linecap: round; }
+.pipe-line .pipe-loop { stroke: var(--flow-accent); opacity: 0.6; }
+.pipe-dot { fill: var(--flow-accent); }
+.pipe-soft { font-size: 8px; letter-spacing: 0.16em; fill: rgba(255, 255, 255, 0.34) !important; }
+
+/* ── FLOW as a dark band ─────────────────────────────────────── */
+[data-mode="light"] .domain-flow {
+  --support: #302744;
+  --ink: #C7AAF8;
+  --accent: var(--flow-accent);
+  --text: #ECEAF4;
+  --text-soft: #BCB6CE;
+  --text-faint: #8F88A8;
+  --line: rgba(255, 255, 255, 0.14);
+  --line-strong: rgba(255, 255, 255, 0.24);
+  --shadow: 0 14px 36px rgba(16, 10, 34, 0.35);
+  background: #171226;
+  color: #ECEAF4;
+}
+[data-mode="dark"] .domain-flow {
+  --ink: #C7AAF8;
+  background: #1A1430;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .signal-pulse, .pipe-dot { animation: none !important; }
+  .signal-pulse { opacity: 0.4; }
+}

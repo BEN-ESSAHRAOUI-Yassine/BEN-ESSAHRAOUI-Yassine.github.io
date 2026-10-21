@@ -1,101 +1,100 @@
-/* Design tokens — portfolio_design.md spec */
+/* ═══════════════════════════════════════════════════════════════
+   DESIGN TOKENS — "One person · three engineering worlds"
+   Midnight / Blueprint / Paper — plus SPEC · FIELD · FLOW palettes
+   ═══════════════════════════════════════════════════════════════ */
 :root {
-  --font-display: 'Oswald', sans-serif;
-  --font-domain: 'Viga', sans-serif;
-  --font-ui: 'Manrope', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
-  --font-editorial: 'Libre Baskerville', serif;
-  --font-hand: 'Satisfy', cursive;
-  --max-width: 1120px;
-  --section-pad: 96px 24px;
-  --radius: 10px;
+  /* Core palette */
+  --midnight: #101828;
+  --blueprint: #3B82F6;
+  --paper: #F7F8FA;
+  --white: #FFFFFF;
+  --steel: #667085;
+  --grid-line: #DCE3EB;
+
+  /* Domain accents (bright — meant for dark surfaces) */
+  --spec-accent: #60A5FA;
+  --spec-support: #132A48;
+  --field-accent: #86B99A;
+  --field-support: #29352F;
+  --flow-accent: #B794F6;
+  --flow-support: #302744;
+
+  /* Typography */
+  --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'Consolas', monospace;
+
+  /* Layout */
+  --maxw: 1180px;
+  --gutter: clamp(20px, 4vw, 32px);
+  --section-pad: clamp(72px, 9vw, 124px);
+  --radius: 4px;
+  --radius-lg: 8px;
+
+  /* Motion */
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
-  --dur: 700ms;
-  --ink: #1a1d21;
-  --ink-soft: #4a4f55;
-  --ink-faint: #8a8f96;
-  --paper: #ffffff;
-  --line: #e4e4e0;
-  /* dark derived */
-  --d-ink: #ececea;
-  --d-ink-soft: #b9bdc2;
-  --d-paper: #141619;
-  --d-card: #1c1f23;
-  --d-line: #2a2e33;
+  --dur: 600ms;
 }
 
-/* Domain environments — light */
-[data-domain="development"][data-mode="light"] {
-  --env: #E5E5E5;
-  --env-deep: #d4d4d4;
-  --env-soft: #f1f1f1;
-  --bg: #fbfbfa;
-  --card: #ffffff;
-  --text: #1a1d21;
-  --text-soft: #4a4f55;
-  --text-faint: #8a8f96;
-  --border: #e4e4e0;
-  --accent: #1a1d21;
-}
-[data-domain="telecom"][data-mode="light"] {
-  --env: #BBDEFB;
-  --env-deep: #90CAF9;
-  --env-soft: #E3F2FD;
-  --bg: #fbfdff;
-  --card: #ffffff;
-  --text: #1a1d21;
-  --text-soft: #3d4f5f;
-  --text-faint: #7a8f9f;
-  --border: #d4e4ef;
-  --accent: #1565C0;
-}
-[data-domain="it"][data-mode="light"] {
-  --env: #B2DFDB;
-  --env-deep: #80CBC4;
-  --env-soft: #E0F2F1;
-  --bg: #fbfdfc;
-  --card: #ffffff;
-  --text: #1a1d21;
-  --text-soft: #3d5451;
-  --text-faint: #75918d;
-  --border: #d2e5e2;
-  --accent: #00695C;
+/* ── Light mode (default) ─────────────────────────────────────── */
+:root,
+[data-mode="light"] {
+  --bg: var(--paper);
+  --bg-alt: #EFF2F6;
+  --surface: var(--white);
+  --surface-2: #EEF1F5;
+  --text: var(--midnight);
+  --text-soft: #475467;
+  --text-faint: var(--steel);
+  --line: var(--grid-line);
+  --line-strong: #C3CDDB;
+  --accent: var(--blueprint);
+  --focus: #1D4ED8;
+  --on-dark: #E9EEF5;
+  --on-dark-soft: #9FB0C4;
+  --on-dark-line: rgba(255, 255, 255, 0.14);
+  --grid-fade: color-mix(in srgb, var(--grid-line) 65%, transparent);
+  --shadow: 0 12px 32px rgba(16, 24, 40, 0.07);
+  --tint: color-mix(in srgb, var(--accent) 7%, transparent);
 }
 
-/* Domain environments — dark (derived, not inverted) */
-[data-domain="development"][data-mode="dark"] {
-  --env: #2a2d31;
-  --env-deep: #1c1f23;
-  --env-soft: #22262a;
-  --bg: #141619;
-  --card: #1c1f23;
-  --text: #ececea;
-  --text-soft: #b9bdc2;
-  --text-faint: #7d8288;
-  --border: #2a2e33;
-  --accent: #E5E5E5;
+/* ── Dark mode (derived, not inverted) ────────────────────────── */
+[data-mode="dark"] {
+  --bg: #0B1220;
+  --bg-alt: #0E1626;
+  --surface: #111B2C;
+  --surface-2: #162133;
+  --text: #E7ECF3;
+  --text-soft: #B4C0D0;
+  --text-faint: #8592A6;
+  --line: #1F2A3C;
+  --line-strong: #2C3B52;
+  --accent: #60A5FA;
+  --focus: #93B4FB;
+  --on-dark: #E9EEF5;
+  --on-dark-soft: #9FB0C4;
+  --on-dark-line: rgba(255, 255, 255, 0.16);
+  --grid-fade: color-mix(in srgb, #2C3B52 60%, transparent);
+  --shadow: 0 14px 36px rgba(0, 0, 0, 0.4);
+  --tint: color-mix(in srgb, var(--accent) 12%, transparent);
 }
-[data-domain="telecom"][data-mode="dark"] {
-  --env: #16283a;
-  --env-deep: #0e1c2a;
-  --env-soft: #1b3049;
-  --bg: #101820;
-  --card: #16202b;
-  --text: #e8f1f8;
-  --text-soft: #a9c0d2;
-  --text-faint: #6d8496;
-  --border: #233747;
-  --accent: #BBDEFB;
-}
-[data-domain="it"][data-mode="dark"] {
-  --env: #142825;
-  --env-deep: #0d1d1b;
-  --env-soft: #1a332f;
-  --bg: #101715;
-  --card: #16211f;
-  --text: #e6f2ef;
-  --text-soft: #a7c2bd;
-  --text-faint: #6d8a85;
-  --border: #223734;
-  --accent: #B2DFDB;
-}
+
+/* ── Domain scopes ────────────────────────────────────────────────
+   Each domain carries: bright accent (dark surfaces), a darker "ink"
+   for readable tags on paper, a support colour for panels and a
+   whisper tint for hovers.                                        */
+.domain-spec { --accent: var(--spec-accent); --support: var(--spec-support); --ink: #2563EB; --tint: #ECF3FE; }
+.domain-field { --accent: var(--field-accent); --support: var(--field-support); --ink: #3F7355; --tint: #EDF4EF; }
+.domain-flow { --accent: var(--flow-accent); --support: var(--flow-support); --ink: #6D46C4; --tint: #F3EFFC; }
+
+[data-mode="dark"] .domain-spec { --ink: #8DBCFC; --tint: rgba(96, 165, 250, 0.1); }
+[data-mode="dark"] .domain-field { --ink: #9ECBB0; --tint: rgba(134, 185, 154, 0.1); }
+[data-mode="dark"] .domain-flow { --ink: #C7AAF8; --tint: rgba(183, 148, 246, 0.1); }
+
+/* Standalone domain accents (hero markers, filters, chips) */
+.acc-spec { --accent: var(--spec-accent); --ink: #2563EB; }
+.acc-field { --accent: var(--field-accent); --ink: #3F7355; }
+.acc-flow { --accent: var(--flow-accent); --ink: #6D46C4; }
+[data-mode="dark"] .acc-spec { --ink: #8DBCFC; }
+[data-mode="dark"] .acc-field { --ink: #9ECBB0; }
+[data-mode="dark"] .acc-flow { --ink: #C7AAF8; }

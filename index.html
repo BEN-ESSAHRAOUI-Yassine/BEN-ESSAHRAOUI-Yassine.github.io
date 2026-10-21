@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html lang="fr" data-domain="development" data-mode="light">
+<html lang="fr" data-mode="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yassine BEN ESSAHRAOUI — Development · Telecom · IT</title>
-  <meta name="description" content="Yassine BEN ESSAHRAOUI — one person, three professional dimensions: software development, telecom FTTH engineering, IT systems.">
-  <meta property="og:title" content="Yassine BEN ESSAHRAOUI — Development · Telecom · IT">
-  <meta property="og:description" content="Software development · FTTH & GIS · IT systems — one portfolio, three domains.">
+  <title>Yassine Ben Essahraoui — Software · Fiber · Systems</title>
+  <meta name="description" content="Yassine Ben Essahraoui — I turn complex requirements into software, connected infrastructure and automated systems. Software development, FTTH telecom engineering, IT systems & automation.">
+  <meta property="og:title" content="Yassine Ben Essahraoui — Software · Fiber · Systems">
+  <meta property="og:description" content="One person, three engineering dimensions: software development, fiber-optic infrastructure, IT systems & automation.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ben-essahraoui-yassine.github.io/">
-  <meta name="theme-color" content="#E5E5E5">
+  <meta name="theme-color" content="#F7F8FA">
   <link rel="canonical" href="https://ben-essahraoui-yassine.github.io/">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%231a1d21'/><text x='50%' y='58%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700' font-size='15'>Y</text></svg>">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%23101828'/><text x='50%' y='58%' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='700' font-size='15'>Y</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Manrope:wght@400;500;600;700&family=Viga&family=DM+Sans:opsz,wght@9..40,400;9..40,500&family=Libre+Baskerville:ital@0;1&family=Satisfy&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
   <link rel="stylesheet" href="css/components/navbar.css">
   <link rel="stylesheet" href="css/components/hero.css">
+  <link rel="stylesheet" href="css/components/domains.css">
+  <link rel="stylesheet" href="css/components/work.css">
   <link rel="stylesheet" href="css/components/sections.css">
   <script src="https://unpkg.com/lucide@0.511.0/dist/umd/lucide.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js" defer></script>
@@ -31,133 +33,415 @@
     <div class="header-inner">
       <a href="#hero" class="brand" aria-label="Yassine — home">YASSINE</a>
       <nav class="main-nav" aria-label="Primary">
-        <a href="#competences" data-i18n="nav.competences">Competences</a>
-        <a href="#work" data-i18n="nav.work">Projects</a>
-        <a href="#faq" data-i18n="nav.faq">FAQ</a>
-        <a href="#contact" class="nav-cta" data-i18n="nav.contact">Contact Me</a>
+        <a href="#spec" data-navlink="spec" data-i18n="nav.spec">SPEC</a>
+        <a href="#field" data-navlink="field" data-i18n="nav.field">FIELD</a>
+        <a href="#flow" data-navlink="flow" data-i18n="nav.flow">FLOW</a>
+        <a href="#work" data-navlink="work" data-i18n="nav.work">Projects</a>
+        <a href="#competences" data-navlink="competences" data-i18n="nav.competences">Competences</a>
+        <a href="#about" data-navlink="about" data-i18n="nav.about">About</a>
+        <a href="#contact" class="nav-cta" data-navlink="contact" data-i18n="nav.contact">Contact</a>
       </nav>
       <div class="header-controls">
-        <div class="lang" role="group" aria-label="Language">
+        <div class="lang" role="group" data-i18n-attr="aria-label:a11y.langGroup" aria-label="Language">
           <button data-lang="en" aria-pressed="false">EN</button>
           <span aria-hidden="true">/</span>
           <button data-lang="fr" class="on" aria-pressed="true">FR</button>
         </div>
-        <button id="mode-toggle" class="icon-btn" aria-label="Light / dark">
-          <i data-lucide="sun"></i>
+        <button id="mode-toggle" class="icon-btn" data-i18n-attr="aria-label:a11y.modeToggle" aria-label="Light / dark mode">
+          <i data-lucide="moon"></i>
         </button>
-        <button id="menu-toggle" class="icon-btn only-mobile" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+        <button id="menu-toggle" class="icon-btn only-mobile" data-i18n-attr="aria-label:a11y.menu" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
           <i data-lucide="menu"></i>
         </button>
       </div>
     </div>
     <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile" hidden>
-      <a href="#competences" data-i18n="nav.competences">Competences</a>
-      <a href="#work" data-i18n="nav.work">Projects</a>
-      <a href="#faq" data-i18n="nav.faq">FAQ</a>
-      <a href="#contact" data-i18n="nav.contact">Contact Me</a>
+      <a href="#spec" data-navlink="spec" data-i18n="nav.spec">SPEC</a>
+      <a href="#field" data-navlink="field" data-i18n="nav.field">FIELD</a>
+      <a href="#flow" data-navlink="flow" data-i18n="nav.flow">FLOW</a>
+      <a href="#work" data-navlink="work" data-i18n="nav.work">Projects</a>
+      <a href="#competences" data-navlink="competences" data-i18n="nav.competences">Competences</a>
+      <a href="#about" data-navlink="about" data-i18n="nav.about">About</a>
+      <a href="#faq" data-navlink="faq" data-i18n="nav.faq">FAQ</a>
+      <a href="#contact" data-navlink="contact" data-i18n="nav.contact">Contact</a>
     </nav>
   </header>
 
   <main>
-    <!-- HERO / DOMAIN EXPERIENCE -->
-    <section id="hero" aria-roledescription="carousel" aria-label="Professional domains">
-      <div class="wrap hero-wrap">
-        <p class="hero-kicker" data-i18n="hero.kicker">One person — three dimensions</p>
+    <!-- ══════════════ HERO ══════════════ -->
+    <section id="hero" aria-roledescription="banner">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="hero.kicker">MULTIDISCIPLINARY ENGINEERING / 001</p>
+          <p class="hero-name">Yassine Ben Essahraoui</p>
+          <h1 class="hero-title" data-i18n="hero.h1">One mind. Three engineering dimensions.</h1>
+          <p class="hero-support" data-i18n="hero.support">I build practical software, work with telecommunications infrastructure, and create technical systems that make complex processes easier to manage.</p>
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="#work" data-i18n="hero.ctaPrimary">Explore my work</a>
+            <a class="btn btn-ghost" href="#contact" data-i18n="hero.ctaSecondary">Get in touch</a>
+          </div>
+        </div>
 
-        <div class="domain-stage" id="domain-stage">
-          <p class="domain-top" id="domain-top" aria-hidden="true">DEVELOPMENT</p>
+        <div class="hero-diagram" id="hero-diagram" data-active="">
+          <figure class="diagram-frame">
+            <div class="diagram-meta">
+              <span data-i18n="hero.figDoc">DOC · PORTFOLIO</span>
+              <span>FIG. 001</span>
+            </div>
 
-          <div class="domain-row">
-            <button class="domain-side" id="domain-prev" aria-label="Previous domain">
-              <span class="side-arrow" aria-hidden="true">&lt;</span>
-              <span class="side-name" id="side-prev-name">TELECOM</span>
-            </button>
+            <div class="diagram-stage">
+              <svg class="diagram-lines" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <path class="dl dl-spec" d="M18,16 H34 V27" vector-effect="non-scaling-stroke"/>
+                <path class="dl dl-field" d="M83,42 H66" vector-effect="non-scaling-stroke"/>
+                <path class="dl dl-flow" d="M20,85 H45 V74" vector-effect="non-scaling-stroke"/>
+                <circle class="dj dj-spec" cx="34" cy="27" r="1.1"/>
+                <circle class="dj dj-field" cx="66" cy="42" r="1.1"/>
+                <circle class="dj dj-flow" cx="45" cy="74" r="1.1"/>
+              </svg>
 
-            <figure class="portrait-card">
-              <div class="portrait-env" id="portrait-env">
-                <img src="assets/img/avatar.png" alt="Portrait of Yassine BEN ESSAHRAOUI" id="portrait-img" fetchpriority="high">
+              <figure class="portrait">
+                <img src="assets/img/avatar.png" alt="Portrait of Yassine BEN ESSAHRAOUI" data-i18n-attr="alt:hero.portraitAlt" id="portrait-img" fetchpriority="high" width="1200" height="1600">
+              </figure>
+
+              <div class="marker-layer" data-i18n-attr="aria-label:hero.markerHint" role="group" aria-label="Domain navigation">
+                <a class="marker marker-spec" href="#spec" data-marker="spec">
+                  <span class="marker-index">01</span>
+                  <span class="marker-body">
+                    <span class="marker-name">SPEC</span>
+                    <span class="marker-sub" data-marker-sub="spec">Software Development</span>
+                  </span>
+                </a>
+                <a class="marker marker-field" href="#field" data-marker="field">
+                  <span class="marker-index">02</span>
+                  <span class="marker-body">
+                    <span class="marker-name">FIELD</span>
+                    <span class="marker-sub" data-marker-sub="field">Civil &amp; Telecom Engineering</span>
+                  </span>
+                </a>
+                <a class="marker marker-flow" href="#flow" data-marker="flow">
+                  <span class="marker-index">03</span>
+                  <span class="marker-body">
+                    <span class="marker-name">FLOW</span>
+                    <span class="marker-sub" data-marker-sub="flow">IT Systems &amp; Automation</span>
+                  </span>
+                </a>
               </div>
-            </figure>
+            </div>
 
-            <button class="domain-side" id="domain-next" aria-label="Next domain">
-              <span class="side-name" id="side-next-name">IT</span>
-              <span class="side-arrow" aria-hidden="true">&gt;</span>
-            </button>
+            <figcaption class="diagram-meta">
+              <span data-i18n="hero.figConcept">ONE PERSON — THREE DIMENSIONS</span>
+              <span data-i18n="hero.figSheet">SHEET 1/1</span>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ SPEC ══════════════ -->
+    <section id="spec" class="domain domain-spec" data-domain-section="spec">
+      <div class="wrap">
+        <div class="domain-grid">
+          <div class="domain-copy">
+            <p class="eyebrow"><span class="dom-tag">SPEC / 01</span><span class="dom-kicker" id="spec-kicker"></span></p>
+            <h2 class="domain-heading" id="spec-heading"></h2>
+            <p class="domain-intro" id="spec-intro"></p>
+            <ol class="steps" id="spec-steps"></ol>
+            <p class="domain-stack" id="spec-stack"></p>
+            <a class="link-arrow" href="#work" data-filter-link="spec" id="spec-link"></a>
           </div>
-
-          <div class="hero-identity">
-            <strong id="hero-name">YASSINE BEN ESSAHRAOUI</strong>
-            <span class="domain-title" id="hero-domain">SOFTWARE DEVELOPER</span>
-            <span class="domain-statement" id="hero-statement">I build practical digital systems.</span>
-            <span class="domain-stack" id="hero-stack">Laravel · PHP · JavaScript · Python · SQL</span>
-            <a href="#contact" class="btn" id="hero-cta" data-i18n="hero.cta">Contact Me</a>
-          </div>
-
-          <div class="domain-meta">
-            <div class="domain-dots" role="tablist" aria-label="Domains" id="domain-dots"></div>
-            <p class="domain-count" aria-live="polite"><span id="domain-index">01</span> / 03</p>
+          <div class="domain-visual">
+            <div class="panel">
+              <svg viewBox="0 0 420 260" class="panel-svg" role="img" aria-label="Traceability diagram: requirements connected to data model, API and tests" data-i18n-attr="aria-label:work.artifacts.spec">
+                <g class="pn-label">
+                  <text x="24" y="34">REQ-01</text>
+                  <text x="24" y="114">REQ-02</text>
+                  <text x="24" y="194">REQ-03</text>
+                </g>
+                <g class="pn-box">
+                  <rect x="96" y="16" width="86" height="30"/>
+                  <rect x="96" y="96" width="86" height="30"/>
+                  <rect x="96" y="176" width="86" height="30"/>
+                </g>
+                <g class="pn-text">
+                  <text x="139" y="35" text-anchor="middle" data-i18n="diagram.req">EXIGENCE</text>
+                  <text x="139" y="115" text-anchor="middle" data-i18n="diagram.req">EXIGENCE</text>
+                  <text x="139" y="195" text-anchor="middle" data-i18n="diagram.req">EXIGENCE</text>
+                </g>
+                <g class="pn-line">
+                  <path d="M182,31 H240 V53 H296" vector-effect="non-scaling-stroke"/>
+                  <path d="M182,31 H240 V133 H296" vector-effect="non-scaling-stroke"/>
+                  <path d="M182,111 H240 V133 H296" vector-effect="non-scaling-stroke"/>
+                  <path d="M182,111 H240 V213 H296" vector-effect="non-scaling-stroke"/>
+                  <path d="M182,191 H240 V213 H296" vector-effect="non-scaling-stroke"/>
+                </g>
+                <g class="pn-target">
+                  <rect x="296" y="38" width="100" height="30"/>
+                  <rect x="296" y="118" width="100" height="30"/>
+                  <rect x="296" y="198" width="100" height="30"/>
+                </g>
+                <g class="pn-text pn-text-acc">
+                  <text x="346" y="57" text-anchor="middle" data-i18n="diagram.model">MODÈLE</text>
+                  <text x="346" y="137" text-anchor="middle" data-i18n="diagram.api">API</text>
+                  <text x="346" y="217" text-anchor="middle" data-i18n="diagram.tests">TESTS</text>
+                </g>
+                <g class="pn-caption">
+                  <text x="96" y="248" data-i18n="diagram.specCol">SPÉCIFICATION</text>
+                  <text x="296" y="248" data-i18n="diagram.implCol">IMPLÉMENTATION</text>
+                </g>
+              </svg>
+            </div>
+            <p class="panel-caption" id="spec-caption"></p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- COMPETENCES -->
-    <section id="competences">
+    <!-- ══════════════ FIELD ══════════════ -->
+    <section id="field" class="domain domain-field" data-domain-section="field">
       <div class="wrap">
-        <h2 class="section-title" data-i18n="sections.competences">COMPETENCES</h2>
-        <p class="section-sub" id="competences-sub"></p>
-        <div class="clusters" id="clusters"></div>
+        <div class="domain-grid">
+          <div class="domain-copy">
+            <p class="eyebrow"><span class="dom-tag">FIELD / 02</span><span class="dom-kicker" id="field-kicker"></span></p>
+            <h2 class="domain-heading" id="field-heading"></h2>
+            <p class="domain-intro" id="field-intro"></p>
+            <ol class="steps" id="field-steps"></ol>
+            <p class="domain-stack" id="field-stack"></p>
+            <a class="link-arrow" href="#work" data-filter-link="field" id="field-link"></a>
+          </div>
+          <div class="domain-visual">
+            <div class="panel">
+              <svg viewBox="0 0 420 300" class="panel-svg" role="img" aria-label="FTTH topology: fiber to the home through SRO and distribution points" data-i18n-attr="aria-label:work.artifacts.field">
+                <g class="contour" aria-hidden="true">
+                  <path d="M-10,60 C80,30 150,90 240,55 C320,25 390,70 430,50" vector-effect="non-scaling-stroke"/>
+                  <path d="M-10,110 C70,85 160,140 250,105 C330,75 395,120 430,100" vector-effect="non-scaling-stroke"/>
+                  <path d="M-10,250 C90,225 170,275 260,245 C340,218 400,255 430,240" vector-effect="non-scaling-stroke"/>
+                </g>
+                <g class="fiber-line">
+                  <path d="M210,44 V92" vector-effect="non-scaling-stroke"/>
+                  <path d="M210,124 V146 H120 V186" vector-effect="non-scaling-stroke"/>
+                  <path d="M210,146 H300 V186" vector-effect="non-scaling-stroke"/>
+                  <path d="M120,218 V244" vector-effect="non-scaling-stroke" stroke-dasharray="4 4"/>
+                  <path d="M300,218 V244" vector-effect="non-scaling-stroke" stroke-dasharray="4 4"/>
+                </g>
+                <circle class="signal-pulse" cx="210" cy="44" r="3.2">
+                  <animate attributeName="cy" values="44;244" dur="3.4s" repeatCount="indefinite"/>
+                  <animate attributeName="opacity" values="0.75;0.15;0.75" dur="3.4s" repeatCount="indefinite"/>
+                </circle>
+                <g class="fnode fnode-main">
+                  <rect x="166" y="14" width="88" height="30"/>
+                  <text x="210" y="33" text-anchor="middle" data-i18n="diagram.fiber">FIBRE</text>
+                </g>
+                <g class="fnode">
+                  <rect x="170" y="92" width="80" height="32"/>
+                  <text x="210" y="112" text-anchor="middle">SRO</text>
+                </g>
+                <g class="fnode">
+                  <rect x="82" y="186" width="76" height="32"/>
+                  <text x="120" y="206" text-anchor="middle">PB</text>
+                </g>
+                <g class="fnode">
+                  <rect x="262" y="186" width="76" height="32"/>
+                  <text x="300" y="206" text-anchor="middle">PB</text>
+                </g>
+                <g class="fnode fnode-home">
+                  <rect x="84" y="244" width="72" height="28"/>
+                  <text x="120" y="262" text-anchor="middle" data-i18n="diagram.home">LOGEMENT</text>
+                </g>
+                <g class="fnode fnode-home">
+                  <rect x="264" y="244" width="72" height="28"/>
+                  <text x="300" y="262" text-anchor="middle" data-i18n="diagram.home">LOGEMENT</text>
+                </g>
+                <text x="210" y="164" text-anchor="middle" class="fnode-soft" data-i18n="diagram.gis">GIS · AUDIT · CONCEPTION</text>
+              </svg>
+            </div>
+            <p class="panel-caption" id="field-caption"></p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- DOMAIN-SPECIFIC: projects OR showcase -->
+    <!-- ══════════════ FLOW ══════════════ -->
+    <section id="flow" class="domain domain-flow" data-domain-section="flow">
+      <div class="wrap">
+        <div class="domain-grid">
+          <div class="domain-copy">
+            <p class="eyebrow"><span class="dom-tag">FLOW / 03</span><span class="dom-kicker" id="flow-kicker"></span></p>
+            <h2 class="domain-heading" id="flow-heading"></h2>
+            <p class="domain-intro" id="flow-intro"></p>
+            <ol class="steps" id="flow-steps"></ol>
+            <p class="domain-stack" id="flow-stack"></p>
+            <a class="link-arrow" href="#work" data-filter-link="flow" id="flow-link"></a>
+          </div>
+          <div class="domain-visual">
+            <div class="panel">
+              <svg viewBox="0 0 420 260" class="panel-svg" role="img" aria-label="Automation pipeline: trigger, script, service, storage, monitoring with a feedback loop" data-i18n-attr="aria-label:work.artifacts.flow">
+                <g class="pipe-node">
+                  <rect x="18" y="46" width="88" height="40"/>
+                  <text x="62" y="70" text-anchor="middle" data-i18n="diagram.trigger">TRIGGER</text>
+                </g>
+                <g class="pipe-node">
+                  <rect x="144" y="46" width="88" height="40"/>
+                  <text x="188" y="70" text-anchor="middle">SCRIPT</text>
+                </g>
+                <g class="pipe-node">
+                  <rect x="270" y="46" width="88" height="40"/>
+                  <text x="314" y="70" text-anchor="middle">SERVICE</text>
+                </g>
+                <g class="pipe-node pipe-node-acc">
+                  <rect x="270" y="150" width="88" height="40"/>
+                  <text x="314" y="174" text-anchor="middle" data-i18n="diagram.storage">STOCKAGE</text>
+                </g>
+                <g class="pipe-node pipe-node-acc">
+                  <rect x="144" y="150" width="88" height="40"/>
+                  <text x="188" y="174" text-anchor="middle" data-i18n="diagram.monitoring">SUIVI</text>
+                </g>
+                <g class="pipe-node">
+                  <rect x="18" y="150" width="88" height="40"/>
+                  <text x="62" y="174" text-anchor="middle" data-i18n="diagram.recovery">REPRISE</text>
+                </g>
+                <g class="pipe-line">
+                  <path d="M106,66 H144" vector-effect="non-scaling-stroke"/>
+                  <path d="M232,66 H270" vector-effect="non-scaling-stroke"/>
+                  <path d="M314,86 V150" vector-effect="non-scaling-stroke"/>
+                  <path d="M270,170 H232" vector-effect="non-scaling-stroke"/>
+                  <path d="M144,170 H106" vector-effect="non-scaling-stroke"/>
+                  <path class="pipe-loop" d="M62,150 V110 H188 V86" vector-effect="non-scaling-stroke" stroke-dasharray="5 5"/>
+                </g>
+                <circle class="pipe-dot" cx="106" cy="66" r="2.6">
+                  <animate attributeName="cx" values="106;144" dur="2.2s" repeatCount="indefinite"/>
+                </circle>
+                <circle class="pipe-dot" cx="232" cy="66" r="2.6">
+                  <animate attributeName="cx" values="232;270" dur="2.2s" begin="0.5s" repeatCount="indefinite"/>
+                </circle>
+                <text x="210" y="238" text-anchor="middle" class="pipe-soft" data-i18n="diagram.flowTools">PYTHON · BASH · PLC · API</text>
+              </svg>
+            </div>
+            <p class="panel-caption" id="flow-caption"></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ PROJECTS ══════════════ -->
     <section id="work">
       <div class="wrap">
-        <h2 class="section-title" id="work-title">PROJECTS</h2>
-        <p class="section-sub" id="work-sub"></p>
+        <header class="section-head">
+          <p class="eyebrow" data-i18n="sections.work.eyebrow">§ 04 — CASE STUDIES</p>
+          <h2 data-i18n="sections.work.title">Selected projects</h2>
+          <p class="section-sub" data-i18n="sections.work.sub"></p>
+        </header>
+        <div class="filters" id="work-filters" role="group" data-i18n-attr="aria-label:work.filterLabel" aria-label="Filter by domain">
+          <button type="button" class="filter" data-filter="all" aria-pressed="true" data-i18n="work.filterAll">All</button>
+          <button type="button" class="filter filter-spec" data-filter="spec" aria-pressed="false" data-i18n="nav.spec">SPEC</button>
+          <button type="button" class="filter filter-field" data-filter="field" aria-pressed="false" data-i18n="nav.field">FIELD</button>
+          <button type="button" class="filter filter-flow" data-filter="flow" aria-pressed="false" data-i18n="nav.flow">FLOW</button>
+        </div>
+        <p class="work-count" id="work-count" aria-live="polite"></p>
         <div id="work-body"></div>
       </div>
     </section>
 
-    <!-- FAQ -->
+    <!-- ══════════════ COMPETENCES ══════════════ -->
+    <section id="competences">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow" data-i18n="sections.competences.eyebrow">§ 06 — COMPETENCES</p>
+          <h2 data-i18n="sections.competences.title">Competences</h2>
+          <p class="section-sub" data-i18n="sections.competences.sub"></p>
+        </header>
+        <div class="skills-grid" id="skills-grid"></div>
+      </div>
+    </section>
+
+    <!-- ══════════════ ABOUT ══════════════ -->
+    <section id="about">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow" data-i18n="sections.about.eyebrow">§ 07 — ABOUT</p>
+          <h2 data-i18n="sections.about.title">Background &amp; experience</h2>
+          <p class="section-sub" data-i18n="sections.about.sub"></p>
+        </header>
+
+        <h3 class="sub-head" data-i18n="sections.about.rolesTitle">Three dimensions, three roles</h3>
+        <div class="roles" id="about-roles"></div>
+
+        <div class="about-grid">
+          <div class="about-main">
+            <h3 class="sub-head" data-i18n="sections.about.experienceTitle">Experience</h3>
+            <ol class="timeline" id="about-experience"></ol>
+          </div>
+          <aside class="about-side">
+            <h3 class="sub-head" data-i18n="sections.about.educationTitle">Education</h3>
+            <ul class="edu-list" id="about-education"></ul>
+            <h3 class="sub-head" data-i18n="sections.about.certificationsTitle">Certifications</h3>
+            <p class="cert-list" id="about-certs"></p>
+            <h3 class="sub-head" data-i18n="sections.about.cvTitle">CV</h3>
+            <p class="side-note" data-i18n="sections.about.cvSub"></p>
+            <div class="cv-links" id="about-cv"></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════ FAQ ══════════════ -->
     <section id="faq">
       <div class="wrap faq-wrap">
-        <h2 class="section-title" data-i18n="sections.faq">FAQ</h2>
+        <header class="section-head">
+          <p class="eyebrow" data-i18n="sections.faq.eyebrow">§ 08 — FAQ</p>
+          <h2 data-i18n="sections.faq.title">Frequently asked questions</h2>
+          <p class="section-sub" data-i18n="sections.faq.sub"></p>
+        </header>
         <div class="accordion" id="faq-list"></div>
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- ══════════════ CONTACT ══════════════ -->
     <section id="contact">
-      <div class="wrap contact-wrap">
-        <h2 class="section-title" data-i18n="sections.contact">CONTACT</h2>
-        <div class="contact-grid">
+      <div class="wrap contact-grid">
+        <div class="contact-copy">
+          <header class="section-head">
+            <p class="eyebrow" data-i18n="sections.contact.eyebrow">§ 09 — CONTACT</p>
+            <h2 data-i18n="sections.contact.title">Have a technical challenge?</h2>
+            <p class="section-sub" data-i18n="sections.contact.sub"></p>
+          </header>
+          <svg class="converge" viewBox="0 0 260 90" aria-hidden="true">
+            <path d="M10,14 H120 Q150,14 150,45" vector-effect="non-scaling-stroke"/>
+            <path d="M10,45 H150" vector-effect="non-scaling-stroke"/>
+            <path d="M10,76 H120 Q150,76 150,45" vector-effect="non-scaling-stroke"/>
+            <path d="M150,45 H216" vector-effect="non-scaling-stroke"/>
+            <circle cx="224" cy="45" r="5"/>
+            <circle cx="10" cy="14" r="2.4" class="cv-dot cv-dot-spec"/>
+            <circle cx="10" cy="45" r="2.4" class="cv-dot cv-dot-field"/>
+            <circle cx="10" cy="76" r="2.4" class="cv-dot cv-dot-flow"/>
+          </svg>
+          <p class="contact-direct" data-i18n="sections.contact.direct">Direct contact</p>
           <div class="contact-links">
             <a id="c-email" href="mailto:ybenessahraoui@gmail.com">ybenessahraoui@gmail.com</a>
             <a id="c-linkedin" href="https://www.linkedin.com/in/yassine-ben-essahraoui-bb7b41125" target="_blank" rel="noopener">LinkedIn</a>
             <a id="c-github" href="https://github.com/BEN-ESSAHRAOUI-Yassine" target="_blank" rel="noopener">GitHub</a>
           </div>
-          <form id="contact-form" novalidate>
-            <input type="text" name="company" id="hp" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
-            <div class="field">
-              <label for="f-name" data-i18n="contact.name">Name</label>
-              <input id="f-name" name="name" type="text" autocomplete="name" required>
-              <p class="err" data-i18n="contact.errName">Please enter your name</p>
-            </div>
-            <div class="field">
-              <label for="f-email" data-i18n="contact.email">Email</label>
-              <input id="f-email" name="email" type="email" autocomplete="email" required>
-              <p class="err" data-i18n="contact.errEmail">Please enter a valid email</p>
-            </div>
-            <div class="field">
-              <label for="f-msg" data-i18n="contact.message">Message</label>
-              <textarea id="f-msg" name="message" rows="5" required></textarea>
-              <p class="err" data-i18n="contact.errMessage">Please enter your message</p>
-            </div>
-            <button type="submit" class="btn" id="send-btn"><span data-i18n="contact.send">Send</span></button>
-            <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
-          </form>
         </div>
+        <form id="contact-form" novalidate>
+          <input type="text" name="company" id="hp" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
+          <div class="field">
+            <label for="f-name" data-i18n="contact.name">Name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" required>
+            <p class="err" data-i18n="contact.errName">Please enter your name</p>
+          </div>
+          <div class="field">
+            <label for="f-email" data-i18n="contact.email">Email</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" required>
+            <p class="err" data-i18n="contact.errEmail">Please enter a valid email</p>
+          </div>
+          <div class="field">
+            <label for="f-msg" data-i18n="contact.message">Message</label>
+            <textarea id="f-msg" name="message" rows="5" required></textarea>
+            <p class="err" data-i18n="contact.errMessage">Please enter your message</p>
+          </div>
+          <button type="submit" class="btn btn-primary" id="send-btn"><span data-i18n="contact.send">Send</span></button>
+          <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
+          <p class="form-legal" data-i18n="sections.contact.formNote"></p>
+        </form>
       </div>
     </section>
   </main>
@@ -166,14 +450,14 @@
     <div class="wrap foot-grid">
       <div>
         <p class="foot-name">Yassine Ben Essahraoui</p>
-        <p class="foot-pos" id="foot-pos">Software · Fiber · Systems</p>
+        <p class="foot-pos" data-i18n="footer.tagline">Software · Fiber · Systems</p>
       </div>
-      <nav class="foot-links" aria-label="Footer">
+      <nav class="foot-links" data-i18n-attr="aria-label:footer.links" aria-label="Links">
         <a id="f-linkedin" href="https://www.linkedin.com/in/yassine-ben-essahraoui-bb7b41125" target="_blank" rel="noopener">LinkedIn</a>
         <a id="f-github" href="https://github.com/BEN-ESSAHRAOUI-Yassine" target="_blank" rel="noopener">GitHub</a>
         <a id="f-email" href="mailto:ybenessahraoui@gmail.com">Email</a>
       </nav>
-      <p class="hand">Thanks for being here.</p>
+      <p class="foot-thanks" data-i18n="footer.thanks">Thanks for being here.</p>
       <p class="copy">© <span id="year"></span> Yassine Ben Essahraoui</p>
     </div>
   </footer>
