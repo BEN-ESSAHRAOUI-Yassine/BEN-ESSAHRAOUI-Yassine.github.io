@@ -31,8 +31,8 @@
 
   <header id="site-header">
     <div class="header-inner">
-      <a href="#hero" class="brand" aria-label="Yassine — home">YASSINE</a>
-      <nav class="main-nav" aria-label="Primary">
+      <a href="#hero" class="brand" data-i18n-attr="aria-label:a11y.home" aria-label="Yassine — home">YASSINE</a>
+      <nav class="main-nav" data-i18n-attr="aria-label:nav.primary" aria-label="Primary">
         <a href="#spec" data-navlink="spec" data-i18n="nav.spec">SPEC</a>
         <a href="#field" data-navlink="field" data-i18n="nav.field">FIELD</a>
         <a href="#flow" data-navlink="flow" data-i18n="nav.flow">FLOW</a>
@@ -55,7 +55,7 @@
         </button>
       </div>
     </div>
-    <nav id="mobile-menu" class="mobile-menu" aria-label="Mobile" hidden>
+    <nav id="mobile-menu" class="mobile-menu" data-i18n-attr="aria-label:nav.mobile" aria-label="Mobile" hidden>
       <a href="#spec" data-navlink="spec" data-i18n="nav.spec">SPEC</a>
       <a href="#field" data-navlink="field" data-i18n="nav.field">FIELD</a>
       <a href="#flow" data-navlink="flow" data-i18n="nav.flow">FLOW</a>
@@ -69,7 +69,7 @@
 
   <main>
     <!-- ══════════════ HERO ══════════════ -->
-    <section id="hero" aria-roledescription="banner">
+    <section id="hero" tabindex="-1">
       <div class="wrap hero-grid">
         <div class="hero-copy">
           <p class="eyebrow" data-i18n="hero.kicker">MULTIDISCIPLINARY ENGINEERING / 001</p>
@@ -404,11 +404,11 @@
             <h2 data-i18n="sections.contact.title">Have a technical challenge?</h2>
             <p class="section-sub" data-i18n="sections.contact.sub"></p>
           </header>
-          <svg class="converge" viewBox="0 0 260 90" aria-hidden="true">
+          <svg class="converge" viewBox="0 0 237 90" aria-hidden="true">
             <path d="M10,14 H120 Q150,14 150,45" vector-effect="non-scaling-stroke"/>
             <path d="M10,45 H150" vector-effect="non-scaling-stroke"/>
             <path d="M10,76 H120 Q150,76 150,45" vector-effect="non-scaling-stroke"/>
-            <path d="M150,45 H216" vector-effect="non-scaling-stroke"/>
+            <path d="M150,45 H224" vector-effect="non-scaling-stroke"/>
             <circle cx="224" cy="45" r="5"/>
             <circle cx="10" cy="14" r="2.4" class="cv-dot cv-dot-spec"/>
             <circle cx="10" cy="45" r="2.4" class="cv-dot cv-dot-field"/>
@@ -425,18 +425,18 @@
           <input type="text" name="company" id="hp" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
           <div class="field">
             <label for="f-name" data-i18n="contact.name">Name</label>
-            <input id="f-name" name="name" type="text" autocomplete="name" required>
-            <p class="err" data-i18n="contact.errName">Please enter your name</p>
+            <input id="f-name" name="name" type="text" autocomplete="name" aria-describedby="f-name-err" required>
+            <p class="err" id="f-name-err" data-i18n="contact.errName">Please enter your name</p>
           </div>
           <div class="field">
             <label for="f-email" data-i18n="contact.email">Email</label>
-            <input id="f-email" name="email" type="email" autocomplete="email" required>
-            <p class="err" data-i18n="contact.errEmail">Please enter a valid email</p>
+            <input id="f-email" name="email" type="email" autocomplete="email" spellcheck="false" aria-describedby="f-email-err" required>
+            <p class="err" id="f-email-err" data-i18n="contact.errEmail">Please enter a valid email</p>
           </div>
           <div class="field">
             <label for="f-msg" data-i18n="contact.message">Message</label>
-            <textarea id="f-msg" name="message" rows="5" required></textarea>
-            <p class="err" data-i18n="contact.errMessage">Please enter your message</p>
+            <textarea id="f-msg" name="message" rows="5" aria-describedby="f-msg-err" required></textarea>
+            <p class="err" id="f-msg-err" data-i18n="contact.errMessage">Please enter your message</p>
           </div>
           <button type="submit" class="btn btn-primary" id="send-btn"><span data-i18n="contact.send">Send</span></button>
           <p class="form-note" id="form-note" role="status" aria-live="polite"></p>

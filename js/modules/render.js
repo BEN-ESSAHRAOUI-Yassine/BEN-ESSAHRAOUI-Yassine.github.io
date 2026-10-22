@@ -81,6 +81,14 @@ export function renderSkills(content, lang) {
    ══════════════════════════════════════════════════════════════ */
 export function initWork(content) {
   contentRef = content;
+  // deep link: ?f=spec | ?f=field | ?f=flow restores the filter on load
+  const initial = new URLSearchParams(location.search).get('f');
+  if (initial && DOMAINS.includes(initial)) {
+    filter = initial;
+    document.querySelectorAll('#work-filters .filter').forEach((b) => {
+      b.setAttribute('aria-pressed', b.dataset.filter === filter ? 'true' : 'false');
+    });
+  }
   document.querySelectorAll('#work-filters .filter').forEach((btn) => {
     btn.addEventListener('click', () => setFilter(btn.dataset.filter));
   });
@@ -96,6 +104,12 @@ export function setFilter(next, opts = {}) {
     b.setAttribute('aria-pressed', b.dataset.filter === filter ? 'true' : 'false');
   });
   renderWork(contentRef, getLang());
+  try {
+    const url = new URL(location.href);
+    if (filter === 'all') url.searchParams.delete('f');
+    else url.searchParams.set('f', filter);
+    history.replaceState(null, '', url);
+  } catch {}
   if (opts.scroll) {
     document.getElementById('work')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
@@ -160,7 +174,7 @@ export function renderWork(content, lang) {
   const featHtml = `
     <article class="case case-feat case--${feat.p.domains?.[0] || 'spec'} rv">
       <div class="case-media" data-ref="${(feat.p.domains?.[0] || 'spec').toUpperCase()} · P-${String(feat.idx).padStart(2, '0')}">
-        <img src="${esc(feat.p.image || '')}" alt="" loading="lazy">
+        <img src="${esc(feat.p.image || '')}" alt="" width="400" height="200" loading="lazy">
       </div>
       ${caseBody(feat.p, feat.idx, feat.p.domains?.[0] || 'spec', lang)}
     </article>`;
@@ -172,7 +186,7 @@ export function renderWork(content, lang) {
         return `
         <article class="case case--${d} rv" style="--stagger:${(i % 4) * 70}ms">
           <div class="case-media" data-ref="${d.toUpperCase()} · P-${String(idx).padStart(2, '0')}">
-            <img src="${esc(p.image || '')}" alt="" loading="lazy">
+            <img src="${esc(p.image || '')}" alt="" width="400" height="200" loading="lazy">
           </div>
           ${caseBody(p, idx, d, lang)}
         </article>`;

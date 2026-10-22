@@ -21,6 +21,18 @@ a { color: inherit; text-decoration: none; }
 img { max-width: 100%; display: block; }
 button { font: inherit; }
 
+/* Touch: no double-tap zoom delay on controls, deliberate tap highlight */
+a, button, input, textarea, label, [role="button"] { touch-action: manipulation; }
+body { -webkit-tap-highlight-color: rgba(59, 130, 246, 0.16); }
+
+/* Long tokens (emails, IDs, company names) must never blow out a column */
+.contact-links a, .cv-links a, .cert-list, .case-title, .case-compact h4,
+.tl-company, .edu-school, .foot-links a { overflow-wrap: break-word; }
+
+/* Numbers that sit in columns read better aligned */
+.work-count, .skill-block-count, .tl-date, .case-index, .marker-index,
+.edu-year, .copy { font-variant-numeric: tabular-nums; }
+
 :focus-visible {
   outline: 2px solid var(--focus);
   outline-offset: 3px;
@@ -34,7 +46,7 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 600; line-height: 1.
 
 /* ── Section scaffolding ─────────────────────────────────────── */
 .section-head { max-width: 640px; margin-bottom: clamp(32px, 4vw, 52px); }
-.section-head h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); margin: 14px 0 12px; }
+.section-head h2 { font-size: clamp(1.9rem, 3.6vw, 2.8rem); margin: 14px 0 12px; text-wrap: balance; }
 .section-sub { font-size: 0.98rem; color: var(--text-soft); max-width: 58ch; }
 
 .eyebrow {

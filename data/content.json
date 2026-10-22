@@ -454,7 +454,9 @@
       "competences": { "fr": "Compétences", "en": "Competences" },
       "about": { "fr": "À propos", "en": "About" },
       "faq": { "fr": "FAQ", "en": "FAQ" },
-      "contact": { "fr": "Contact", "en": "Contact" }
+      "contact": { "fr": "Contact", "en": "Contact" },
+      "primary": { "fr": "Navigation principale", "en": "Primary navigation" },
+      "mobile": { "fr": "Menu mobile", "en": "Mobile menu" }
     },
     "hero": {
       "kicker": { "fr": "INGÉNIERIE MULTIDISCIPLINAIRE / 001", "en": "MULTIDISCIPLINARY ENGINEERING / 001" },
@@ -596,7 +598,8 @@
       "skip": { "fr": "Aller au contenu", "en": "Skip to content" },
       "langGroup": { "fr": "Langue", "en": "Language" },
       "modeToggle": { "fr": "Mode clair / sombre", "en": "Light / dark mode" },
-      "menu": { "fr": "Menu", "en": "Menu" }
+      "menu": { "fr": "Menu", "en": "Menu" },
+      "home": { "fr": "Yassine — accueil", "en": "Yassine — home" }
     }
   }
 }

@@ -39,13 +39,16 @@
 /* ── Light mode (default) ─────────────────────────────────────── */
 :root,
 [data-mode="light"] {
+  color-scheme: light;
   --bg: var(--paper);
   --bg-alt: #EFF2F6;
   --surface: var(--white);
   --surface-2: #EEF1F5;
   --text: var(--midnight);
   --text-soft: #475467;
-  --text-faint: var(--steel);
+  /* steel one step darker: #667085 on the --bg-alt band is only 4.43:1,
+     this lands at 5.1:1 so faint labels stay WCAG AA on every surface */
+  --text-faint: #5D6678;
   --line: var(--grid-line);
   --line-strong: #C3CDDB;
   --accent: var(--blueprint);
@@ -60,6 +63,7 @@
 
 /* ── Dark mode (derived, not inverted) ────────────────────────── */
 [data-mode="dark"] {
+  color-scheme: dark;
   --bg: #0B1220;
   --bg-alt: #0E1626;
   --surface: #111B2C;

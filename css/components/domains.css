@@ -175,6 +175,6 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .signal-pulse, .pipe-dot { animation: none !important; }
-  .signal-pulse { opacity: 0.4; }
+  /* SMIL <animate> ignores CSS animation properties — hide the loops instead */
+  .signal-pulse, .pipe-dot { display: none !important; }
 }

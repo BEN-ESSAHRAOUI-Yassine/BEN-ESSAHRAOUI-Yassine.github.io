@@ -42,13 +42,24 @@ export function initContactForm(messages = {}) {
       { id: 'f-msg', ok: (v) => v.trim().length >= 10 },
     ];
     let valid = true;
+    let firstInvalid = null;
     checks.forEach(({ id, ok }) => {
       const input = document.getElementById(id);
       const field = input.closest('.field');
       field.classList.remove('invalid');
-      if (!ok(input.value)) { field.classList.add('invalid'); valid = false; }
+      input.removeAttribute('aria-invalid');
+      if (!ok(input.value)) {
+        field.classList.add('invalid');
+        input.setAttribute('aria-invalid', 'true');
+        valid = false;
+        if (!firstInvalid) firstInvalid = input;
+      }
     });
-    if (!valid) { setNote('', ''); return; }
+    if (!valid) {
+      firstInvalid?.focus();
+      setNote('', '');
+      return;
+    }
 
     const name = document.getElementById('f-name').value.trim();
     const email = document.getElementById('f-email').value.trim();
@@ -75,6 +86,9 @@ export function initContactForm(messages = {}) {
   });
 
   ['f-name', 'f-email', 'f-msg'].forEach((id) => {
-    document.getElementById(id)?.addEventListener('input', (e) => e.target.closest('.field')?.classList.remove('invalid'));
+    document.getElementById(id)?.addEventListener('input', (e) => {
+      e.target.closest('.field')?.classList.remove('invalid');
+      e.target.removeAttribute('aria-invalid');
+    });
   });
 }
